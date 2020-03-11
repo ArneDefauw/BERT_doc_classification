@@ -128,30 +128,30 @@ class BertForDocumentClassification():
         self.bert_doc_classification = document_bert_architectures[self.args['architecture']].from_pretrained(self.args['bert_model_path'], config=config)
         
         
-        param_optimizer=list(self.bert_doc_classification.named_parameters())
+        #param_optimizer=list(self.bert_doc_classification.named_parameters())
 
-        no_decay = ['bias', 'gamma', 'beta']
+        #no_decay = ['bias', 'gamma', 'beta']
 
-        optimizer_grouped_parameters = [
-            {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)],
-             'weight_decay_rate': 0.01},
-            {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)],
-             'weight_decay_rate': 0.0}
-        ]
+        #optimizer_grouped_parameters = [
+        #    {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)],
+        #     'weight_decay_rate': 0.01},
+        #    {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)],
+        #     'weight_decay_rate': 0.0}
+        #]
         
         self.bert_doc_classification.freeze_bert_encoder()
         self.bert_doc_classification.unfreeze_bert_encoder_last_layers()
         
-        self.optimizer = torch.optim.Adam(
-            optimizer_grouped_parameters,  
-            lr=self.args['learning_rate']
-        )
-        
         #self.optimizer = torch.optim.Adam(
-        #    self.bert_doc_classification.parameters(),
-        #    weight_decay=self.args['weight_decay'],
+        #    optimizer_grouped_parameters,  
         #    lr=self.args['learning_rate']
         #)
+        
+        self.optimizer = torch.optim.Adam(
+            self.bert_doc_classification.parameters(),
+            weight_decay=self.args['weight_decay'],
+            lr=self.args['learning_rate']
+        )
 
 
     def fit(self, train, dev):
