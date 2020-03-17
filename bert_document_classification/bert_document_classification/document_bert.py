@@ -1,12 +1,21 @@
-from pytorch_transformers.modeling_bert import BertPreTrainedModel, BertConfig, BertModel
-from pytorch_transformers.modeling_utils import WEIGHTS_NAME, CONFIG_NAME
-from pytorch_transformers.tokenization_bert import BertTokenizer
+#from pytorch_transformers.modeling_bert import BertPreTrainedModel, BertConfig, BertModel
+#from pytorch_transformers.modeling_utils import WEIGHTS_NAME, CONFIG_NAME
+#from pytorch_transformers.tokenization_bert import BertTokenizer
+
+from transformers import CONFIG_NAME, WEIGHTS_NAME
+
+from transformers.modeling_bert import BertConfig
+from transformers.tokenization_bert import BertTokenizer
+
+from transformers.modeling_distilbert import DistilBertConfig
+from transformers.tokenization_distilbert import DistilBertTokenizer
+
 from torch import nn
 import torch,math,logging,os
 from sklearn.metrics import f1_score, precision_score, recall_score
 
 
-from .document_bert_architectures import DocumentBertLSTM, DocumentBertLinear, DocumentBertTransformer, DocumentBertMaxPool
+from .document_bert_architectures import DocumentBertLSTM, DocumentDistilBertLSTM, DocumentBertLinear, DocumentBertTransformer, DocumentBertMaxPool
 
 def encode_documents(documents: list, tokenizer: BertTokenizer, max_input_length=512):
     """
@@ -24,6 +33,14 @@ def encode_documents(documents: list, tokenizer: BertTokenizer, max_input_length
     assert max_sequences_per_document <= 20, "Your document is to large, arbitrary size when writing"
 
     output = torch.zeros(size=(len(documents), max_sequences_per_document, 3, 512), dtype=torch.long)
+    
+    #for distilbert ( distilbert can not work with empty sequences. Therefore, we replace empty sequences with '[CLS]', '[SEP]', 0, 0, 0, .... ):
+    for doc_id in range( len(documents) ):
+        for seq_id in range( max_sequences_per_document ):
+            output[doc_id,seq_id,0]=torch.LongTensor( tokenizer.convert_tokens_to_ids( [ '[CLS]' , '[SEP]' ] )+[0]*(512-2)  ) #input_ids
+            output[doc_id,seq_id,2]=torch.LongTensor( [1]*2+[0]*(512-2)  ) #attention_mask
+    
+    
     document_seq_lengths = [] #number of sequence generated per document
     #Need to use 510 to account for 2 padding tokens
     for doc_index, tokenized_document in enumerate(tokenized_documents):
@@ -61,10 +78,9 @@ def encode_documents(documents: list, tokenizer: BertTokenizer, max_input_length
     return output, torch.LongTensor(document_seq_lengths)
 
 
-
-
 document_bert_architectures = {
     'DocumentBertLSTM': DocumentBertLSTM,
+    'DocumentDistilBertLSTM': DocumentDistilBertLSTM,
     'DocumentBertTransformer': DocumentBertTransformer,
     'DocumentBertLinear': DocumentBertLinear,
     'DocumentBertMaxPool': DocumentBertMaxPool
@@ -100,19 +116,28 @@ class BertForDocumentClassification():
         assert self.args['labels'] is not None, "Must specify all labels in prediction"
 
         self.log = logging.getLogger()
-        self.bert_tokenizer = BertTokenizer.from_pretrained( self.args['bert_model_path']  )
-
 
         #account for some random tensorflow naming scheme
+        
+        if 'Distil' in self.args['architecture']:
+            ArchitectureConfig=DistilBertConfig
+            self.bert_tokenizer = DistilBertTokenizer.from_pretrained( self.args['bert_model_path']  )
+
+        else:
+            ArchitectureConfig=BertConfig
+            self.bert_tokenizer = BertTokenizer.from_pretrained( self.args['bert_model_path']  )
+
+        
         if os.path.exists(self.args['bert_model_path']):
             if os.path.exists(os.path.join(self.args['bert_model_path'], CONFIG_NAME)):
-                config = BertConfig.from_json_file(os.path.join(self.args['bert_model_path'], CONFIG_NAME))
+                config = ArchitectureConfig.from_json_file(os.path.join(self.args['bert_model_path'], CONFIG_NAME))
             elif os.path.exists(os.path.join(self.args['bert_model_path'], 'bert_config.json')):
-                config = BertConfig.from_json_file(os.path.join(self.args['bert_model_path'], 'bert_config.json'))
+                
+                config = ArchitectureConfig.from_json_file(os.path.join(self.args['bert_model_path'], 'bert_config.json'))
             else:
                 raise ValueError("Cannot find a configuration for the BERT based model you are attempting to load.")
         else:
-            config = BertConfig.from_pretrained(self.args['bert_model_path'])
+            config = ArchitectureConfig.from_pretrained(self.args['bert_model_path'])
         config.__setattr__('num_labels',len(self.args['labels']))
         config.__setattr__('bert_batch_size',self.args['bert_batch_size'])
 
@@ -161,7 +186,7 @@ class BertForDocumentClassification():
         :param labels: a list of label vectors
         :return:
         """
-
+        
         train_documents, train_labels = train 
         dev_documents, dev_labels = dev
 
@@ -197,7 +222,7 @@ class BertForDocumentClassification():
                 #self.log.info(batch_document_tensors.shape)
                 batch_predictions = self.bert_doc_classification(batch_document_tensors,
                                                                  batch_document_sequence_lengths,
-                                                                 freeze_bert=self.args['freeze_bert'], device=self.args['device'])
+                                                                 device=self.args['device'])
 
                 batch_correct_output = correct_output[i:i + self.args['batch_size']].to(device=self.args['device'])
                 loss = self.loss_function(batch_predictions, batch_correct_output)
@@ -320,24 +345,5 @@ class BertForDocumentClassification():
         net.config.to_json_file(os.path.join(checkpoint_path, CONFIG_NAME))
         #save exact vocabulary utilized
         self.bert_tokenizer.save_vocabulary(checkpoint_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -1,9 +1,14 @@
-from pytorch_transformers.modeling_bert import BertPreTrainedModel, BertConfig, BertModel
+#from pytorch_transformers.modeling_bert import BertPreTrainedModel, BertConfig, BertModel
+from transformers.modeling_bert import BertPreTrainedModel, BertConfig, BertModel
+from transformers.modeling_distilbert import DistilBertPreTrainedModel, DistilBertConfig, DistilBertModel
+
 from torch import nn
 import torch
 from .transformer import TransformerEncoderLayer, TransformerEncoder
 
 from torch.nn import LSTM
+
+
 class DocumentBertLSTM(BertPreTrainedModel):
     """
     BERT output over document in LSTM
@@ -22,7 +27,7 @@ class DocumentBertLSTM(BertPreTrainedModel):
         )
 
     #input_ids, token_type_ids, attention_masks
-    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, freeze_bert=False, device='cuda'):
+    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, device='cuda'):
 
         #contains all BERT sequences
         #bert should output a (batch_size, num_sequences, bert_hidden_size)
@@ -72,7 +77,92 @@ class DocumentBertLSTM(BertPreTrainedModel):
         for name, param in self.bert.named_parameters():
             if "pooler" in name:
                 param.requires_grad = True
+                         
+
+class DistilBertPooler(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.dense = nn.Linear(config.hidden_size, config.hidden_size)
+        self.activation = nn.ReLU()
+
+    def forward(self, hidden_states):
+        # We "pool" the model by simply taking the hidden state corresponding
+        # to the first token.
+        first_token_tensor = hidden_states[:, 0]
+        pooled_output = self.dense(first_token_tensor)
+        pooled_output = self.activation(pooled_output)
+        return pooled_output
+
+
+class DocumentDistilBertLSTM( DistilBertPreTrainedModel ):
+    """
+    DistilBERT output over document in LSTM
+    """
+
+    def __init__(self, bert_model_config: DistilBertConfig ):
+        super(DocumentDistilBertLSTM, self).__init__(bert_model_config)
+        self.distilbert = DistilBertModel(bert_model_config)
+        self.pooler=DistilBertPooler(bert_model_config)
+        self.bert_batch_size= self.distilbert.config.bert_batch_size
+        self.dropout = nn.Dropout(p=bert_model_config.dropout)
+        self.lstm = LSTM(bert_model_config.hidden_size,bert_model_config.hidden_size, )
+        self.classifier = nn.Sequential(
+            nn.Dropout(p=bert_model_config.dropout),
+            nn.Linear(bert_model_config.hidden_size, bert_model_config.num_labels),
+            nn.Tanh()
+        )
+        self.init_weights()
+
+    #input_ids, token_type_ids, attention_masks
+    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, device='cuda'):
+
+        #contains all BERT sequences
+        #bert should output a (batch_size (i.e. number of documents), num_sequences , bert_hidden_size)
+        distilbert_output = torch.zeros(size=(document_batch.shape[0],
+                                              min(document_batch.shape[1],self.bert_batch_size),
+                                              self.distilbert.config.hidden_size), dtype=torch.float, device=device)
+        
+        #only pass through bert_batch_size numbers of inputs into bert.
+        #this means that we are possibly cutting off the last part of documents.
+    
+        for doc_id in range(document_batch.shape[0]):
                 
+            hidden_states=self.distilbert(  input_ids=document_batch[doc_id][:self.bert_batch_size,0],
+                                attention_mask=document_batch[doc_id][:self.bert_batch_size,2] )[0]
+            #Output of distilbert is a tuple of length 1. First element (hidden_states) is of shape: 
+            #( num_sequences(i.e. nr of sequences per document), nr_of_tokens(512) (i.e. nr of tokens per sequence), bert_hidden_size )
+                        
+            pooled_output=self.pooler( hidden_states )  # (num_sequences (i.e. nr of sequences per document), bert_hidden_size)
+            
+            distilbert_output[doc_id][:self.bert_batch_size]=self.dropout(pooled_output) #( #batch_size(i.e. number of documents) ,num_sequences (i.e. nr of sequences per document), bert_hidden_size)
+
+        #lstm expects a ( num_sequences, batch_size (i.e. number of documents) , bert_hidden_size )
+        self.lstm.flatten_parameters()
+        output, (_, _) = self.lstm(distilbert_output.permute(1,0,2))
+        
+        last_layer = output[-1]
+
+        prediction = self.classifier(last_layer)
+        assert prediction.shape[0] == document_batch.shape[0]
+        return prediction
+    
+    def freeze_bert_encoder(self):
+        for param in self.distilbert.parameters():
+            param.requires_grad = False
+    
+    def unfreeze_bert_encoder(self):
+        for param in self.distilbert.parameters():
+            param.requires_grad = True
+            
+    def unfreeze_bert_encoder_last_layers(self):
+        for name, param in self.distilbert.named_parameters():
+            if "layer.5" in name or "pooler" in name:
+                param.requires_grad = True
+                
+    def unfreeze_bert_encoder_pooler_layer(self):
+        for name, param in self.distilbert.named_parameters():
+            if "pooler" in name:
+                param.requires_grad = True         
 
 
 class DocumentBertLinear(BertPreTrainedModel):
