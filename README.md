@@ -53,6 +53,8 @@ And the python scripts ( 	train_n2c2_2006.py, train_n2c2_2008.py, train_newstest
 Use the predict_n2c2_2006.py, predict_n2c2_2008.py, predict_newstest_bert.py, predict_newstest_distilbert.py,
 
 
+#### Architectures:
+
 This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLSTM, DocumentBertTransformer, DocumentBertLinear, DocumentBertMaxPool. 
 
 
