@@ -55,7 +55,8 @@ Use the predict_n2c2_2006.py, predict_n2c2_2008.py, predict_newstest_bert.py, pr
 
 This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLSTM, DocumentBertTransformer, DocumentBertLinear, DocumentBertMaxPool. 
 
-Note: neither of these architectures could replicate results reported in https://arxiv.org/abs/1910.13664.
+
+# Note: none of these architectures could replicate results reported in https://arxiv.org/abs/1910.13664.
 
 ### Results on n2c2_2006 task:
 
