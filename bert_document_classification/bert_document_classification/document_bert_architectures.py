@@ -184,28 +184,45 @@ class DocumentBertLinear(BertPreTrainedModel):
         )
 
     #input_ids, token_type_ids, attention_masks
-    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, freeze_bert=False, device='cuda'):
+    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, device='cuda'):
 
         #contains all BERT sequences
         #bert should output a (batch_size, num_sequences, bert_hidden_size)
         bert_output = torch.zeros(size=(document_batch.shape[0],
                                               min(document_batch.shape[1],self.bert_batch_size),
-                                              self.bert.config.hidden_size), dtype=torch.float, device='cuda')
+                                              self.bert.config.hidden_size), dtype=torch.float, device=device )
 
         #only pass through bert_batch_size numbers of inputs into bert.
         #this means that we are possibly cutting off the last part of documents.
-        use_grad = not freeze_bert
-        with torch.set_grad_enabled(False):
-            for doc_id in range(document_batch.shape[0]):
-                bert_output[doc_id][:self.bert_batch_size] = self.dropout(self.bert(document_batch[doc_id][:self.bert_batch_size,0],
-                                                token_type_ids=document_batch[doc_id][:self.bert_batch_size,1],
-                                                attention_mask=document_batch[doc_id][:self.bert_batch_size,2])[1])
+        for doc_id in range(document_batch.shape[0]):
+            bert_output[doc_id][:self.bert_batch_size] = self.dropout(self.bert(document_batch[doc_id][:self.bert_batch_size,0],
+                                            token_type_ids=document_batch[doc_id][:self.bert_batch_size,1],
+                                            attention_mask=document_batch[doc_id][:self.bert_batch_size,2])[1])
 
-
+    
+            
         prediction = self.classifier(bert_output.view(bert_output.shape[0], -1))
         assert prediction.shape[0] == document_batch.shape[0]
         return prediction
-
+    
+    def freeze_bert_encoder(self):
+        for param in self.bert.parameters():
+            param.requires_grad = False
+    
+    def unfreeze_bert_encoder(self):
+        for param in self.bert.parameters():
+            param.requires_grad = True
+                 
+    def unfreeze_bert_encoder_last_layers(self):
+        for name, param in self.bert.named_parameters():
+            if "encoder.layer.11" in name or "pooler" in name:
+                param.requires_grad = True
+                
+    def unfreeze_bert_encoder_pooler_layer(self):
+        for name, param in self.bert.named_parameters():
+            if "pooler" in name:
+                param.requires_grad = True
+    
 
 class DocumentBertMaxPool(BertPreTrainedModel):
     """
@@ -229,29 +246,44 @@ class DocumentBertMaxPool(BertPreTrainedModel):
         )
 
     #input_ids, token_type_ids, attention_masks
-    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, freeze_bert=False, device='cuda'):
+    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, device='cuda'):
 
         #contains all BERT sequences
         #bert should output a (batch_size, num_sequences, bert_hidden_size)
         bert_output = torch.zeros(size=(document_batch.shape[0],
                                               min(document_batch.shape[1],self.bert_batch_size),
-                                              self.bert.config.hidden_size), dtype=torch.float, device='cuda')
+                                              self.bert.config.hidden_size), dtype=torch.float, device=device)
 
         #only pass through bert_batch_size numbers of inputs into bert.
         #this means that we are possibly cutting off the last part of documents.
-        use_grad = not freeze_bert
-        with torch.set_grad_enabled(False):
-            for doc_id in range(document_batch.shape[0]):
-                bert_output[doc_id][:self.bert_batch_size] = self.dropout(self.bert(document_batch[doc_id][:self.bert_batch_size,0],
-                                                token_type_ids=document_batch[doc_id][:self.bert_batch_size,1],
-                                                attention_mask=document_batch[doc_id][:self.bert_batch_size,2])[1])
-
+        for doc_id in range(document_batch.shape[0]):
+            bert_output[doc_id][:self.bert_batch_size] = self.dropout(self.bert(document_batch[doc_id][:self.bert_batch_size,0],
+                                            token_type_ids=document_batch[doc_id][:self.bert_batch_size,1],
+                                            attention_mask=document_batch[doc_id][:self.bert_batch_size,2])[1])
 
         prediction = self.classifier(bert_output.max(dim=1)[0])
         assert prediction.shape[0] == document_batch.shape[0]
         return prediction
-
-
+    
+    def freeze_bert_encoder(self):
+        for param in self.bert.parameters():
+            param.requires_grad = False
+    
+    def unfreeze_bert_encoder(self):
+        for param in self.bert.parameters():
+            param.requires_grad = True
+                 
+    def unfreeze_bert_encoder_last_layers(self):
+        for name, param in self.bert.named_parameters():
+            if "encoder.layer.11" in name or "pooler" in name:
+                param.requires_grad = True
+                
+    def unfreeze_bert_encoder_pooler_layer(self):
+        for name, param in self.bert.named_parameters():
+            if "pooler" in name:
+                param.requires_grad = True
+    
+    
 class DocumentBertTransformer(BertPreTrainedModel):
     """
     BERT -> TransformerEncoder -> Max over attention output.
@@ -274,23 +306,22 @@ class DocumentBertTransformer(BertPreTrainedModel):
         )
 
     #input_ids, token_type_ids, attention_masks
-    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, freeze_bert=True):
+    def forward(self, document_batch: torch.Tensor, document_sequence_lengths: list, device='cuda'):
 
         #contains all BERT sequences
         #bert should output a (batch_size, num_sequences, bert_hidden_size)
         bert_output = torch.zeros(size=(document_batch.shape[0],
                                               min(document_batch.shape[1],self.bert_batch_size),
-                                              self.bert.config.hidden_size), dtype=torch.float, device='cuda')
+                                              self.bert.config.hidden_size), dtype=torch.float, device=device )
 
         #only pass through bert_batch_size numbers of inputs into bert.
         #this means that we are possibly cutting off the last part of documents.
-        use_grad = not freeze_bert
-        with torch.set_grad_enabled(False):
-            for doc_id in range(document_batch.shape[0]):
-                bert_output[doc_id][:self.bert_batch_size] = self.dropout(self.bert(document_batch[doc_id][:self.bert_batch_size,0],
-                                                token_type_ids=document_batch[doc_id][:self.bert_batch_size,1],
-                                                attention_mask=document_batch[doc_id][:self.bert_batch_size,2])[1])
+        for doc_id in range(document_batch.shape[0]):
+            bert_output[doc_id][:self.bert_batch_size] = self.dropout(self.bert(document_batch[doc_id][:self.bert_batch_size,0],
+                                            token_type_ids=document_batch[doc_id][:self.bert_batch_size,1],
+                                            attention_mask=document_batch[doc_id][:self.bert_batch_size,2])[1])
 
+                
         transformer_output = self.transformer_encoder(bert_output.permute(1,0,2))
 
         #print(transformer_output.shape)
@@ -298,3 +329,22 @@ class DocumentBertTransformer(BertPreTrainedModel):
         prediction = self.classifier(transformer_output.permute(1,0,2).max(dim=1)[0])
         assert prediction.shape[0] == document_batch.shape[0]
         return prediction
+    
+    def freeze_bert_encoder(self):
+        for param in self.bert.parameters():
+            param.requires_grad = False
+    
+    def unfreeze_bert_encoder(self):
+        for param in self.bert.parameters():
+            param.requires_grad = True
+                 
+    def unfreeze_bert_encoder_last_layers(self):
+        for name, param in self.bert.named_parameters():
+            if "encoder.layer.11" in name or "pooler" in name:
+                param.requires_grad = True
+                
+    def unfreeze_bert_encoder_pooler_layer(self):
+        for name, param in self.bert.named_parameters():
+            if "pooler" in name:
+                param.requires_grad = True
+    

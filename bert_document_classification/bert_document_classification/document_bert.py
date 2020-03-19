@@ -164,8 +164,11 @@ class BertForDocumentClassification():
         #     'weight_decay_rate': 0.0}
         #]
         
+        
+        #Change these lines if you want to freeze bert, unfreeze bert, or only freeze last layers of BERT
         self.bert_doc_classification.freeze_bert_encoder()
         self.bert_doc_classification.unfreeze_bert_encoder_last_layers()
+        
         
         #self.optimizer = torch.optim.Adam(
         #    optimizer_grouped_parameters,  

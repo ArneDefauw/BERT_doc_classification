@@ -1,5 +1,5 @@
 import os, tarfile, urllib, tempfile, shutil
-from pytorch_transformers.file_utils import url_to_filename, http_get
+from transformers.file_utils import url_to_filename, http_get
 
 try:
     from torch.hub import _get_torch_home
