@@ -67,6 +67,8 @@ https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_
 
 When unfreezing last encoding layer of Clinical BERT:
 
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff
+
 
 ### Results on newsgroup task:
 
@@ -75,5 +77,6 @@ When freezing bert-base-uncased:
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10/run_2020_03_04_12_52_51_58d26bafbcb2
 
 When unfreezing last encoding layer of bert-base-uncased:
+
 
 
