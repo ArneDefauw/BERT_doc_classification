@@ -9,13 +9,14 @@ With some modifications:
 -unfreezing of the last layers of BERT, instead of freezing complete BERT (the latter results in subpar peformance).
 
 
-Information on how to get data, see. 
+Information on how to get data to try replicate results reported in (https://arxiv.org/abs/1910.13664 ), see. 
 https://github.com/ArneDefauw/bert_document_classification/blob/master/examples/ml4health_2019_replication/data/README.md
 
 In short, you must sign the appropriate agreements:
 https://portal.dbmi.hms.harvard.edu/projects/n2c2-nlp/
 
 Afterwards, you can download the data. Folder structure should look like this.
+
 
 
 ```bash
@@ -53,6 +54,14 @@ Use the predict_n2c2_2006.py, predict_n2c2_2008.py, predict_newstest_bert.py, pr
 
 
 This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLSTM, DocumentBertTransformer, DocumentBertLinear, DocumentBertMaxPool. 
+
+Note: neither of these architectures could replicate results reported in https://arxiv.org/abs/1910.13664.
+
+### Results on n2c2_2006 task:
+
+When freezing Clinical BERT:
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_single_gpu_single_lstm_batch_size10/run_2020_03_04_10_37_12_58d26bafbcb2
+
 
 
 
