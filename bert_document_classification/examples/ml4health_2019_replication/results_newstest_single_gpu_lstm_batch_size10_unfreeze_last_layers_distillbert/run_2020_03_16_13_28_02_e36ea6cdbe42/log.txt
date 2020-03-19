@@ -1,0 +1,1574 @@
+Config File (newstest_train_config.ini):
+  model_storage_directory:./results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers_distillbert
+  batch_size:        10
+  epochs:            1000
+  evaluation_interval:10
+  checkpoint_interval:250
+  bert_model_path:   distilbert-base-uncased
+  labels:            alt.atheism, talk.religion.misc, comp.graphics, sci.space
+  architecture:      DocumentDistilBertLSTM
+  bert_batch_size:   7
+  device:            cuda:0
+  cuda:              true
+  learning_rate:     6e-5
+  weight_decay:      0
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /root/.cache/torch/transformers/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/distilbert-base-uncased-config.json from cache at /root/.cache/torch/transformers/a41e817d5c0743e29e86ff85edc8c257e61bc8d88e4271bb1b243b6e7614c633.587f67ec28c540f4294c9c2ac7dcf7841ff371aeb12cdeb6a17f69da39ad9452
+Model config DistilBertConfig {
+  "activation": "gelu",
+  "architectures": [
+    "DistilBertForMaskedLM"
+  ],
+  "attention_dropout": 0.1,
+  "bos_token_id": null,
+  "dim": 768,
+  "do_sample": false,
+  "dropout": 0.1,
+  "eos_token_ids": null,
+  "finetuning_task": null,
+  "hidden_dim": 3072,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 512,
+  "model_type": "distilbert",
+  "n_heads": 12,
+  "n_layers": 6,
+  "num_beams": 1,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": null,
+  "pruned_heads": {},
+  "qa_dropout": 0.1,
+  "repetition_penalty": 1.0,
+  "seq_classif_dropout": 0.2,
+  "sinusoidal_pos_embds": false,
+  "temperature": 1.0,
+  "tie_weights_": true,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/distilbert-base-uncased-pytorch_model.bin from cache at /root/.cache/torch/transformers/7b8a8f0b21c4e7f6962451c9370a5d9af90372a5f64637a251f2de154d0fc72c.c2015533705b9dff680ae707e205a35e2860e8d148b45d35085419d74fe57ac5
+Weights of DocumentDistilBertLSTM not initialized from pretrained model: ['pooler.dense.weight', 'pooler.dense.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'classifier.1.weight', 'classifier.1.bias']
+Weights from pretrained model not used in DocumentDistilBertLSTM: ['vocab_transform.weight', 'vocab_transform.bias', 'vocab_layer_norm.weight', 'vocab_layer_norm.bias', 'vocab_projector.weight', 'vocab_projector.bias']
+Epoch 1 Completed: 0.917570
+Epoch 2 Completed: 0.648414
+Epoch 3 Completed: 0.616595
+Epoch 4 Completed: 0.624499
+Epoch 5 Completed: 0.631013
+Epoch 6 Completed: 0.613979
+Epoch 7 Completed: 0.608295
+Epoch 8 Completed: 0.609329
+Epoch 9 Completed: 0.617968
+Epoch 10 Completed: 0.626809
+Evaluating on Epoch 10
+F1	alt.atheism	0.670306
+F1	talk.religion.misc	0.572104
+F1	comp.graphics	0.957560
+F1	sci.space	0.936709
+Epoch 11 Completed: 0.606823
+Epoch 12 Completed: 0.599405
+Epoch 13 Completed: 0.603107
+Epoch 14 Completed: 0.626620
+Epoch 15 Completed: 0.598494
+Epoch 16 Completed: 0.599266
+Epoch 17 Completed: 0.603726
+Epoch 18 Completed: 0.600356
+Epoch 19 Completed: 0.600841
+Epoch 20 Completed: 0.608040
+Evaluating on Epoch 20
+F1	alt.atheism	0.679204
+F1	talk.religion.misc	0.574850
+F1	comp.graphics	0.950732
+F1	sci.space	0.936330
+Epoch 21 Completed: 0.627102
+Epoch 22 Completed: 0.601535
+Epoch 23 Completed: 0.637058
+Epoch 24 Completed: 0.615832
+Epoch 25 Completed: 0.609585
+Epoch 26 Completed: 0.667292
+Epoch 27 Completed: 0.613415
+Epoch 28 Completed: 0.611570
+Epoch 29 Completed: 0.604158
+Epoch 30 Completed: 0.601096
+Evaluating on Epoch 30
+F1	alt.atheism	0.686297
+F1	talk.religion.misc	0.586503
+F1	comp.graphics	0.970013
+F1	sci.space	0.931677
+Epoch 31 Completed: 0.597485
+Epoch 32 Completed: 0.607708
+Epoch 33 Completed: 0.603782
+Epoch 34 Completed: 0.608919
+Epoch 35 Completed: 0.609393
+Epoch 36 Completed: 0.602142
+Epoch 37 Completed: 0.613227
+Epoch 38 Completed: 0.620066
+Epoch 39 Completed: 0.632841
+Epoch 40 Completed: 0.640176
+Evaluating on Epoch 40
+F1	alt.atheism	0.663892
+F1	talk.religion.misc	0.560538
+F1	comp.graphics	0.948617
+F1	sci.space	0.917456
+Epoch 41 Completed: 0.633158
+Epoch 42 Completed: 0.733078
+Epoch 43 Completed: 0.604585
+Epoch 44 Completed: 0.599352
+Epoch 45 Completed: 0.603749
+Epoch 46 Completed: 0.600752
+Epoch 47 Completed: 0.595922
+Epoch 48 Completed: 0.595204
+Epoch 49 Completed: 0.592506
+Epoch 50 Completed: 0.592221
+Evaluating on Epoch 50
+F1	alt.atheism	0.684746
+F1	talk.religion.misc	0.592411
+F1	comp.graphics	0.963338
+F1	sci.space	0.940431
+Epoch 51 Completed: 0.598006
+Epoch 52 Completed: 0.601306
+Epoch 53 Completed: 0.602539
+Epoch 54 Completed: 0.662991
+Epoch 55 Completed: 0.691396
+Epoch 56 Completed: 0.648297
+Epoch 57 Completed: 0.641549
+Epoch 58 Completed: 0.633726
+Epoch 59 Completed: 0.630263
+Epoch 60 Completed: 0.626215
+Evaluating on Epoch 60
+F1	alt.atheism	0.650814
+F1	talk.religion.misc	0.585499
+F1	comp.graphics	0.943765
+F1	sci.space	0.885714
+Epoch 61 Completed: 0.608884
+Epoch 62 Completed: 0.601909
+Epoch 63 Completed: 0.600351
+Epoch 64 Completed: 0.598264
+Epoch 65 Completed: 0.595202
+Epoch 66 Completed: 0.592439
+Epoch 67 Completed: 0.592756
+Epoch 68 Completed: 0.590542
+Epoch 69 Completed: 0.590660
+Epoch 70 Completed: 0.590654
+Evaluating on Epoch 70
+F1	alt.atheism	0.687640
+F1	talk.religion.misc	0.591241
+F1	comp.graphics	0.970323
+F1	sci.space	0.937500
+Epoch 71 Completed: 0.595521
+Epoch 72 Completed: 0.592633
+Epoch 73 Completed: 0.592548
+Epoch 74 Completed: 0.591195
+Epoch 75 Completed: 0.591805
+Epoch 76 Completed: 0.590301
+Epoch 77 Completed: 0.589944
+Epoch 78 Completed: 0.590140
+Epoch 79 Completed: 0.589302
+Epoch 80 Completed: 0.589964
+Evaluating on Epoch 80
+F1	alt.atheism	0.686230
+F1	talk.religion.misc	0.589242
+F1	comp.graphics	0.969152
+F1	sci.space	0.939547
+Epoch 81 Completed: 0.591350
+Epoch 82 Completed: 0.589669
+Epoch 83 Completed: 0.590459
+Epoch 84 Completed: 0.590887
+Epoch 85 Completed: 0.591881
+Epoch 86 Completed: 0.589497
+Epoch 87 Completed: 0.589841
+Epoch 88 Completed: 0.592964
+Epoch 89 Completed: 0.591586
+Epoch 90 Completed: 0.592151
+Evaluating on Epoch 90
+F1	alt.atheism	0.686869
+F1	talk.religion.misc	0.588092
+F1	comp.graphics	0.966667
+F1	sci.space	0.937580
+Epoch 91 Completed: 0.591941
+Epoch 92 Completed: 0.590952
+Epoch 93 Completed: 0.591897
+Epoch 94 Completed: 0.596773
+Epoch 95 Completed: 0.603228
+Epoch 96 Completed: 0.598107
+Epoch 97 Completed: 0.600184
+Epoch 98 Completed: 0.604109
+Epoch 99 Completed: 0.597756
+Epoch 100 Completed: 0.598095
+Evaluating on Epoch 100
+F1	alt.atheism	0.679825
+F1	talk.religion.misc	0.580569
+F1	comp.graphics	0.949547
+F1	sci.space	0.935065
+Epoch 101 Completed: 0.599976
+Epoch 102 Completed: 0.598479
+Epoch 103 Completed: 0.599004
+Epoch 104 Completed: 0.596729
+Epoch 105 Completed: 0.593538
+Epoch 106 Completed: 0.594758
+Epoch 107 Completed: 0.592836
+Epoch 108 Completed: 0.598533
+Epoch 109 Completed: 0.647647
+Epoch 110 Completed: 0.614033
+Evaluating on Epoch 110
+F1	alt.atheism	0.670968
+F1	talk.religion.misc	0.568445
+F1	comp.graphics	0.940379
+F1	sci.space	0.937738
+Epoch 111 Completed: 0.604860
+Epoch 112 Completed: 0.602105
+Epoch 113 Completed: 0.600334
+Epoch 114 Completed: 0.868804
+Epoch 115 Completed: 0.970525
+Epoch 116 Completed: 0.855087
+Epoch 117 Completed: 0.788279
+Epoch 118 Completed: 0.783873
+Epoch 119 Completed: 0.787405
+Epoch 120 Completed: 0.861456
+Evaluating on Epoch 120
+F1	alt.atheism	0.000000
+F1	talk.religion.misc	0.000000
+F1	comp.graphics	0.904110
+F1	sci.space	0.548851
+Epoch 121 Completed: 1.033175
+Epoch 122 Completed: 0.995765
+Epoch 123 Completed: 0.765455
+Epoch 124 Completed: 0.627249
+Epoch 125 Completed: 0.631359
+Epoch 126 Completed: 0.627406
+Epoch 127 Completed: 0.627620
+Epoch 128 Completed: 0.620493
+Epoch 129 Completed: 0.618173
+Epoch 130 Completed: 0.617800
+Evaluating on Epoch 130
+F1	alt.atheism	0.666667
+F1	talk.religion.misc	0.571773
+F1	comp.graphics	0.930719
+F1	sci.space	0.900629
+Epoch 131 Completed: 0.613991
+Epoch 132 Completed: 0.616187
+Epoch 133 Completed: 0.616779
+Epoch 134 Completed: 0.612355
+Epoch 135 Completed: 0.607852
+Epoch 136 Completed: 0.600091
+Epoch 137 Completed: 0.602556
+Epoch 138 Completed: 0.603242
+Epoch 139 Completed: 0.602298
+Epoch 140 Completed: 0.596965
+Evaluating on Epoch 140
+F1	alt.atheism	0.686364
+F1	talk.religion.misc	0.580324
+F1	comp.graphics	0.942065
+F1	sci.space	0.909091
+Epoch 141 Completed: 0.599549
+Epoch 142 Completed: 0.605383
+Epoch 143 Completed: 0.597199
+Epoch 144 Completed: 0.598778
+Epoch 145 Completed: 0.597115
+Epoch 146 Completed: 0.598670
+Epoch 147 Completed: 0.597141
+Epoch 148 Completed: 0.594517
+Epoch 149 Completed: 0.611749
+Epoch 150 Completed: 0.605452
+Evaluating on Epoch 150
+F1	alt.atheism	0.692932
+F1	talk.religion.misc	0.580402
+F1	comp.graphics	0.948718
+F1	sci.space	0.919903
+Epoch 151 Completed: 0.603652
+Epoch 152 Completed: 0.608007
+Epoch 153 Completed: 0.602761
+Epoch 154 Completed: 0.605284
+Epoch 155 Completed: 0.605052
+Epoch 156 Completed: 0.605823
+Epoch 157 Completed: 0.598682
+Epoch 158 Completed: 0.598379
+Epoch 159 Completed: 0.598444
+Epoch 160 Completed: 0.599157
+Evaluating on Epoch 160
+F1	alt.atheism	0.688940
+F1	talk.religion.misc	0.587065
+F1	comp.graphics	0.951777
+F1	sci.space	0.929193
+Epoch 161 Completed: 0.596527
+Epoch 162 Completed: 0.597543
+Epoch 163 Completed: 0.600496
+Epoch 164 Completed: 0.599867
+Epoch 165 Completed: 0.600412
+Epoch 166 Completed: 0.600126
+Epoch 167 Completed: 0.595686
+Epoch 168 Completed: 0.597746
+Epoch 169 Completed: 0.602026
+Epoch 170 Completed: 0.602314
+Evaluating on Epoch 170
+F1	alt.atheism	0.688414
+F1	talk.religion.misc	0.582524
+F1	comp.graphics	0.952261
+F1	sci.space	0.927273
+Epoch 171 Completed: 0.595771
+Epoch 172 Completed: 0.596169
+Epoch 173 Completed: 0.594678
+Epoch 174 Completed: 0.593424
+Epoch 175 Completed: 0.595646
+Epoch 176 Completed: 0.601507
+Epoch 177 Completed: 0.602578
+Epoch 178 Completed: 0.591372
+Epoch 179 Completed: 0.592431
+Epoch 180 Completed: 0.592686
+Evaluating on Epoch 180
+F1	alt.atheism	0.689342
+F1	talk.religion.misc	0.577396
+F1	comp.graphics	0.961140
+F1	sci.space	0.929368
+Epoch 181 Completed: 0.594208
+Epoch 182 Completed: 0.592612
+Epoch 183 Completed: 0.594435
+Epoch 184 Completed: 0.605872
+Epoch 185 Completed: 0.596987
+Epoch 186 Completed: 0.595844
+Epoch 187 Completed: 0.592868
+Epoch 188 Completed: 0.592990
+Epoch 189 Completed: 0.596622
+Epoch 190 Completed: 0.593950
+Evaluating on Epoch 190
+F1	alt.atheism	0.687783
+F1	talk.religion.misc	0.578431
+F1	comp.graphics	0.958549
+F1	sci.space	0.936170
+Epoch 191 Completed: 0.592761
+Epoch 192 Completed: 0.594584
+Epoch 193 Completed: 0.598905
+Epoch 194 Completed: 0.596622
+Epoch 195 Completed: 0.623266
+Epoch 196 Completed: 0.593601
+Epoch 197 Completed: 0.602235
+Epoch 198 Completed: 0.599459
+Epoch 199 Completed: 0.597052
+Epoch 200 Completed: 0.610174
+Evaluating on Epoch 200
+F1	alt.atheism	0.691038
+F1	talk.religion.misc	0.569231
+F1	comp.graphics	0.922342
+F1	sci.space	0.916129
+Epoch 201 Completed: 0.613301
+Epoch 202 Completed: 0.596474
+Epoch 203 Completed: 0.594183
+Epoch 204 Completed: 0.592989
+Epoch 205 Completed: 0.588389
+Epoch 206 Completed: 0.591545
+Epoch 207 Completed: 0.590943
+Epoch 208 Completed: 0.593061
+Epoch 209 Completed: 0.593397
+Epoch 210 Completed: 0.592751
+Evaluating on Epoch 210
+F1	alt.atheism	0.681344
+F1	talk.religion.misc	0.579487
+F1	comp.graphics	0.957784
+F1	sci.space	0.886574
+Epoch 211 Completed: 0.599299
+Epoch 212 Completed: 0.591102
+Epoch 213 Completed: 0.588246
+Epoch 214 Completed: 0.590251
+Epoch 215 Completed: 0.588805
+Epoch 216 Completed: 0.593435
+Epoch 217 Completed: 0.596625
+Epoch 218 Completed: 0.601116
+Epoch 219 Completed: 0.598547
+Epoch 220 Completed: 0.595974
+Evaluating on Epoch 220
+F1	alt.atheism	0.688341
+F1	talk.religion.misc	0.587379
+F1	comp.graphics	0.956853
+F1	sci.space	0.938144
+Epoch 221 Completed: 0.592700
+Epoch 222 Completed: 0.591128
+Epoch 223 Completed: 0.588043
+Epoch 224 Completed: 0.586458
+Epoch 225 Completed: 0.588140
+Epoch 226 Completed: 0.590193
+Epoch 227 Completed: 0.587852
+Epoch 228 Completed: 0.601012
+Epoch 229 Completed: 0.602926
+Epoch 230 Completed: 0.596567
+Evaluating on Epoch 230
+F1	alt.atheism	0.681564
+F1	talk.religion.misc	0.587666
+F1	comp.graphics	0.962773
+F1	sci.space	0.942382
+Epoch 231 Completed: 0.618386
+Epoch 232 Completed: 0.614689
+Epoch 233 Completed: 0.606468
+Epoch 234 Completed: 0.605741
+Epoch 235 Completed: 0.604444
+Epoch 236 Completed: 0.600593
+Epoch 237 Completed: 0.596834
+Epoch 238 Completed: 0.590718
+Epoch 239 Completed: 0.588252
+Epoch 240 Completed: 0.588716
+Evaluating on Epoch 240
+F1	alt.atheism	0.680804
+F1	talk.religion.misc	0.579710
+F1	comp.graphics	0.957784
+F1	sci.space	0.935162
+Epoch 241 Completed: 0.588350
+Epoch 242 Completed: 0.587521
+Epoch 243 Completed: 0.589127
+Epoch 244 Completed: 0.586657
+Epoch 245 Completed: 0.590450
+Epoch 246 Completed: 0.589008
+Epoch 247 Completed: 0.588349
+Epoch 248 Completed: 0.588915
+Epoch 249 Completed: 0.588020
+Epoch 250 Completed: 0.587539
+Saving checkpoint: ./results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers_distillbert/run_2020_03_16_13_28_02_e36ea6cdbe42/checkpoint_250
+Evaluating on Epoch 250
+F1	alt.atheism	0.677778
+F1	talk.religion.misc	0.581731
+F1	comp.graphics	0.955263
+F1	sci.space	0.936010
+Epoch 251 Completed: 0.589993
+Epoch 252 Completed: 0.589174
+Epoch 253 Completed: 0.590760
+Epoch 254 Completed: 0.601676
+Epoch 255 Completed: 0.596667
+Epoch 256 Completed: 0.593803
+Epoch 257 Completed: 0.593781
+Epoch 258 Completed: 0.591959
+Epoch 259 Completed: 0.602416
+Epoch 260 Completed: 0.602115
+Evaluating on Epoch 260
+F1	alt.atheism	0.677071
+F1	talk.religion.misc	0.575163
+F1	comp.graphics	0.927184
+F1	sci.space	0.924812
+Epoch 261 Completed: 0.599664
+Epoch 262 Completed: 0.617410
+Epoch 263 Completed: 0.616413
+Epoch 264 Completed: 0.609505
+Epoch 265 Completed: 0.606856
+Epoch 266 Completed: 0.597129
+Epoch 267 Completed: 0.594896
+Epoch 268 Completed: 0.596384
+Epoch 269 Completed: 0.592302
+Epoch 270 Completed: 0.596053
+Evaluating on Epoch 270
+F1	alt.atheism	0.665906
+F1	talk.religion.misc	0.585909
+F1	comp.graphics	0.942282
+F1	sci.space	0.912365
+Epoch 271 Completed: 0.599267
+Epoch 272 Completed: 0.600607
+Epoch 273 Completed: 0.598262
+Epoch 274 Completed: 0.598049
+Epoch 275 Completed: 0.596373
+Epoch 276 Completed: 0.594013
+Epoch 277 Completed: 0.598967
+Epoch 278 Completed: 0.595034
+Epoch 279 Completed: 0.595795
+Epoch 280 Completed: 0.599261
+Evaluating on Epoch 280
+F1	alt.atheism	0.674107
+F1	talk.religion.misc	0.583836
+F1	comp.graphics	0.941970
+F1	sci.space	0.918269
+Epoch 281 Completed: 0.596344
+Epoch 282 Completed: 0.594894
+Epoch 283 Completed: 0.593782
+Epoch 284 Completed: 0.591163
+Epoch 285 Completed: 0.591919
+Epoch 286 Completed: 0.591362
+Epoch 287 Completed: 0.589848
+Epoch 288 Completed: 0.589201
+Epoch 289 Completed: 0.591725
+Epoch 290 Completed: 0.587523
+Evaluating on Epoch 290
+F1	alt.atheism	0.671840
+F1	talk.religion.misc	0.582734
+F1	comp.graphics	0.952632
+F1	sci.space	0.936010
+Epoch 291 Completed: 0.590437
+Epoch 292 Completed: 0.587294
+Epoch 293 Completed: 0.589953
+Epoch 294 Completed: 0.589999
+Epoch 295 Completed: 0.587095
+Epoch 296 Completed: 0.587739
+Epoch 297 Completed: 0.588297
+Epoch 298 Completed: 0.588717
+Epoch 299 Completed: 0.589871
+Epoch 300 Completed: 0.587067
+Evaluating on Epoch 300
+F1	alt.atheism	0.676437
+F1	talk.religion.misc	0.588523
+F1	comp.graphics	0.956407
+F1	sci.space	0.932349
+Epoch 301 Completed: 0.585170
+Epoch 302 Completed: 0.588404
+Epoch 303 Completed: 0.585745
+Epoch 304 Completed: 0.586295
+Epoch 305 Completed: 0.586004
+Epoch 306 Completed: 0.585919
+Epoch 307 Completed: 0.586476
+Epoch 308 Completed: 0.584917
+Epoch 309 Completed: 0.587939
+Epoch 310 Completed: 0.584424
+Evaluating on Epoch 310
+F1	alt.atheism	0.679287
+F1	talk.religion.misc	0.583133
+F1	comp.graphics	0.955263
+F1	sci.space	0.938673
+Epoch 311 Completed: 0.587146
+Epoch 312 Completed: 0.586882
+Epoch 313 Completed: 0.588321
+Epoch 314 Completed: 0.593925
+Epoch 315 Completed: 0.600914
+Epoch 316 Completed: 0.602231
+Epoch 317 Completed: 0.599779
+Epoch 318 Completed: 0.596896
+Epoch 319 Completed: 0.589196
+Epoch 320 Completed: 0.587165
+Evaluating on Epoch 320
+F1	alt.atheism	0.689888
+F1	talk.religion.misc	0.580802
+F1	comp.graphics	0.963731
+F1	sci.space	0.943538
+Epoch 321 Completed: 0.586871
+Epoch 322 Completed: 0.586360
+Epoch 323 Completed: 0.589601
+Epoch 324 Completed: 0.589747
+Epoch 325 Completed: 0.599484
+Epoch 326 Completed: 0.595528
+Epoch 327 Completed: 0.592669
+Epoch 328 Completed: 0.589566
+Epoch 329 Completed: 0.587883
+Epoch 330 Completed: 0.589587
+Evaluating on Epoch 330
+F1	alt.atheism	0.682171
+F1	talk.religion.misc	0.574850
+F1	comp.graphics	0.951886
+F1	sci.space	0.939974
+Epoch 331 Completed: 0.590815
+Epoch 332 Completed: 0.592830
+Epoch 333 Completed: 0.590626
+Epoch 334 Completed: 0.586276
+Epoch 335 Completed: 0.590177
+Epoch 336 Completed: 0.601983
+Epoch 337 Completed: 0.599601
+Epoch 338 Completed: 0.597207
+Epoch 339 Completed: 0.595429
+Epoch 340 Completed: 0.596014
+Evaluating on Epoch 340
+F1	alt.atheism	0.677890
+F1	talk.religion.misc	0.588092
+F1	comp.graphics	0.943110
+F1	sci.space	0.934023
+Epoch 341 Completed: 0.597308
+Epoch 342 Completed: 0.598543
+Epoch 343 Completed: 0.594409
+Epoch 344 Completed: 0.592511
+Epoch 345 Completed: 0.594283
+Epoch 346 Completed: 0.591340
+Epoch 347 Completed: 0.589298
+Epoch 348 Completed: 0.590094
+Epoch 349 Completed: 0.604387
+Epoch 350 Completed: 0.596767
+Evaluating on Epoch 350
+F1	alt.atheism	0.682814
+F1	talk.religion.misc	0.590738
+F1	comp.graphics	0.946716
+F1	sci.space	0.942529
+Epoch 351 Completed: 0.593126
+Epoch 352 Completed: 0.590433
+Epoch 353 Completed: 0.593743
+Epoch 354 Completed: 0.594445
+Epoch 355 Completed: 0.590802
+Epoch 356 Completed: 0.592175
+Epoch 357 Completed: 0.588080
+Epoch 358 Completed: 0.587550
+Epoch 359 Completed: 0.589329
+Epoch 360 Completed: 0.589943
+Evaluating on Epoch 360
+F1	alt.atheism	0.689189
+F1	talk.religion.misc	0.579781
+F1	comp.graphics	0.952258
+F1	sci.space	0.938209
+Epoch 361 Completed: 0.587584
+Epoch 362 Completed: 0.589300
+Epoch 363 Completed: 0.589644
+Epoch 364 Completed: 0.595906
+Epoch 365 Completed: 0.593169
+Epoch 366 Completed: 0.592299
+Epoch 367 Completed: 0.588610
+Epoch 368 Completed: 0.590576
+Epoch 369 Completed: 0.588482
+Epoch 370 Completed: 0.589010
+Evaluating on Epoch 370
+F1	alt.atheism	0.682486
+F1	talk.religion.misc	0.580171
+F1	comp.graphics	0.958225
+F1	sci.space	0.939130
+Epoch 371 Completed: 0.589414
+Epoch 372 Completed: 0.590098
+Epoch 373 Completed: 0.588683
+Epoch 374 Completed: 0.588873
+Epoch 375 Completed: 0.590948
+Epoch 376 Completed: 0.588408
+Epoch 377 Completed: 0.588317
+Epoch 378 Completed: 0.589427
+Epoch 379 Completed: 0.590415
+Epoch 380 Completed: 0.592013
+Evaluating on Epoch 380
+F1	alt.atheism	0.679814
+F1	talk.religion.misc	0.594458
+F1	comp.graphics	0.953105
+F1	sci.space	0.927861
+Epoch 381 Completed: 0.593477
+Epoch 382 Completed: 0.593162
+Epoch 383 Completed: 0.592164
+Epoch 384 Completed: 0.590756
+Epoch 385 Completed: 0.592850
+Epoch 386 Completed: 0.590394
+Epoch 387 Completed: 0.591299
+Epoch 388 Completed: 0.589871
+Epoch 389 Completed: 0.590204
+Epoch 390 Completed: 0.590036
+Evaluating on Epoch 390
+F1	alt.atheism	0.682594
+F1	talk.religion.misc	0.586930
+F1	comp.graphics	0.949109
+F1	sci.space	0.934177
+Epoch 391 Completed: 0.592600
+Epoch 392 Completed: 0.591412
+Epoch 393 Completed: 0.597756
+Epoch 394 Completed: 0.605171
+Epoch 395 Completed: 0.595934
+Epoch 396 Completed: 0.592721
+Epoch 397 Completed: 0.595539
+Epoch 398 Completed: 0.612339
+Epoch 399 Completed: 0.603696
+Epoch 400 Completed: 0.602442
+Evaluating on Epoch 400
+F1	alt.atheism	0.680226
+F1	talk.religion.misc	0.585067
+F1	comp.graphics	0.945982
+F1	sci.space	0.927250
+Epoch 401 Completed: 0.605292
+Epoch 402 Completed: 0.593909
+Epoch 403 Completed: 0.592178
+Epoch 404 Completed: 0.594631
+Epoch 405 Completed: 0.589929
+Epoch 406 Completed: 0.591395
+Epoch 407 Completed: 0.591004
+Epoch 408 Completed: 0.591356
+Epoch 409 Completed: 0.591185
+Epoch 410 Completed: 0.591465
+Evaluating on Epoch 410
+F1	alt.atheism	0.681416
+F1	talk.religion.misc	0.576555
+F1	comp.graphics	0.953846
+F1	sci.space	0.932642
+Epoch 411 Completed: 0.592096
+Epoch 412 Completed: 0.592209
+Epoch 413 Completed: 0.593032
+Epoch 414 Completed: 0.590454
+Epoch 415 Completed: 0.592476
+Epoch 416 Completed: 0.588060
+Epoch 417 Completed: 0.592772
+Epoch 418 Completed: 0.602092
+Epoch 419 Completed: 0.599628
+Epoch 420 Completed: 0.611545
+Evaluating on Epoch 420
+F1	alt.atheism	0.667371
+F1	talk.religion.misc	0.563636
+F1	comp.graphics	0.951252
+F1	sci.space	0.926764
+Epoch 421 Completed: 0.616320
+Epoch 422 Completed: 0.613172
+Epoch 423 Completed: 0.603910
+Epoch 424 Completed: 0.588289
+Epoch 425 Completed: 0.588378
+Epoch 426 Completed: 0.589548
+Epoch 427 Completed: 0.590980
+Epoch 428 Completed: 0.589750
+Epoch 429 Completed: 0.589338
+Epoch 430 Completed: 0.590899
+Evaluating on Epoch 430
+F1	alt.atheism	0.683202
+F1	talk.religion.misc	0.586081
+F1	comp.graphics	0.956633
+F1	sci.space	0.937580
+Epoch 431 Completed: 0.590175
+Epoch 432 Completed: 0.590742
+Epoch 433 Completed: 0.590024
+Epoch 434 Completed: 0.588557
+Epoch 435 Completed: 0.590610
+Epoch 436 Completed: 0.589093
+Epoch 437 Completed: 0.587417
+Epoch 438 Completed: 0.588310
+Epoch 439 Completed: 0.588401
+Epoch 440 Completed: 0.589512
+Evaluating on Epoch 440
+F1	alt.atheism	0.683973
+F1	talk.religion.misc	0.586797
+F1	comp.graphics	0.958974
+F1	sci.space	0.937896
+Epoch 441 Completed: 0.587422
+Epoch 442 Completed: 0.600585
+Epoch 443 Completed: 0.623900
+Epoch 444 Completed: 0.645276
+Epoch 445 Completed: 0.631950
+Epoch 446 Completed: 0.637951
+Epoch 447 Completed: 0.646093
+Epoch 448 Completed: 0.648616
+Epoch 449 Completed: 0.625847
+Epoch 450 Completed: 0.591960
+Evaluating on Epoch 450
+F1	alt.atheism	0.684685
+F1	talk.religion.misc	0.582927
+F1	comp.graphics	0.962581
+F1	sci.space	0.936869
+Epoch 451 Completed: 0.588327
+Epoch 452 Completed: 0.590338
+Epoch 453 Completed: 0.589672
+Epoch 454 Completed: 0.590748
+Epoch 455 Completed: 0.591676
+Epoch 456 Completed: 0.592185
+Epoch 457 Completed: 0.590126
+Epoch 458 Completed: 0.592995
+Epoch 459 Completed: 0.589896
+Epoch 460 Completed: 0.592258
+Evaluating on Epoch 460
+F1	alt.atheism	0.687711
+F1	talk.religion.misc	0.586081
+F1	comp.graphics	0.965340
+F1	sci.space	0.937896
+Epoch 461 Completed: 0.593213
+Epoch 462 Completed: 0.590777
+Epoch 463 Completed: 0.590562
+Epoch 464 Completed: 0.592299
+Epoch 465 Completed: 0.590334
+Epoch 466 Completed: 0.591224
+Epoch 467 Completed: 0.592402
+Epoch 468 Completed: 0.588704
+Epoch 469 Completed: 0.588036
+Epoch 470 Completed: 0.592696
+Evaluating on Epoch 470
+F1	alt.atheism	0.688268
+F1	talk.religion.misc	0.577993
+F1	comp.graphics	0.959264
+F1	sci.space	0.933667
+Epoch 471 Completed: 0.592273
+Epoch 472 Completed: 0.592318
+Epoch 473 Completed: 0.588586
+Epoch 474 Completed: 0.593456
+Epoch 475 Completed: 0.592174
+Epoch 476 Completed: 0.589152
+Epoch 477 Completed: 0.590972
+Epoch 478 Completed: 0.591613
+Epoch 479 Completed: 0.591373
+Epoch 480 Completed: 0.593345
+Evaluating on Epoch 480
+F1	alt.atheism	0.690745
+F1	talk.religion.misc	0.584352
+F1	comp.graphics	0.965340
+F1	sci.space	0.939241
+Epoch 481 Completed: 0.617129
+Epoch 482 Completed: 0.589976
+Epoch 483 Completed: 0.591002
+Epoch 484 Completed: 0.591243
+Epoch 485 Completed: 0.590380
+Epoch 486 Completed: 0.588096
+Epoch 487 Completed: 0.590304
+Epoch 488 Completed: 0.592721
+Epoch 489 Completed: 0.592713
+Epoch 490 Completed: 0.592432
+Evaluating on Epoch 490
+F1	alt.atheism	0.683857
+F1	talk.religion.misc	0.582524
+F1	comp.graphics	0.955844
+F1	sci.space	0.940731
+Epoch 491 Completed: 0.588030
+Epoch 492 Completed: 0.596786
+Epoch 493 Completed: 0.597484
+Epoch 494 Completed: 0.593229
+Epoch 495 Completed: 0.592191
+Epoch 496 Completed: 0.592170
+Epoch 497 Completed: 0.593160
+Epoch 498 Completed: 0.591713
+Epoch 499 Completed: 0.593948
+Epoch 500 Completed: 0.591395
+Saving checkpoint: ./results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers_distillbert/run_2020_03_16_13_28_02_e36ea6cdbe42/checkpoint_500
+Evaluating on Epoch 500
+F1	alt.atheism	0.684932
+F1	talk.religion.misc	0.591584
+F1	comp.graphics	0.959391
+F1	sci.space	0.940582
+Epoch 501 Completed: 0.594826
+Epoch 502 Completed: 0.594660
+Epoch 503 Completed: 0.600480
+Epoch 504 Completed: 0.597644
+Epoch 505 Completed: 0.595829
+Epoch 506 Completed: 0.596316
+Epoch 507 Completed: 0.597587
+Epoch 508 Completed: 0.590957
+Epoch 509 Completed: 0.594093
+Epoch 510 Completed: 0.589313
+Evaluating on Epoch 510
+F1	alt.atheism	0.682814
+F1	talk.religion.misc	0.593242
+F1	comp.graphics	0.957179
+F1	sci.space	0.934509
+Epoch 511 Completed: 0.595029
+Epoch 512 Completed: 0.594653
+Epoch 513 Completed: 0.592952
+Epoch 514 Completed: 0.598183
+Epoch 515 Completed: 0.596428
+Epoch 516 Completed: 0.593727
+Epoch 517 Completed: 0.594748
+Epoch 518 Completed: 0.594312
+Epoch 519 Completed: 0.592980
+Epoch 520 Completed: 0.595803
+Evaluating on Epoch 520
+F1	alt.atheism	0.681818
+F1	talk.religion.misc	0.588670
+F1	comp.graphics	0.962868
+F1	sci.space	0.934509
+Epoch 521 Completed: 0.594781
+Epoch 522 Completed: 0.598545
+Epoch 523 Completed: 0.595091
+Epoch 524 Completed: 0.595186
+Epoch 525 Completed: 0.596719
+Epoch 526 Completed: 0.597025
+Epoch 527 Completed: 0.594990
+Epoch 528 Completed: 0.596835
+Epoch 529 Completed: 0.597523
+Epoch 530 Completed: 0.598555
+Evaluating on Epoch 530
+F1	alt.atheism	0.684932
+F1	talk.religion.misc	0.586634
+F1	comp.graphics	0.954545
+F1	sci.space	0.941624
+Epoch 531 Completed: 0.598010
+Epoch 532 Completed: 0.596975
+Epoch 533 Completed: 0.596449
+Epoch 534 Completed: 0.597914
+Epoch 535 Completed: 0.592828
+Epoch 536 Completed: 0.593020
+Epoch 537 Completed: 0.594920
+Epoch 538 Completed: 0.593351
+Epoch 539 Completed: 0.593769
+Epoch 540 Completed: 0.597498
+Evaluating on Epoch 540
+F1	alt.atheism	0.678043
+F1	talk.religion.misc	0.589396
+F1	comp.graphics	0.960409
+F1	sci.space	0.934509
+Epoch 541 Completed: 0.595660
+Epoch 542 Completed: 0.592274
+Epoch 543 Completed: 0.594249
+Epoch 544 Completed: 0.594290
+Epoch 545 Completed: 0.595902
+Epoch 546 Completed: 0.595417
+Epoch 547 Completed: 0.596731
+Epoch 548 Completed: 0.594707
+Epoch 549 Completed: 0.596785
+Epoch 550 Completed: 0.594030
+Evaluating on Epoch 550
+F1	alt.atheism	0.684807
+F1	talk.religion.misc	0.587224
+F1	comp.graphics	0.965340
+F1	sci.space	0.934509
+Epoch 551 Completed: 0.595461
+Epoch 552 Completed: 0.599174
+Epoch 553 Completed: 0.619429
+Epoch 554 Completed: 0.603885
+Epoch 555 Completed: 0.608730
+Epoch 556 Completed: 0.604808
+Epoch 557 Completed: 0.603023
+Epoch 558 Completed: 0.605257
+Epoch 559 Completed: 0.605322
+Epoch 560 Completed: 0.601170
+Evaluating on Epoch 560
+F1	alt.atheism	0.679502
+F1	talk.religion.misc	0.579141
+F1	comp.graphics	0.954955
+F1	sci.space	0.930818
+Epoch 561 Completed: 0.600636
+Epoch 562 Completed: 0.596622
+Epoch 563 Completed: 0.608416
+Epoch 564 Completed: 0.805255
+Epoch 565 Completed: 0.694275
+Epoch 566 Completed: 0.747345
+Epoch 567 Completed: 0.605490
+Epoch 568 Completed: 0.604438
+Epoch 569 Completed: 0.608498
+Epoch 570 Completed: 0.611171
+Evaluating on Epoch 570
+F1	alt.atheism	0.673054
+F1	talk.religion.misc	0.587467
+F1	comp.graphics	0.929612
+F1	sci.space	0.927136
+Epoch 571 Completed: 0.614672
+Epoch 572 Completed: 0.614252
+Epoch 573 Completed: 0.609651
+Epoch 574 Completed: 0.604668
+Epoch 575 Completed: 0.605392
+Epoch 576 Completed: 0.609207
+Epoch 577 Completed: 0.606526
+Epoch 578 Completed: 0.600386
+Epoch 579 Completed: 0.601674
+Epoch 580 Completed: 0.604381
+Evaluating on Epoch 580
+F1	alt.atheism	0.671395
+F1	talk.religion.misc	0.593830
+F1	comp.graphics	0.953224
+F1	sci.space	0.929095
+Epoch 581 Completed: 0.603266
+Epoch 582 Completed: 0.601577
+Epoch 583 Completed: 0.603025
+Epoch 584 Completed: 0.623249
+Epoch 585 Completed: 0.627240
+Epoch 586 Completed: 0.618990
+Epoch 587 Completed: 0.621138
+Epoch 588 Completed: 0.621841
+Epoch 589 Completed: 0.616801
+Epoch 590 Completed: 0.625884
+Evaluating on Epoch 590
+F1	alt.atheism	0.679956
+F1	talk.religion.misc	0.577246
+F1	comp.graphics	0.951777
+F1	sci.space	0.939791
+Epoch 591 Completed: 0.622900
+Epoch 592 Completed: 0.617517
+Epoch 593 Completed: 0.621788
+Epoch 594 Completed: 0.602930
+Epoch 595 Completed: 0.606743
+Epoch 596 Completed: 0.606258
+Epoch 597 Completed: 0.604887
+Epoch 598 Completed: 0.610596
+Epoch 599 Completed: 0.612057
+Epoch 600 Completed: 0.654843
+Evaluating on Epoch 600
+F1	alt.atheism	0.656059
+F1	talk.religion.misc	0.597577
+F1	comp.graphics	0.925519
+F1	sci.space	0.921951
+Epoch 601 Completed: 0.651498
+Epoch 602 Completed: 0.609788
+Epoch 603 Completed: 0.603501
+Epoch 604 Completed: 0.605394
+Epoch 605 Completed: 0.622155
+Epoch 606 Completed: 0.630144
+Epoch 607 Completed: 0.600033
+Epoch 608 Completed: 0.603522
+Epoch 609 Completed: 0.600325
+Epoch 610 Completed: 0.604555
+Evaluating on Epoch 610
+F1	alt.atheism	0.677165
+F1	talk.religion.misc	0.584653
+F1	comp.graphics	0.954604
+F1	sci.space	0.938365
+Epoch 611 Completed: 0.599829
+Epoch 612 Completed: 0.599515
+Epoch 613 Completed: 0.597733
+Epoch 614 Completed: 0.616747
+Epoch 615 Completed: 0.629135
+Epoch 616 Completed: 0.628591
+Epoch 617 Completed: 0.626311
+Epoch 618 Completed: 0.624745
+Epoch 619 Completed: 0.609569
+Epoch 620 Completed: 0.608133
+Evaluating on Epoch 620
+F1	alt.atheism	0.679545
+F1	talk.religion.misc	0.592593
+F1	comp.graphics	0.948557
+F1	sci.space	0.943590
+Epoch 621 Completed: 0.602553
+Epoch 622 Completed: 0.610909
+Epoch 623 Completed: 0.628952
+Epoch 624 Completed: 0.624820
+Epoch 625 Completed: 0.609505
+Epoch 626 Completed: 0.600019
+Epoch 627 Completed: 0.599821
+Epoch 628 Completed: 0.604053
+Epoch 629 Completed: 0.598522
+Epoch 630 Completed: 0.599993
+Evaluating on Epoch 630
+F1	alt.atheism	0.675057
+F1	talk.religion.misc	0.594663
+F1	comp.graphics	0.957179
+F1	sci.space	0.937738
+Epoch 631 Completed: 0.597026
+Epoch 632 Completed: 0.598644
+Epoch 633 Completed: 0.592742
+Epoch 634 Completed: 0.598240
+Epoch 635 Completed: 0.608648
+Epoch 636 Completed: 0.621769
+Epoch 637 Completed: 0.613032
+Epoch 638 Completed: 0.601661
+Epoch 639 Completed: 0.589103
+Epoch 640 Completed: 0.595110
+Evaluating on Epoch 640
+F1	alt.atheism	0.668981
+F1	talk.religion.misc	0.598446
+F1	comp.graphics	0.956085
+F1	sci.space	0.939547
+Epoch 641 Completed: 0.599594
+Epoch 642 Completed: 0.596401
+Epoch 643 Completed: 0.614779
+Epoch 644 Completed: 0.600357
+Epoch 645 Completed: 0.607829
+Epoch 646 Completed: 0.603474
+Epoch 647 Completed: 0.600885
+Epoch 648 Completed: 0.606223
+Epoch 649 Completed: 0.608128
+Epoch 650 Completed: 0.608089
+Evaluating on Epoch 650
+F1	alt.atheism	0.679724
+F1	talk.religion.misc	0.577500
+F1	comp.graphics	0.952507
+F1	sci.space	0.919374
+Epoch 651 Completed: 0.599327
+Epoch 652 Completed: 0.599374
+Epoch 653 Completed: 0.593918
+Epoch 654 Completed: 0.591195
+Epoch 655 Completed: 0.600108
+Epoch 656 Completed: 0.594634
+Epoch 657 Completed: 0.593754
+Epoch 658 Completed: 0.594603
+Epoch 659 Completed: 0.602739
+Epoch 660 Completed: 0.599987
+Evaluating on Epoch 660
+F1	alt.atheism	0.676851
+F1	talk.religion.misc	0.583120
+F1	comp.graphics	0.964377
+F1	sci.space	0.908442
+Epoch 661 Completed: 0.603901
+Epoch 662 Completed: 0.596782
+Epoch 663 Completed: 0.592476
+Epoch 664 Completed: 0.593027
+Epoch 665 Completed: 0.593421
+Epoch 666 Completed: 0.595794
+Epoch 667 Completed: 0.595770
+Epoch 668 Completed: 0.594202
+Epoch 669 Completed: 0.592472
+Epoch 670 Completed: 0.592431
+Evaluating on Epoch 670
+F1	alt.atheism	0.678492
+F1	talk.religion.misc	0.585132
+F1	comp.graphics	0.957419
+F1	sci.space	0.945223
+Epoch 671 Completed: 0.595263
+Epoch 672 Completed: 0.591843
+Epoch 673 Completed: 0.591651
+Epoch 674 Completed: 0.589579
+Epoch 675 Completed: 0.592377
+Epoch 676 Completed: 0.593404
+Epoch 677 Completed: 0.590359
+Epoch 678 Completed: 0.590719
+Epoch 679 Completed: 0.590872
+Epoch 680 Completed: 0.593351
+Evaluating on Epoch 680
+F1	alt.atheism	0.683036
+F1	talk.religion.misc	0.589372
+F1	comp.graphics	0.963918
+F1	sci.space	0.945083
+Epoch 681 Completed: 0.591872
+Epoch 682 Completed: 0.590652
+Epoch 683 Completed: 0.589923
+Epoch 684 Completed: 0.592915
+Epoch 685 Completed: 0.593140
+Epoch 686 Completed: 0.586010
+Epoch 687 Completed: 0.588197
+Epoch 688 Completed: 0.589845
+Epoch 689 Completed: 0.588310
+Epoch 690 Completed: 0.590100
+Evaluating on Epoch 690
+F1	alt.atheism	0.680412
+F1	talk.religion.misc	0.600000
+F1	comp.graphics	0.960307
+F1	sci.space	0.935162
+Epoch 691 Completed: 0.592938
+Epoch 692 Completed: 0.605499
+Epoch 693 Completed: 0.596096
+Epoch 694 Completed: 0.596588
+Epoch 695 Completed: 0.588349
+Epoch 696 Completed: 0.592760
+Epoch 697 Completed: 0.588015
+Epoch 698 Completed: 0.578091
+Epoch 699 Completed: 0.575510
+Epoch 700 Completed: 0.572112
+Evaluating on Epoch 700
+F1	alt.atheism	0.679868
+F1	talk.religion.misc	0.658537
+F1	comp.graphics	0.954008
+F1	sci.space	0.939086
+Epoch 701 Completed: 0.569813
+Epoch 702 Completed: 0.615924
+Epoch 703 Completed: 0.590794
+Epoch 704 Completed: 0.585637
+Epoch 705 Completed: 0.579668
+Epoch 706 Completed: 0.578260
+Epoch 707 Completed: 0.583103
+Epoch 708 Completed: 0.585925
+Epoch 709 Completed: 0.580028
+Epoch 710 Completed: 0.586488
+Evaluating on Epoch 710
+F1	alt.atheism	0.492406
+F1	talk.religion.misc	0.607500
+F1	comp.graphics	0.124700
+F1	sci.space	0.943396
+Epoch 711 Completed: 0.612780
+Epoch 712 Completed: 0.580163
+Epoch 713 Completed: 0.579761
+Epoch 714 Completed: 0.572002
+Epoch 715 Completed: 0.575748
+Epoch 716 Completed: 0.574244
+Epoch 717 Completed: 0.573510
+Epoch 718 Completed: 0.570508
+Epoch 719 Completed: 0.567271
+Epoch 720 Completed: 0.570965
+Evaluating on Epoch 720
+F1	alt.atheism	0.683486
+F1	talk.religion.misc	0.655689
+F1	comp.graphics	0.960409
+F1	sci.space	0.937965
+Epoch 721 Completed: 0.580135
+Epoch 722 Completed: 0.590518
+Epoch 723 Completed: 0.583031
+Epoch 724 Completed: 0.570833
+Epoch 725 Completed: 0.570842
+Epoch 726 Completed: 0.569131
+Epoch 727 Completed: 0.570267
+Epoch 728 Completed: 0.570528
+Epoch 729 Completed: 0.566976
+Epoch 730 Completed: 0.565994
+Evaluating on Epoch 730
+F1	alt.atheism	0.676404
+F1	talk.religion.misc	0.671900
+F1	comp.graphics	0.961240
+F1	sci.space	0.942643
+Epoch 731 Completed: 0.565778
+Epoch 732 Completed: 0.562847
+Epoch 733 Completed: 0.562868
+Epoch 734 Completed: 0.564013
+Epoch 735 Completed: 0.564305
+Epoch 736 Completed: 0.562610
+Epoch 737 Completed: 0.561493
+Epoch 738 Completed: 0.557552
+Epoch 739 Completed: 0.558895
+Epoch 740 Completed: 0.560479
+Evaluating on Epoch 740
+F1	alt.atheism	0.683857
+F1	talk.religion.misc	0.679487
+F1	comp.graphics	0.945362
+F1	sci.space	0.938462
+Epoch 741 Completed: 0.556851
+Epoch 742 Completed: 0.562148
+Epoch 743 Completed: 0.571821
+Epoch 744 Completed: 0.564033
+Epoch 745 Completed: 0.563252
+Epoch 746 Completed: 0.566830
+Epoch 747 Completed: 0.567656
+Epoch 748 Completed: 0.566178
+Epoch 749 Completed: 0.556317
+Epoch 750 Completed: 0.556018
+Saving checkpoint: ./results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers_distillbert/run_2020_03_16_13_28_02_e36ea6cdbe42/checkpoint_750
+Evaluating on Epoch 750
+F1	alt.atheism	0.697039
+F1	talk.religion.misc	0.677686
+F1	comp.graphics	0.955527
+F1	sci.space	0.936709
+Epoch 751 Completed: 0.560562
+Epoch 752 Completed: 0.554082
+Epoch 753 Completed: 0.563558
+Epoch 754 Completed: 0.559205
+Epoch 755 Completed: 0.561330
+Epoch 756 Completed: 0.565909
+Epoch 757 Completed: 0.557005
+Epoch 758 Completed: 0.560999
+Epoch 759 Completed: 0.557262
+Epoch 760 Completed: 0.552827
+Evaluating on Epoch 760
+F1	alt.atheism	0.692661
+F1	talk.religion.misc	0.675926
+F1	comp.graphics	0.967742
+F1	sci.space	0.937115
+Epoch 761 Completed: 0.552457
+Epoch 762 Completed: 0.554366
+Epoch 763 Completed: 0.554293
+Epoch 764 Completed: 0.553915
+Epoch 765 Completed: 0.559038
+Epoch 766 Completed: 0.560202
+Epoch 767 Completed: 0.556222
+Epoch 768 Completed: 0.558490
+Epoch 769 Completed: 0.594681
+Epoch 770 Completed: 0.563893
+Evaluating on Epoch 770
+F1	alt.atheism	0.676856
+F1	talk.religion.misc	0.676056
+F1	comp.graphics	0.968750
+F1	sci.space	0.949239
+Epoch 771 Completed: 0.565642
+Epoch 772 Completed: 0.560984
+Epoch 773 Completed: 0.556340
+Epoch 774 Completed: 0.560942
+Epoch 775 Completed: 0.563635
+Epoch 776 Completed: 0.559948
+Epoch 777 Completed: 0.555106
+Epoch 778 Completed: 0.559682
+Epoch 779 Completed: 0.553502
+Epoch 780 Completed: 0.553803
+Evaluating on Epoch 780
+F1	alt.atheism	0.681243
+F1	talk.religion.misc	0.697124
+F1	comp.graphics	0.962677
+F1	sci.space	0.930061
+Epoch 781 Completed: 0.558205
+Epoch 782 Completed: 0.554233
+Epoch 783 Completed: 0.555683
+Epoch 784 Completed: 0.554542
+Epoch 785 Completed: 0.552467
+Epoch 786 Completed: 0.551874
+Epoch 787 Completed: 0.552620
+Epoch 788 Completed: 0.552797
+Epoch 789 Completed: 0.552052
+Epoch 790 Completed: 0.550418
+Evaluating on Epoch 790
+F1	alt.atheism	0.690745
+F1	talk.religion.misc	0.682848
+F1	comp.graphics	0.965161
+F1	sci.space	0.935849
+Epoch 791 Completed: 0.550165
+Epoch 792 Completed: 0.553086
+Epoch 793 Completed: 0.561160
+Epoch 794 Completed: 0.554116
+Epoch 795 Completed: 0.549770
+Epoch 796 Completed: 0.548357
+Epoch 797 Completed: 0.551274
+Epoch 798 Completed: 0.546878
+Epoch 799 Completed: 0.550926
+Epoch 800 Completed: 0.551534
+Evaluating on Epoch 800
+F1	alt.atheism	0.688712
+F1	talk.religion.misc	0.677686
+F1	comp.graphics	0.961637
+F1	sci.space	0.929016
+Epoch 801 Completed: 0.554201
+Epoch 802 Completed: 0.545962
+Epoch 803 Completed: 0.548222
+Epoch 804 Completed: 0.551405
+Epoch 805 Completed: 0.564171
+Epoch 806 Completed: 0.595107
+Epoch 807 Completed: 0.574691
+Epoch 808 Completed: 0.569216
+Epoch 809 Completed: 0.567248
+Epoch 810 Completed: 0.558372
+Evaluating on Epoch 810
+F1	alt.atheism	0.675966
+F1	talk.religion.misc	0.660969
+F1	comp.graphics	0.949333
+F1	sci.space	0.947233
+Epoch 811 Completed: 0.581056
+Epoch 812 Completed: 0.547871
+Epoch 813 Completed: 0.547054
+Epoch 814 Completed: 0.548881
+Epoch 815 Completed: 0.547761
+Epoch 816 Completed: 0.579753
+Epoch 817 Completed: 0.582653
+Epoch 818 Completed: 0.589049
+Epoch 819 Completed: 0.578593
+Epoch 820 Completed: 0.577904
+Evaluating on Epoch 820
+F1	alt.atheism	0.718121
+F1	talk.religion.misc	0.698305
+F1	comp.graphics	0.964103
+F1	sci.space	0.702108
+Epoch 821 Completed: 0.576145
+Epoch 822 Completed: 0.555435
+Epoch 823 Completed: 0.550831
+Epoch 824 Completed: 0.551973
+Epoch 825 Completed: 0.548477
+Epoch 826 Completed: 0.548246
+Epoch 827 Completed: 0.545365
+Epoch 828 Completed: 0.545795
+Epoch 829 Completed: 0.547652
+Epoch 830 Completed: 0.549690
+Evaluating on Epoch 830
+F1	alt.atheism	0.686734
+F1	talk.religion.misc	0.682927
+F1	comp.graphics	0.962677
+F1	sci.space	0.939086
+Epoch 831 Completed: 0.548864
+Epoch 832 Completed: 0.543853
+Epoch 833 Completed: 0.548492
+Epoch 834 Completed: 0.545519
+Epoch 835 Completed: 0.545751
+Epoch 836 Completed: 0.540670
+Epoch 837 Completed: 0.543458
+Epoch 838 Completed: 0.548667
+Epoch 839 Completed: 0.554836
+Epoch 840 Completed: 0.549336
+Evaluating on Epoch 840
+F1	alt.atheism	0.687361
+F1	talk.religion.misc	0.696063
+F1	comp.graphics	0.958974
+F1	sci.space	0.934194
+Epoch 841 Completed: 0.550203
+Epoch 842 Completed: 0.545391
+Epoch 843 Completed: 0.548579
+Epoch 844 Completed: 0.549247
+Epoch 845 Completed: 0.548308
+Epoch 846 Completed: 0.542916
+Epoch 847 Completed: 0.543861
+Epoch 848 Completed: 0.542453
+Epoch 849 Completed: 0.542057
+Epoch 850 Completed: 0.540671
+Evaluating on Epoch 850
+F1	alt.atheism	0.686734
+F1	talk.religion.misc	0.700508
+F1	comp.graphics	0.962387
+F1	sci.space	0.942065
+Epoch 851 Completed: 0.542581
+Epoch 852 Completed: 0.540785
+Epoch 853 Completed: 0.545187
+Epoch 854 Completed: 0.541352
+Epoch 855 Completed: 0.540241
+Epoch 856 Completed: 0.546872
+Epoch 857 Completed: 0.538135
+Epoch 858 Completed: 0.543106
+Epoch 859 Completed: 0.540050
+Epoch 860 Completed: 0.542337
+Evaluating on Epoch 860
+F1	alt.atheism	0.687430
+F1	talk.religion.misc	0.715278
+F1	comp.graphics	0.964981
+F1	sci.space	0.944584
+Epoch 861 Completed: 0.537499
+Epoch 862 Completed: 0.543255
+Epoch 863 Completed: 0.544516
+Epoch 864 Completed: 0.542752
+Epoch 865 Completed: 0.544801
+Epoch 866 Completed: 0.540337
+Epoch 867 Completed: 0.541278
+Epoch 868 Completed: 0.539957
+Epoch 869 Completed: 0.545323
+Epoch 870 Completed: 0.539611
+Evaluating on Epoch 870
+F1	alt.atheism	0.688000
+F1	talk.religion.misc	0.694268
+F1	comp.graphics	0.968072
+F1	sci.space	0.943820
+Epoch 871 Completed: 0.544326
+Epoch 872 Completed: 0.540191
+Epoch 873 Completed: 0.539798
+Epoch 874 Completed: 0.539122
+Epoch 875 Completed: 0.539349
+Epoch 876 Completed: 0.539357
+Epoch 877 Completed: 0.540375
+Epoch 878 Completed: 0.557397
+Epoch 879 Completed: 0.586120
+Epoch 880 Completed: 0.566355
+Evaluating on Epoch 880
+F1	alt.atheism	0.733638
+F1	talk.religion.misc	0.695925
+F1	comp.graphics	0.966667
+F1	sci.space	0.754420
+Epoch 881 Completed: 0.562190
+Epoch 882 Completed: 0.552703
+Epoch 883 Completed: 0.552991
+Epoch 884 Completed: 0.546364
+Epoch 885 Completed: 0.557394
+Epoch 886 Completed: 0.556897
+Epoch 887 Completed: 0.561156
+Epoch 888 Completed: 0.553241
+Epoch 889 Completed: 0.545515
+Epoch 890 Completed: 0.550263
+Evaluating on Epoch 890
+F1	alt.atheism	0.711055
+F1	talk.religion.misc	0.680272
+F1	comp.graphics	0.961538
+F1	sci.space	0.853575
+Epoch 891 Completed: 0.547260
+Epoch 892 Completed: 0.550089
+Epoch 893 Completed: 0.554399
+Epoch 894 Completed: 0.550965
+Epoch 895 Completed: 0.544663
+Epoch 896 Completed: 0.538966
+Epoch 897 Completed: 0.538632
+Epoch 898 Completed: 0.540850
+Epoch 899 Completed: 0.539451
+Epoch 900 Completed: 0.541270
+Evaluating on Epoch 900
+F1	alt.atheism	0.696897
+F1	talk.religion.misc	0.684015
+F1	comp.graphics	0.966752
+F1	sci.space	0.896057
+Epoch 901 Completed: 0.546039
+Epoch 902 Completed: 0.540876
+Epoch 903 Completed: 0.544551
+Epoch 904 Completed: 0.541289
+Epoch 905 Completed: 0.539306
+Epoch 906 Completed: 0.538811
+Epoch 907 Completed: 0.538834
+Epoch 908 Completed: 0.536096
+Epoch 909 Completed: 0.536949
+Epoch 910 Completed: 0.536464
+Evaluating on Epoch 910
+F1	alt.atheism	0.687428
+F1	talk.religion.misc	0.705680
+F1	comp.graphics	0.961735
+F1	sci.space	0.931846
+Epoch 911 Completed: 0.537291
+Epoch 912 Completed: 0.533776
+Epoch 913 Completed: 0.541350
+Epoch 914 Completed: 0.538252
+Epoch 915 Completed: 0.533710
+Epoch 916 Completed: 0.537232
+Epoch 917 Completed: 0.535275
+Epoch 918 Completed: 0.537695
+Epoch 919 Completed: 0.535876
+Epoch 920 Completed: 0.537167
+Evaluating on Epoch 920
+F1	alt.atheism	0.689966
+F1	talk.religion.misc	0.701209
+F1	comp.graphics	0.956743
+F1	sci.space	0.930468
+Epoch 921 Completed: 0.534524
+Epoch 922 Completed: 0.540446
+Epoch 923 Completed: 0.537131
+Epoch 924 Completed: 0.542544
+Epoch 925 Completed: 0.547388
+Epoch 926 Completed: 0.566130
+Epoch 927 Completed: 0.561209
+Epoch 928 Completed: 0.563487
+Epoch 929 Completed: 0.570017
+Epoch 930 Completed: 0.566535
+Evaluating on Epoch 930
+F1	alt.atheism	0.731320
+F1	talk.religion.misc	0.718910
+F1	comp.graphics	0.956186
+F1	sci.space	0.727445
+Epoch 931 Completed: 0.563784
+Epoch 932 Completed: 0.568753
+Epoch 933 Completed: 0.560358
+Epoch 934 Completed: 0.549142
+Epoch 935 Completed: 0.552238
+Epoch 936 Completed: 0.549571
+Epoch 937 Completed: 0.548814
+Epoch 938 Completed: 0.543287
+Epoch 939 Completed: 0.541267
+Epoch 940 Completed: 0.541736
+Evaluating on Epoch 940
+F1	alt.atheism	0.694382
+F1	talk.religion.misc	0.709910
+F1	comp.graphics	0.968072
+F1	sci.space	0.935197
+Epoch 941 Completed: 0.538886
+Epoch 942 Completed: 0.540005
+Epoch 943 Completed: 0.543595
+Epoch 944 Completed: 0.540145
+Epoch 945 Completed: 0.542198
+Epoch 946 Completed: 0.540836
+Epoch 947 Completed: 0.539534
+Epoch 948 Completed: 0.536028
+Epoch 949 Completed: 0.538705
+Epoch 950 Completed: 0.535337
+Evaluating on Epoch 950
+F1	alt.atheism	0.692221
+F1	talk.religion.misc	0.699844
+F1	comp.graphics	0.966408
+F1	sci.space	0.927681
+Epoch 951 Completed: 0.540906
+Epoch 952 Completed: 0.537102
+Epoch 953 Completed: 0.541623
+Epoch 954 Completed: 0.536632
+Epoch 955 Completed: 0.536735
+Epoch 956 Completed: 0.534978
+Epoch 957 Completed: 0.536306
+Epoch 958 Completed: 0.536203
+Epoch 959 Completed: 0.533236
+Epoch 960 Completed: 0.536605
+Evaluating on Epoch 960
+F1	alt.atheism	0.691610
+F1	talk.religion.misc	0.724954
+F1	comp.graphics	0.962484
+F1	sci.space	0.933002
+Epoch 961 Completed: 0.534648
+Epoch 962 Completed: 0.535857
+Epoch 963 Completed: 0.539784
+Epoch 964 Completed: 0.540890
+Epoch 965 Completed: 0.536958
+Epoch 966 Completed: 0.537671
+Epoch 967 Completed: 0.536009
+Epoch 968 Completed: 0.534370
+Epoch 969 Completed: 0.539838
+Epoch 970 Completed: 0.537026
+Evaluating on Epoch 970
+F1	alt.atheism	0.688488
+F1	talk.religion.misc	0.711268
+F1	comp.graphics	0.965517
+F1	sci.space	0.935361
+Epoch 971 Completed: 0.547186
+Epoch 972 Completed: 0.548772
+Epoch 973 Completed: 0.540177
+Epoch 974 Completed: 0.543515
+Epoch 975 Completed: 0.544104
+Epoch 976 Completed: 0.541551
+Epoch 977 Completed: 0.544539
+Epoch 978 Completed: 0.544708
+Epoch 979 Completed: 0.549800
+Epoch 980 Completed: 0.544039
+Evaluating on Epoch 980
+F1	alt.atheism	0.697174
+F1	talk.religion.misc	0.708609
+F1	comp.graphics	0.967172
+F1	sci.space	0.822894
+Epoch 981 Completed: 0.547131
+Epoch 982 Completed: 0.546562
+Epoch 983 Completed: 0.539842
+Epoch 984 Completed: 0.539814
+Epoch 985 Completed: 0.537702
+Epoch 986 Completed: 0.538524
+Epoch 987 Completed: 0.535815
+Epoch 988 Completed: 0.536825
+Epoch 989 Completed: 0.532148
+Epoch 990 Completed: 0.534827
+Evaluating on Epoch 990
+F1	alt.atheism	0.691076
+F1	talk.religion.misc	0.702609
+F1	comp.graphics	0.959391
+F1	sci.space	0.939698
+Epoch 991 Completed: 0.535547
+Epoch 992 Completed: 0.535446
+Epoch 993 Completed: 0.534330
+Epoch 994 Completed: 0.536224
+Epoch 995 Completed: 0.536395
+Epoch 996 Completed: 0.534493
+Epoch 997 Completed: 0.534071
+Epoch 998 Completed: 0.531973
+Epoch 999 Completed: 0.537061
+Epoch 1000 Completed: 0.535929
+Saving checkpoint: ./results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers_distillbert/run_2020_03_16_13_28_02_e36ea6cdbe42/checkpoint_1000
+Evaluating on Epoch 1000
+F1	alt.atheism	0.689966
+F1	talk.religion.misc	0.698182
+F1	comp.graphics	0.960938
+F1	sci.space	0.937500
