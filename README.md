@@ -63,6 +63,7 @@ This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLS
 ### Results on n2c2_2006 task:
 
 Freezing Clinical BERT:
+
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_single_gpu_single_lstm_batch_size10/run_2020_03_04_10_37_12_58d26bafbcb2
 
 Unfreezing last encoding layer of Clinical BERT:
