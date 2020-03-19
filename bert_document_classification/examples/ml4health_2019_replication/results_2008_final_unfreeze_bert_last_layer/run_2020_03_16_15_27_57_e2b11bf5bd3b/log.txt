@@ -1,0 +1,1710 @@
+Config File (n2c2_2008_train_config.ini):
+  model_storage_directory:./results_2008_final_unfreeze_bert_last_layer
+  batch_size:        10
+  epochs:            1000
+  evaluation_interval:25
+  checkpoint_interval:250
+  bert_model_path:   clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000
+  labels:            Gout, Venous Insufficiency, Gallstones, Hypertension, Obesity, Asthma, GERD, Hypercholesterolemia, Hypertriglyceridemia, CHF, OSA, OA, PVD, CAD, Depression, Diabetes
+  architecture:      DocumentBertLSTM
+  bert_batch_size:   7
+  cuda:              true
+  device:            cuda:0
+  learning_rate:     6e-5
+  weight_decay:      0
+
+Model name 'clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, bert-base-finnish-cased-v1, bert-base-finnish-uncased-v1, bert-base-dutch-cased). Assuming 'clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000' is a path, a model identifier, or url to a directory containing tokenizer files.
+Didn't find file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/added_tokens.json. We won't load it.
+Didn't find file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/special_tokens_map.json. We won't load it.
+Didn't find file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/tokenizer_config.json. We won't load it.
+loading file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/vocab.txt
+loading file None
+loading file None
+loading file None
+loading weights file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/pytorch_model.bin
+Weights of DocumentBertLSTM not initialized from pretrained model: ['lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'classifier.1.weight', 'classifier.1.bias']
+Weights from pretrained model not used in DocumentBertLSTM: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+Epoch 1 Completed: 1.004306
+Epoch 2 Completed: 0.994440
+Epoch 3 Completed: 0.991325
+Epoch 4 Completed: 0.987305
+Epoch 5 Completed: 0.976780
+Epoch 6 Completed: 0.957768
+Epoch 7 Completed: 0.943394
+Epoch 8 Completed: 0.913301
+Epoch 9 Completed: 0.892177
+Epoch 10 Completed: 0.875084
+Epoch 11 Completed: 0.863192
+Epoch 12 Completed: 0.842960
+Epoch 13 Completed: 0.836886
+Epoch 14 Completed: 0.820937
+Epoch 15 Completed: 0.813904
+Epoch 16 Completed: 0.795889
+Epoch 17 Completed: 0.786322
+Epoch 18 Completed: 0.775976
+Epoch 19 Completed: 0.759858
+Epoch 20 Completed: 0.747191
+Epoch 21 Completed: 0.740439
+Epoch 22 Completed: 0.728747
+Epoch 23 Completed: 0.720116
+Epoch 24 Completed: 0.707446
+Epoch 25 Completed: 0.698603
+Evaluating on Epoch 25
+F1	Gout	0.426230
+F1	Venous Insufficiency	0.278481
+F1	Gallstones	0.352941
+F1	Hypertension	0.655008
+F1	Obesity	0.627451
+F1	Asthma	0.704403
+F1	GERD	0.317568
+F1	Hypercholesterolemia	0.614754
+F1	Hypertriglyceridemia	0.093023
+F1	CHF	0.651452
+F1	OSA	0.577540
+F1	OA	0.420233
+F1	PVD	0.374332
+F1	CAD	0.745698
+F1	Depression	0.360248
+F1	Diabetes	0.720000
+Epoch 26 Completed: 0.688947
+Epoch 27 Completed: 0.682470
+Epoch 28 Completed: 0.681174
+Epoch 29 Completed: 0.675706
+Epoch 30 Completed: 0.665528
+Epoch 31 Completed: 0.655947
+Epoch 32 Completed: 0.648673
+Epoch 33 Completed: 0.643666
+Epoch 34 Completed: 0.636695
+Epoch 35 Completed: 0.640917
+Epoch 36 Completed: 0.624860
+Epoch 37 Completed: 0.619413
+Epoch 38 Completed: 0.620853
+Epoch 39 Completed: 0.609270
+Epoch 40 Completed: 0.608780
+Epoch 41 Completed: 0.600123
+Epoch 42 Completed: 0.599051
+Epoch 43 Completed: 0.592339
+Epoch 44 Completed: 0.581755
+Epoch 45 Completed: 0.580647
+Epoch 46 Completed: 0.577369
+Epoch 47 Completed: 0.575229
+Epoch 48 Completed: 0.569545
+Epoch 49 Completed: 0.564808
+Epoch 50 Completed: 0.565098
+Evaluating on Epoch 50
+F1	Gout	0.492308
+F1	Venous Insufficiency	0.219178
+F1	Gallstones	0.483871
+F1	Hypertension	0.728636
+F1	Obesity	0.791878
+F1	Asthma	0.787500
+F1	GERD	0.243655
+F1	Hypercholesterolemia	0.707407
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.672032
+F1	OSA	0.585034
+F1	OA	0.434783
+F1	PVD	0.380952
+F1	CAD	0.782007
+F1	Depression	0.343750
+F1	Diabetes	0.690236
+Epoch 51 Completed: 0.559516
+Epoch 52 Completed: 0.556939
+Epoch 53 Completed: 0.554642
+Epoch 54 Completed: 0.547906
+Epoch 55 Completed: 0.544724
+Epoch 56 Completed: 0.538904
+Epoch 57 Completed: 0.537620
+Epoch 58 Completed: 0.534188
+Epoch 59 Completed: 0.531291
+Epoch 60 Completed: 0.528457
+Epoch 61 Completed: 0.526953
+Epoch 62 Completed: 0.526925
+Epoch 63 Completed: 0.521243
+Epoch 64 Completed: 0.523037
+Epoch 65 Completed: 0.519882
+Epoch 66 Completed: 0.516199
+Epoch 67 Completed: 0.512184
+Epoch 68 Completed: 0.510644
+Epoch 69 Completed: 0.509588
+Epoch 70 Completed: 0.510079
+Epoch 71 Completed: 0.507128
+Epoch 72 Completed: 0.506363
+Epoch 73 Completed: 0.506280
+Epoch 74 Completed: 0.505323
+Epoch 75 Completed: 0.501299
+Evaluating on Epoch 75
+F1	Gout	0.619469
+F1	Venous Insufficiency	0.226415
+F1	Gallstones	0.703030
+F1	Hypertension	0.767908
+F1	Obesity	0.819843
+F1	Asthma	0.810127
+F1	GERD	0.196319
+F1	Hypercholesterolemia	0.729367
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.699029
+F1	OSA	0.597015
+F1	OA	0.393782
+F1	PVD	0.500000
+F1	CAD	0.770950
+F1	Depression	0.372881
+F1	Diabetes	0.780715
+Epoch 76 Completed: 0.498196
+Epoch 77 Completed: 0.504162
+Epoch 78 Completed: 0.496721
+Epoch 79 Completed: 0.493221
+Epoch 80 Completed: 0.496354
+Epoch 81 Completed: 0.491387
+Epoch 82 Completed: 0.492781
+Epoch 83 Completed: 0.492427
+Epoch 84 Completed: 0.489448
+Epoch 85 Completed: 0.487810
+Epoch 86 Completed: 0.489176
+Epoch 87 Completed: 0.488866
+Epoch 88 Completed: 0.486542
+Epoch 89 Completed: 0.486033
+Epoch 90 Completed: 0.486047
+Epoch 91 Completed: 0.482900
+Epoch 92 Completed: 0.484433
+Epoch 93 Completed: 0.484752
+Epoch 94 Completed: 0.486348
+Epoch 95 Completed: 0.485390
+Epoch 96 Completed: 0.481452
+Epoch 97 Completed: 0.479911
+Epoch 98 Completed: 0.478792
+Epoch 99 Completed: 0.485246
+Epoch 100 Completed: 0.479985
+Evaluating on Epoch 100
+F1	Gout	0.608000
+F1	Venous Insufficiency	0.280000
+F1	Gallstones	0.666667
+F1	Hypertension	0.797260
+F1	Obesity	0.830918
+F1	Asthma	0.805970
+F1	GERD	0.265060
+F1	Hypercholesterolemia	0.725000
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.726477
+F1	OSA	0.606061
+F1	OA	0.442105
+F1	PVD	0.566667
+F1	CAD	0.755299
+F1	Depression	0.429268
+F1	Diabetes	0.814493
+Epoch 101 Completed: 0.480353
+Epoch 102 Completed: 0.479162
+Epoch 103 Completed: 0.478446
+Epoch 104 Completed: 0.477570
+Epoch 105 Completed: 0.479774
+Epoch 106 Completed: 0.477008
+Epoch 107 Completed: 0.474586
+Epoch 108 Completed: 0.473990
+Epoch 109 Completed: 0.475348
+Epoch 110 Completed: 0.474647
+Epoch 111 Completed: 0.473529
+Epoch 112 Completed: 0.471763
+Epoch 113 Completed: 0.472594
+Epoch 114 Completed: 0.474558
+Epoch 115 Completed: 0.472769
+Epoch 116 Completed: 0.471289
+Epoch 117 Completed: 0.470296
+Epoch 118 Completed: 0.472260
+Epoch 119 Completed: 0.472864
+Epoch 120 Completed: 0.470474
+Epoch 121 Completed: 0.474026
+Epoch 122 Completed: 0.474778
+Epoch 123 Completed: 0.472247
+Epoch 124 Completed: 0.473593
+Epoch 125 Completed: 0.469657
+Evaluating on Epoch 125
+F1	Gout	0.618182
+F1	Venous Insufficiency	0.260870
+F1	Gallstones	0.682635
+F1	Hypertension	0.804911
+F1	Obesity	0.821429
+F1	Asthma	0.839161
+F1	GERD	0.280488
+F1	Hypercholesterolemia	0.737044
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.699752
+F1	OSA	0.601504
+F1	OA	0.415842
+F1	PVD	0.540984
+F1	CAD	0.786355
+F1	Depression	0.397727
+F1	Diabetes	0.808696
+Epoch 126 Completed: 0.467208
+Epoch 127 Completed: 0.468290
+Epoch 128 Completed: 0.468829
+Epoch 129 Completed: 0.468476
+Epoch 130 Completed: 0.469567
+Epoch 131 Completed: 0.469086
+Epoch 132 Completed: 0.469032
+Epoch 133 Completed: 0.469239
+Epoch 134 Completed: 0.468665
+Epoch 135 Completed: 0.468408
+Epoch 136 Completed: 0.469215
+Epoch 137 Completed: 0.469935
+Epoch 138 Completed: 0.468845
+Epoch 139 Completed: 0.467455
+Epoch 140 Completed: 0.470163
+Epoch 141 Completed: 0.469130
+Epoch 142 Completed: 0.467152
+Epoch 143 Completed: 0.466265
+Epoch 144 Completed: 0.465079
+Epoch 145 Completed: 0.465225
+Epoch 146 Completed: 0.467057
+Epoch 147 Completed: 0.468261
+Epoch 148 Completed: 0.469045
+Epoch 149 Completed: 0.468257
+Epoch 150 Completed: 0.465441
+Evaluating on Epoch 150
+F1	Gout	0.666667
+F1	Venous Insufficiency	0.307692
+F1	Gallstones	0.597222
+F1	Hypertension	0.819923
+F1	Obesity	0.821596
+F1	Asthma	0.868966
+F1	GERD	0.240000
+F1	Hypercholesterolemia	0.741021
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.737060
+F1	OSA	0.626866
+F1	OA	0.376344
+F1	PVD	0.530973
+F1	CAD	0.779174
+F1	Depression	0.444444
+F1	Diabetes	0.811679
+Epoch 151 Completed: 0.465668
+Epoch 152 Completed: 0.464204
+Epoch 153 Completed: 0.467293
+Epoch 154 Completed: 0.471739
+Epoch 155 Completed: 0.465366
+Epoch 156 Completed: 0.464312
+Epoch 157 Completed: 0.464502
+Epoch 158 Completed: 0.463460
+Epoch 159 Completed: 0.462436
+Epoch 160 Completed: 0.462294
+Epoch 161 Completed: 0.462649
+Epoch 162 Completed: 0.465145
+Epoch 163 Completed: 0.464357
+Epoch 164 Completed: 0.462927
+Epoch 165 Completed: 0.463638
+Epoch 166 Completed: 0.464898
+Epoch 167 Completed: 0.462432
+Epoch 168 Completed: 0.464960
+Epoch 169 Completed: 0.468084
+Epoch 170 Completed: 0.470649
+Epoch 171 Completed: 0.466177
+Epoch 172 Completed: 0.466100
+Epoch 173 Completed: 0.462733
+Epoch 174 Completed: 0.465962
+Epoch 175 Completed: 0.467977
+Evaluating on Epoch 175
+F1	Gout	0.641221
+F1	Venous Insufficiency	0.444444
+F1	Gallstones	0.639456
+F1	Hypertension	0.815303
+F1	Obesity	0.835443
+F1	Asthma	0.764706
+F1	GERD	0.184397
+F1	Hypercholesterolemia	0.730627
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.712788
+F1	OSA	0.544000
+F1	OA	0.439252
+F1	PVD	0.515152
+F1	CAD	0.792523
+F1	Depression	0.383234
+F1	Diabetes	0.795144
+Epoch 176 Completed: 0.464420
+Epoch 177 Completed: 0.462846
+Epoch 178 Completed: 0.463337
+Epoch 179 Completed: 0.463358
+Epoch 180 Completed: 0.462492
+Epoch 181 Completed: 0.462472
+Epoch 182 Completed: 0.462555
+Epoch 183 Completed: 0.462409
+Epoch 184 Completed: 0.463661
+Epoch 185 Completed: 0.463129
+Epoch 186 Completed: 0.463598
+Epoch 187 Completed: 0.462433
+Epoch 188 Completed: 0.462539
+Epoch 189 Completed: 0.461914
+Epoch 190 Completed: 0.461401
+Epoch 191 Completed: 0.461438
+Epoch 192 Completed: 0.461566
+Epoch 193 Completed: 0.461436
+Epoch 194 Completed: 0.466723
+Epoch 195 Completed: 0.470483
+Epoch 196 Completed: 0.467391
+Epoch 197 Completed: 0.464345
+Epoch 198 Completed: 0.462795
+Epoch 199 Completed: 0.462387
+Epoch 200 Completed: 0.462096
+Evaluating on Epoch 200
+F1	Gout	0.643478
+F1	Venous Insufficiency	0.350000
+F1	Gallstones	0.640000
+F1	Hypertension	0.798898
+F1	Obesity	0.830287
+F1	Asthma	0.857143
+F1	GERD	0.256410
+F1	Hypercholesterolemia	0.725367
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.698901
+F1	OSA	0.625000
+F1	OA	0.413146
+F1	PVD	0.585366
+F1	CAD	0.792857
+F1	Depression	0.397590
+F1	Diabetes	0.824225
+Epoch 201 Completed: 0.462101
+Epoch 202 Completed: 0.461711
+Epoch 203 Completed: 0.461563
+Epoch 204 Completed: 0.461817
+Epoch 205 Completed: 0.465799
+Epoch 206 Completed: 0.464260
+Epoch 207 Completed: 0.466252
+Epoch 208 Completed: 0.463167
+Epoch 209 Completed: 0.464260
+Epoch 210 Completed: 0.464453
+Epoch 211 Completed: 0.462940
+Epoch 212 Completed: 0.465701
+Epoch 213 Completed: 0.467908
+Epoch 214 Completed: 0.463099
+Epoch 215 Completed: 0.463244
+Epoch 216 Completed: 0.462662
+Epoch 217 Completed: 0.461717
+Epoch 218 Completed: 0.461577
+Epoch 219 Completed: 0.463411
+Epoch 220 Completed: 0.461906
+Epoch 221 Completed: 0.461321
+Epoch 222 Completed: 0.461108
+Epoch 223 Completed: 0.460975
+Epoch 224 Completed: 0.460727
+Epoch 225 Completed: 0.460736
+Evaluating on Epoch 225
+F1	Gout	0.637931
+F1	Venous Insufficiency	0.341463
+F1	Gallstones	0.627451
+F1	Hypertension	0.808163
+F1	Obesity	0.849105
+F1	Asthma	0.849315
+F1	GERD	0.225352
+F1	Hypercholesterolemia	0.718816
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.718894
+F1	OSA	0.623188
+F1	OA	0.439560
+F1	PVD	0.495868
+F1	CAD	0.782443
+F1	Depression	0.428571
+F1	Diabetes	0.828986
+Epoch 226 Completed: 0.467938
+Epoch 227 Completed: 0.471800
+Epoch 228 Completed: 0.465697
+Epoch 229 Completed: 0.463988
+Epoch 230 Completed: 0.461839
+Epoch 231 Completed: 0.461359
+Epoch 232 Completed: 0.461044
+Epoch 233 Completed: 0.460750
+Epoch 234 Completed: 0.460326
+Epoch 235 Completed: 0.460531
+Epoch 236 Completed: 0.460314
+Epoch 237 Completed: 0.460825
+Epoch 238 Completed: 0.461390
+Epoch 239 Completed: 0.460882
+Epoch 240 Completed: 0.460879
+Epoch 241 Completed: 0.460584
+Epoch 242 Completed: 0.460565
+Epoch 243 Completed: 0.461897
+Epoch 244 Completed: 0.460837
+Epoch 245 Completed: 0.460443
+Epoch 246 Completed: 0.460155
+Epoch 247 Completed: 0.460058
+Epoch 248 Completed: 0.460627
+Epoch 249 Completed: 0.461898
+Epoch 250 Completed: 0.462366
+Saving checkpoint: ./results_2008_final_unfreeze_bert_last_layer/run_2020_03_16_15_27_57_e2b11bf5bd3b/checkpoint_250
+Evaluating on Epoch 250
+F1	Gout	0.614035
+F1	Venous Insufficiency	0.214286
+F1	Gallstones	0.537313
+F1	Hypertension	0.820000
+F1	Obesity	0.821990
+F1	Asthma	0.763158
+F1	GERD	0.197183
+F1	Hypercholesterolemia	0.732852
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.674740
+F1	OSA	0.521008
+F1	OA	0.385787
+F1	PVD	0.554622
+F1	CAD	0.713693
+F1	Depression	0.349650
+F1	Diabetes	0.798151
+Epoch 251 Completed: 0.463635
+Epoch 252 Completed: 0.463299
+Epoch 253 Completed: 0.462421
+Epoch 254 Completed: 0.460868
+Epoch 255 Completed: 0.467191
+Epoch 256 Completed: 0.463375
+Epoch 257 Completed: 0.464800
+Epoch 258 Completed: 0.466681
+Epoch 259 Completed: 0.461820
+Epoch 260 Completed: 0.462675
+Epoch 261 Completed: 0.461881
+Epoch 262 Completed: 0.462434
+Epoch 263 Completed: 0.461123
+Epoch 264 Completed: 0.460918
+Epoch 265 Completed: 0.460912
+Epoch 266 Completed: 0.460278
+Epoch 267 Completed: 0.460201
+Epoch 268 Completed: 0.460017
+Epoch 269 Completed: 0.460896
+Epoch 270 Completed: 0.462064
+Epoch 271 Completed: 0.461743
+Epoch 272 Completed: 0.462220
+Epoch 273 Completed: 0.463992
+Epoch 274 Completed: 0.463561
+Epoch 275 Completed: 0.463442
+Evaluating on Epoch 275
+F1	Gout	0.634146
+F1	Venous Insufficiency	0.285714
+F1	Gallstones	0.616438
+F1	Hypertension	0.805737
+F1	Obesity	0.816327
+F1	Asthma	0.833333
+F1	GERD	0.189781
+F1	Hypercholesterolemia	0.728814
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.710407
+F1	OSA	0.605634
+F1	OA	0.423729
+F1	PVD	0.585366
+F1	CAD	0.786389
+F1	Depression	0.413408
+F1	Diabetes	0.823022
+Epoch 276 Completed: 0.461517
+Epoch 277 Completed: 0.460723
+Epoch 278 Completed: 0.460844
+Epoch 279 Completed: 0.460067
+Epoch 280 Completed: 0.460938
+Epoch 281 Completed: 0.461030
+Epoch 282 Completed: 0.461571
+Epoch 283 Completed: 0.460760
+Epoch 284 Completed: 0.460756
+Epoch 285 Completed: 0.467815
+Epoch 286 Completed: 0.472342
+Epoch 287 Completed: 0.463444
+Epoch 288 Completed: 0.461208
+Epoch 289 Completed: 0.461909
+Epoch 290 Completed: 0.460906
+Epoch 291 Completed: 0.461404
+Epoch 292 Completed: 0.460327
+Epoch 293 Completed: 0.460454
+Epoch 294 Completed: 0.460736
+Epoch 295 Completed: 0.460938
+Epoch 296 Completed: 0.460517
+Epoch 297 Completed: 0.460291
+Epoch 298 Completed: 0.460170
+Epoch 299 Completed: 0.460143
+Epoch 300 Completed: 0.460472
+Evaluating on Epoch 300
+F1	Gout	0.601770
+F1	Venous Insufficiency	0.269231
+F1	Gallstones	0.538462
+F1	Hypertension	0.832924
+F1	Obesity	0.829517
+F1	Asthma	0.861314
+F1	GERD	0.169231
+F1	Hypercholesterolemia	0.730290
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.722689
+F1	OSA	0.602941
+F1	OA	0.425532
+F1	PVD	0.561404
+F1	CAD	0.746450
+F1	Depression	0.395349
+F1	Diabetes	0.828194
+Epoch 301 Completed: 0.460130
+Epoch 302 Completed: 0.460864
+Epoch 303 Completed: 0.461647
+Epoch 304 Completed: 0.461059
+Epoch 305 Completed: 0.460405
+Epoch 306 Completed: 0.460039
+Epoch 307 Completed: 0.460011
+Epoch 308 Completed: 0.459984
+Epoch 309 Completed: 0.459748
+Epoch 310 Completed: 0.462449
+Epoch 311 Completed: 0.461702
+Epoch 312 Completed: 0.461861
+Epoch 313 Completed: 0.460690
+Epoch 314 Completed: 0.460530
+Epoch 315 Completed: 0.460372
+Epoch 316 Completed: 0.461515
+Epoch 317 Completed: 0.460567
+Epoch 318 Completed: 0.461263
+Epoch 319 Completed: 0.460354
+Epoch 320 Completed: 0.460117
+Epoch 321 Completed: 0.460104
+Epoch 322 Completed: 0.459877
+Epoch 323 Completed: 0.462184
+Epoch 324 Completed: 0.462926
+Epoch 325 Completed: 0.463781
+Evaluating on Epoch 325
+F1	Gout	0.590476
+F1	Venous Insufficiency	0.325581
+F1	Gallstones	0.558824
+F1	Hypertension	0.787551
+F1	Obesity	0.805405
+F1	Asthma	0.816901
+F1	GERD	0.208955
+F1	Hypercholesterolemia	0.756238
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.669903
+F1	OSA	0.595745
+F1	OA	0.400000
+F1	PVD	0.571429
+F1	CAD	0.786765
+F1	Depression	0.391892
+F1	Diabetes	0.794603
+Epoch 326 Completed: 0.463900
+Epoch 327 Completed: 0.462600
+Epoch 328 Completed: 0.462725
+Epoch 329 Completed: 0.461492
+Epoch 330 Completed: 0.461248
+Epoch 331 Completed: 0.460718
+Epoch 332 Completed: 0.461729
+Epoch 333 Completed: 0.461485
+Epoch 334 Completed: 0.460253
+Epoch 335 Completed: 0.459910
+Epoch 336 Completed: 0.459987
+Epoch 337 Completed: 0.459769
+Epoch 338 Completed: 0.459712
+Epoch 339 Completed: 0.459837
+Epoch 340 Completed: 0.459746
+Epoch 341 Completed: 0.460156
+Epoch 342 Completed: 0.459983
+Epoch 343 Completed: 0.459745
+Epoch 344 Completed: 0.459560
+Epoch 345 Completed: 0.459575
+Epoch 346 Completed: 0.459629
+Epoch 347 Completed: 0.459554
+Epoch 348 Completed: 0.460268
+Epoch 349 Completed: 0.463325
+Epoch 350 Completed: 0.462874
+Evaluating on Epoch 350
+F1	Gout	0.592593
+F1	Venous Insufficiency	0.279070
+F1	Gallstones	0.564885
+F1	Hypertension	0.710692
+F1	Obesity	0.818898
+F1	Asthma	0.867647
+F1	GERD	0.179310
+F1	Hypercholesterolemia	0.755299
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.679070
+F1	OSA	0.606061
+F1	OA	0.336134
+F1	PVD	0.500000
+F1	CAD	0.789762
+F1	Depression	0.425000
+F1	Diabetes	0.825444
+Epoch 351 Completed: 0.460916
+Epoch 352 Completed: 0.464427
+Epoch 353 Completed: 0.463954
+Epoch 354 Completed: 0.464742
+Epoch 355 Completed: 0.462535
+Epoch 356 Completed: 0.460683
+Epoch 357 Completed: 0.460412
+Epoch 358 Completed: 0.460030
+Epoch 359 Completed: 0.459831
+Epoch 360 Completed: 0.461012
+Epoch 361 Completed: 0.460043
+Epoch 362 Completed: 0.459857
+Epoch 363 Completed: 0.459683
+Epoch 364 Completed: 0.460006
+Epoch 365 Completed: 0.460151
+Epoch 366 Completed: 0.460159
+Epoch 367 Completed: 0.459746
+Epoch 368 Completed: 0.459615
+Epoch 369 Completed: 0.459936
+Epoch 370 Completed: 0.459733
+Epoch 371 Completed: 0.459904
+Epoch 372 Completed: 0.460279
+Epoch 373 Completed: 0.460648
+Epoch 374 Completed: 0.459759
+Epoch 375 Completed: 0.460880
+Evaluating on Epoch 375
+F1	Gout	0.628571
+F1	Venous Insufficiency	0.285714
+F1	Gallstones	0.550000
+F1	Hypertension	0.820972
+F1	Obesity	0.822917
+F1	Asthma	0.852713
+F1	GERD	0.187050
+F1	Hypercholesterolemia	0.756957
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.704403
+F1	OSA	0.578947
+F1	OA	0.468900
+F1	PVD	0.540881
+F1	CAD	0.749499
+F1	Depression	0.427746
+F1	Diabetes	0.832418
+Epoch 376 Completed: 0.463743
+Epoch 377 Completed: 0.463889
+Epoch 378 Completed: 0.461589
+Epoch 379 Completed: 0.460884
+Epoch 380 Completed: 0.460548
+Epoch 381 Completed: 0.461073
+Epoch 382 Completed: 0.460279
+Epoch 383 Completed: 0.461599
+Epoch 384 Completed: 0.461276
+Epoch 385 Completed: 0.461730
+Epoch 386 Completed: 0.460089
+Epoch 387 Completed: 0.460360
+Epoch 388 Completed: 0.459612
+Epoch 389 Completed: 0.459703
+Epoch 390 Completed: 0.459839
+Epoch 391 Completed: 0.460558
+Epoch 392 Completed: 0.462142
+Epoch 393 Completed: 0.459941
+Epoch 394 Completed: 0.459918
+Epoch 395 Completed: 0.460485
+Epoch 396 Completed: 0.460700
+Epoch 397 Completed: 0.462187
+Epoch 398 Completed: 0.460614
+Epoch 399 Completed: 0.459881
+Epoch 400 Completed: 0.460693
+Evaluating on Epoch 400
+F1	Gout	0.641509
+F1	Venous Insufficiency	0.205128
+F1	Gallstones	0.608696
+F1	Hypertension	0.815508
+F1	Obesity	0.830918
+F1	Asthma	0.784000
+F1	GERD	0.231293
+F1	Hypercholesterolemia	0.745562
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.738255
+F1	OSA	0.596774
+F1	OA	0.447059
+F1	PVD	0.576271
+F1	CAD	0.763359
+F1	Depression	0.411111
+F1	Diabetes	0.809741
+Epoch 401 Completed: 0.460481
+Epoch 402 Completed: 0.459648
+Epoch 403 Completed: 0.459688
+Epoch 404 Completed: 0.460147
+Epoch 405 Completed: 0.459674
+Epoch 406 Completed: 0.459846
+Epoch 407 Completed: 0.459618
+Epoch 408 Completed: 0.460796
+Epoch 409 Completed: 0.462297
+Epoch 410 Completed: 0.460306
+Epoch 411 Completed: 0.459835
+Epoch 412 Completed: 0.459669
+Epoch 413 Completed: 0.459807
+Epoch 414 Completed: 0.459868
+Epoch 415 Completed: 0.459694
+Epoch 416 Completed: 0.459753
+Epoch 417 Completed: 0.459902
+Epoch 418 Completed: 0.460097
+Epoch 419 Completed: 0.460757
+Epoch 420 Completed: 0.459712
+Epoch 421 Completed: 0.460016
+Epoch 422 Completed: 0.460695
+Epoch 423 Completed: 0.460216
+Epoch 424 Completed: 0.460140
+Epoch 425 Completed: 0.459858
+Evaluating on Epoch 425
+F1	Gout	0.605505
+F1	Venous Insufficiency	0.222222
+F1	Gallstones	0.628205
+F1	Hypertension	0.830334
+F1	Obesity	0.830000
+F1	Asthma	0.816901
+F1	GERD	0.282051
+F1	Hypercholesterolemia	0.747433
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.705882
+F1	OSA	0.624000
+F1	OA	0.464646
+F1	PVD	0.500000
+F1	CAD	0.784906
+F1	Depression	0.457711
+F1	Diabetes	0.834553
+Epoch 426 Completed: 0.460347
+Epoch 427 Completed: 0.459775
+Epoch 428 Completed: 0.459459
+Epoch 429 Completed: 0.459396
+Epoch 430 Completed: 0.459406
+Epoch 431 Completed: 0.459648
+Epoch 432 Completed: 0.461438
+Epoch 433 Completed: 0.461187
+Epoch 434 Completed: 0.463912
+Epoch 435 Completed: 0.462220
+Epoch 436 Completed: 0.462033
+Epoch 437 Completed: 0.463135
+Epoch 438 Completed: 0.463693
+Epoch 439 Completed: 0.460611
+Epoch 440 Completed: 0.460004
+Epoch 441 Completed: 0.461629
+Epoch 442 Completed: 0.460420
+Epoch 443 Completed: 0.459715
+Epoch 444 Completed: 0.459501
+Epoch 445 Completed: 0.459788
+Epoch 446 Completed: 0.459704
+Epoch 447 Completed: 0.459344
+Epoch 448 Completed: 0.459238
+Epoch 449 Completed: 0.459318
+Epoch 450 Completed: 0.459537
+Evaluating on Epoch 450
+F1	Gout	0.568627
+F1	Venous Insufficiency	0.263158
+F1	Gallstones	0.573529
+F1	Hypertension	0.814913
+F1	Obesity	0.847716
+F1	Asthma	0.836601
+F1	GERD	0.226667
+F1	Hypercholesterolemia	0.753968
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.736364
+F1	OSA	0.619718
+F1	OA	0.417178
+F1	PVD	0.576577
+F1	CAD	0.768340
+F1	Depression	0.456522
+F1	Diabetes	0.848315
+Epoch 451 Completed: 0.460494
+Epoch 452 Completed: 0.461733
+Epoch 453 Completed: 0.459910
+Epoch 454 Completed: 0.460454
+Epoch 455 Completed: 0.459703
+Epoch 456 Completed: 0.459489
+Epoch 457 Completed: 0.459213
+Epoch 458 Completed: 0.459352
+Epoch 459 Completed: 0.459328
+Epoch 460 Completed: 0.459623
+Epoch 461 Completed: 0.462642
+Epoch 462 Completed: 0.460403
+Epoch 463 Completed: 0.460131
+Epoch 464 Completed: 0.459598
+Epoch 465 Completed: 0.459521
+Epoch 466 Completed: 0.459775
+Epoch 467 Completed: 0.459369
+Epoch 468 Completed: 0.459487
+Epoch 469 Completed: 0.459340
+Epoch 470 Completed: 0.459782
+Epoch 471 Completed: 0.459345
+Epoch 472 Completed: 0.459350
+Epoch 473 Completed: 0.459291
+Epoch 474 Completed: 0.459307
+Epoch 475 Completed: 0.459400
+Evaluating on Epoch 475
+F1	Gout	0.605505
+F1	Venous Insufficiency	0.368421
+F1	Gallstones	0.549618
+F1	Hypertension	0.766764
+F1	Obesity	0.804233
+F1	Asthma	0.829630
+F1	GERD	0.211921
+F1	Hypercholesterolemia	0.750988
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.721239
+F1	OSA	0.598540
+F1	OA	0.422111
+F1	PVD	0.536585
+F1	CAD	0.781481
+F1	Depression	0.435754
+F1	Diabetes	0.800591
+Epoch 476 Completed: 0.459303
+Epoch 477 Completed: 0.459683
+Epoch 478 Completed: 0.459437
+Epoch 479 Completed: 0.459892
+Epoch 480 Completed: 0.459461
+Epoch 481 Completed: 0.460972
+Epoch 482 Completed: 0.461535
+Epoch 483 Completed: 0.463687
+Epoch 484 Completed: 0.465018
+Epoch 485 Completed: 0.465298
+Epoch 486 Completed: 0.463482
+Epoch 487 Completed: 0.462553
+Epoch 488 Completed: 0.462985
+Epoch 489 Completed: 0.460547
+Epoch 490 Completed: 0.459866
+Epoch 491 Completed: 0.461802
+Epoch 492 Completed: 0.460495
+Epoch 493 Completed: 0.460832
+Epoch 494 Completed: 0.459622
+Epoch 495 Completed: 0.459787
+Epoch 496 Completed: 0.459564
+Epoch 497 Completed: 0.459618
+Epoch 498 Completed: 0.459325
+Epoch 499 Completed: 0.459544
+Epoch 500 Completed: 0.459239
+Saving checkpoint: ./results_2008_final_unfreeze_bert_last_layer/run_2020_03_16_15_27_57_e2b11bf5bd3b/checkpoint_500
+Evaluating on Epoch 500
+F1	Gout	0.642857
+F1	Venous Insufficiency	0.266667
+F1	Gallstones	0.635762
+F1	Hypertension	0.822751
+F1	Obesity	0.840506
+F1	Asthma	0.829630
+F1	GERD	0.160584
+F1	Hypercholesterolemia	0.750491
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.742597
+F1	OSA	0.558140
+F1	OA	0.419890
+F1	PVD	0.574074
+F1	CAD	0.792593
+F1	Depression	0.371585
+F1	Diabetes	0.822995
+Epoch 501 Completed: 0.459157
+Epoch 502 Completed: 0.459282
+Epoch 503 Completed: 0.459591
+Epoch 504 Completed: 0.459244
+Epoch 505 Completed: 0.459581
+Epoch 506 Completed: 0.459795
+Epoch 507 Completed: 0.459686
+Epoch 508 Completed: 0.459788
+Epoch 509 Completed: 0.460182
+Epoch 510 Completed: 0.459740
+Epoch 511 Completed: 0.460271
+Epoch 512 Completed: 0.461356
+Epoch 513 Completed: 0.461336
+Epoch 514 Completed: 0.462298
+Epoch 515 Completed: 0.459781
+Epoch 516 Completed: 0.459600
+Epoch 517 Completed: 0.459616
+Epoch 518 Completed: 0.459414
+Epoch 519 Completed: 0.459767
+Epoch 520 Completed: 0.459364
+Epoch 521 Completed: 0.459324
+Epoch 522 Completed: 0.459227
+Epoch 523 Completed: 0.461240
+Epoch 524 Completed: 0.465474
+Epoch 525 Completed: 0.463786
+Evaluating on Epoch 525
+F1	Gout	0.576577
+F1	Venous Insufficiency	0.212766
+F1	Gallstones	0.558140
+F1	Hypertension	0.813648
+F1	Obesity	0.760085
+F1	Asthma	0.844444
+F1	GERD	0.282209
+F1	Hypercholesterolemia	0.729412
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.713217
+F1	OSA	0.569444
+F1	OA	0.430622
+F1	PVD	0.505263
+F1	CAD	0.771593
+F1	Depression	0.394904
+F1	Diabetes	0.818605
+Epoch 526 Completed: 0.460896
+Epoch 527 Completed: 0.461031
+Epoch 528 Completed: 0.460489
+Epoch 529 Completed: 0.460875
+Epoch 530 Completed: 0.460225
+Epoch 531 Completed: 0.459643
+Epoch 532 Completed: 0.459404
+Epoch 533 Completed: 0.459332
+Epoch 534 Completed: 0.459489
+Epoch 535 Completed: 0.459858
+Epoch 536 Completed: 0.460951
+Epoch 537 Completed: 0.459566
+Epoch 538 Completed: 0.459440
+Epoch 539 Completed: 0.460263
+Epoch 540 Completed: 0.459191
+Epoch 541 Completed: 0.459168
+Epoch 542 Completed: 0.459193
+Epoch 543 Completed: 0.459571
+Epoch 544 Completed: 0.459749
+Epoch 545 Completed: 0.459108
+Epoch 546 Completed: 0.459173
+Epoch 547 Completed: 0.461536
+Epoch 548 Completed: 0.460668
+Epoch 549 Completed: 0.462290
+Epoch 550 Completed: 0.460631
+Evaluating on Epoch 550
+F1	Gout	0.606557
+F1	Venous Insufficiency	0.217391
+F1	Gallstones	0.641026
+F1	Hypertension	0.751479
+F1	Obesity	0.833787
+F1	Asthma	0.791045
+F1	GERD	0.209790
+F1	Hypercholesterolemia	0.759690
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.702041
+F1	OSA	0.559441
+F1	OA	0.390476
+F1	PVD	0.521008
+F1	CAD	0.784946
+F1	Depression	0.460733
+F1	Diabetes	0.819625
+Epoch 551 Completed: 0.459771
+Epoch 552 Completed: 0.462422
+Epoch 553 Completed: 0.459591
+Epoch 554 Completed: 0.459532
+Epoch 555 Completed: 0.459678
+Epoch 556 Completed: 0.459463
+Epoch 557 Completed: 0.459907
+Epoch 558 Completed: 0.459366
+Epoch 559 Completed: 0.460623
+Epoch 560 Completed: 0.459302
+Epoch 561 Completed: 0.459476
+Epoch 562 Completed: 0.459606
+Epoch 563 Completed: 0.459476
+Epoch 564 Completed: 0.459393
+Epoch 565 Completed: 0.459190
+Epoch 566 Completed: 0.460310
+Epoch 567 Completed: 0.459224
+Epoch 568 Completed: 0.459737
+Epoch 569 Completed: 0.460175
+Epoch 570 Completed: 0.460789
+Epoch 571 Completed: 0.461299
+Epoch 572 Completed: 0.459581
+Epoch 573 Completed: 0.461600
+Epoch 574 Completed: 0.464332
+Epoch 575 Completed: 0.460486
+Evaluating on Epoch 575
+F1	Gout	0.573913
+F1	Venous Insufficiency	0.269231
+F1	Gallstones	0.578313
+F1	Hypertension	0.800525
+F1	Obesity	0.820106
+F1	Asthma	0.861111
+F1	GERD	0.125984
+F1	Hypercholesterolemia	0.719149
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.739606
+F1	OSA	0.577778
+F1	OA	0.457143
+F1	PVD	0.578947
+F1	CAD	0.746212
+F1	Depression	0.391960
+F1	Diabetes	0.801802
+Epoch 576 Completed: 0.460609
+Epoch 577 Completed: 0.459459
+Epoch 578 Completed: 0.460249
+Epoch 579 Completed: 0.459311
+Epoch 580 Completed: 0.459437
+Epoch 581 Completed: 0.459514
+Epoch 582 Completed: 0.459258
+Epoch 583 Completed: 0.459364
+Epoch 584 Completed: 0.459035
+Epoch 585 Completed: 0.459055
+Epoch 586 Completed: 0.459163
+Epoch 587 Completed: 0.459791
+Epoch 588 Completed: 0.463503
+Epoch 589 Completed: 0.461948
+Epoch 590 Completed: 0.462690
+Epoch 591 Completed: 0.460516
+Epoch 592 Completed: 0.458936
+Epoch 593 Completed: 0.460845
+Epoch 594 Completed: 0.459292
+Epoch 595 Completed: 0.458673
+Epoch 596 Completed: 0.459396
+Epoch 597 Completed: 0.459219
+Epoch 598 Completed: 0.458659
+Epoch 599 Completed: 0.458733
+Epoch 600 Completed: 0.458821
+Evaluating on Epoch 600
+F1	Gout	0.625000
+F1	Venous Insufficiency	0.279070
+F1	Gallstones	0.607595
+F1	Hypertension	0.786096
+F1	Obesity	0.847291
+F1	Asthma	0.844444
+F1	GERD	0.157480
+F1	Hypercholesterolemia	0.751423
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.708520
+F1	OSA	0.622222
+F1	OA	0.470000
+F1	PVD	0.590164
+F1	CAD	0.774775
+F1	Depression	0.457143
+F1	Diabetes	0.848576
+Epoch 601 Completed: 0.458635
+Epoch 602 Completed: 0.458582
+Epoch 603 Completed: 0.458700
+Epoch 604 Completed: 0.458594
+Epoch 605 Completed: 0.458612
+Epoch 606 Completed: 0.458726
+Epoch 607 Completed: 0.458704
+Epoch 608 Completed: 0.458712
+Epoch 609 Completed: 0.458551
+Epoch 610 Completed: 0.458549
+Epoch 611 Completed: 0.459094
+Epoch 612 Completed: 0.458752
+Epoch 613 Completed: 0.458618
+Epoch 614 Completed: 0.458567
+Epoch 615 Completed: 0.458512
+Epoch 616 Completed: 0.458506
+Epoch 617 Completed: 0.458781
+Epoch 618 Completed: 0.459660
+Epoch 619 Completed: 0.458918
+Epoch 620 Completed: 0.459805
+Epoch 621 Completed: 0.459932
+Epoch 622 Completed: 0.458708
+Epoch 623 Completed: 0.458958
+Epoch 624 Completed: 0.460367
+Epoch 625 Completed: 0.460097
+Evaluating on Epoch 625
+F1	Gout	0.678571
+F1	Venous Insufficiency	0.280000
+F1	Gallstones	0.621951
+F1	Hypertension	0.812500
+F1	Obesity	0.841026
+F1	Asthma	0.835616
+F1	GERD	0.055046
+F1	Hypercholesterolemia	0.770093
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.698901
+F1	OSA	0.569106
+F1	OA	0.435233
+F1	PVD	0.610687
+F1	CAD	0.762617
+F1	Depression	0.326241
+F1	Diabetes	0.850299
+Epoch 626 Completed: 0.459316
+Epoch 627 Completed: 0.458976
+Epoch 628 Completed: 0.458923
+Epoch 629 Completed: 0.458809
+Epoch 630 Completed: 0.458725
+Epoch 631 Completed: 0.458805
+Epoch 632 Completed: 0.459241
+Epoch 633 Completed: 0.458842
+Epoch 634 Completed: 0.458772
+Epoch 635 Completed: 0.458854
+Epoch 636 Completed: 0.459622
+Epoch 637 Completed: 0.459389
+Epoch 638 Completed: 0.459349
+Epoch 639 Completed: 0.461908
+Epoch 640 Completed: 0.460674
+Epoch 641 Completed: 0.459760
+Epoch 642 Completed: 0.459520
+Epoch 643 Completed: 0.459043
+Epoch 644 Completed: 0.459045
+Epoch 645 Completed: 0.458829
+Epoch 646 Completed: 0.458675
+Epoch 647 Completed: 0.459664
+Epoch 648 Completed: 0.459155
+Epoch 649 Completed: 0.458706
+Epoch 650 Completed: 0.458583
+Evaluating on Epoch 650
+F1	Gout	0.634146
+F1	Venous Insufficiency	0.250000
+F1	Gallstones	0.639456
+F1	Hypertension	0.810256
+F1	Obesity	0.822943
+F1	Asthma	0.843537
+F1	GERD	0.271739
+F1	Hypercholesterolemia	0.746615
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.732632
+F1	OSA	0.565217
+F1	OA	0.451613
+F1	PVD	0.563107
+F1	CAD	0.768946
+F1	Depression	0.455556
+F1	Diabetes	0.804348
+Epoch 651 Completed: 0.458560
+Epoch 652 Completed: 0.458709
+Epoch 653 Completed: 0.458633
+Epoch 654 Completed: 0.458637
+Epoch 655 Completed: 0.458899
+Epoch 656 Completed: 0.458879
+Epoch 657 Completed: 0.459031
+Epoch 658 Completed: 0.459327
+Epoch 659 Completed: 0.459822
+Epoch 660 Completed: 0.458853
+Epoch 661 Completed: 0.459222
+Epoch 662 Completed: 0.458742
+Epoch 663 Completed: 0.458763
+Epoch 664 Completed: 0.458993
+Epoch 665 Completed: 0.459165
+Epoch 666 Completed: 0.459332
+Epoch 667 Completed: 0.459582
+Epoch 668 Completed: 0.458947
+Epoch 669 Completed: 0.460424
+Epoch 670 Completed: 0.459668
+Epoch 671 Completed: 0.460202
+Epoch 672 Completed: 0.461715
+Epoch 673 Completed: 0.468106
+Epoch 674 Completed: 0.462260
+Epoch 675 Completed: 0.459238
+Evaluating on Epoch 675
+F1	Gout	0.606061
+F1	Venous Insufficiency	0.320000
+F1	Gallstones	0.582090
+F1	Hypertension	0.821745
+F1	Obesity	0.795918
+F1	Asthma	0.764331
+F1	GERD	0.136364
+F1	Hypercholesterolemia	0.729560
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.720682
+F1	OSA	0.557823
+F1	OA	0.451282
+F1	PVD	0.485981
+F1	CAD	0.767528
+F1	Depression	0.445652
+F1	Diabetes	0.815830
+Epoch 676 Completed: 0.458764
+Epoch 677 Completed: 0.458802
+Epoch 678 Completed: 0.458856
+Epoch 679 Completed: 0.458903
+Epoch 680 Completed: 0.458861
+Epoch 681 Completed: 0.458587
+Epoch 682 Completed: 0.458640
+Epoch 683 Completed: 0.458542
+Epoch 684 Completed: 0.458555
+Epoch 685 Completed: 0.458580
+Epoch 686 Completed: 0.458647
+Epoch 687 Completed: 0.458599
+Epoch 688 Completed: 0.458616
+Epoch 689 Completed: 0.458528
+Epoch 690 Completed: 0.458555
+Epoch 691 Completed: 0.458527
+Epoch 692 Completed: 0.458662
+Epoch 693 Completed: 0.458749
+Epoch 694 Completed: 0.460066
+Epoch 695 Completed: 0.459054
+Epoch 696 Completed: 0.459138
+Epoch 697 Completed: 0.458664
+Epoch 698 Completed: 0.458537
+Epoch 699 Completed: 0.458589
+Epoch 700 Completed: 0.458526
+Evaluating on Epoch 700
+F1	Gout	0.650407
+F1	Venous Insufficiency	0.285714
+F1	Gallstones	0.588235
+F1	Hypertension	0.843945
+F1	Obesity	0.821429
+F1	Asthma	0.830986
+F1	GERD	0.188976
+F1	Hypercholesterolemia	0.732673
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.723684
+F1	OSA	0.578125
+F1	OA	0.421053
+F1	PVD	0.560000
+F1	CAD	0.786642
+F1	Depression	0.429448
+F1	Diabetes	0.827481
+Epoch 701 Completed: 0.459737
+Epoch 702 Completed: 0.458995
+Epoch 703 Completed: 0.459488
+Epoch 704 Completed: 0.458944
+Epoch 705 Completed: 0.459905
+Epoch 706 Completed: 0.459201
+Epoch 707 Completed: 0.459573
+Epoch 708 Completed: 0.460760
+Epoch 709 Completed: 0.461993
+Epoch 710 Completed: 0.461287
+Epoch 711 Completed: 0.460608
+Epoch 712 Completed: 0.459890
+Epoch 713 Completed: 0.459576
+Epoch 714 Completed: 0.459486
+Epoch 715 Completed: 0.459395
+Epoch 716 Completed: 0.459294
+Epoch 717 Completed: 0.458796
+Epoch 718 Completed: 0.459258
+Epoch 719 Completed: 0.458745
+Epoch 720 Completed: 0.458808
+Epoch 721 Completed: 0.458775
+Epoch 722 Completed: 0.459248
+Epoch 723 Completed: 0.458884
+Epoch 724 Completed: 0.458696
+Epoch 725 Completed: 0.458620
+Evaluating on Epoch 725
+F1	Gout	0.682540
+F1	Venous Insufficiency	0.274510
+F1	Gallstones	0.614286
+F1	Hypertension	0.819121
+F1	Obesity	0.835381
+F1	Asthma	0.832215
+F1	GERD	0.258993
+F1	Hypercholesterolemia	0.754039
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.715884
+F1	OSA	0.569444
+F1	OA	0.446429
+F1	PVD	0.489796
+F1	CAD	0.774312
+F1	Depression	0.455556
+F1	Diabetes	0.838039
+Epoch 726 Completed: 0.458580
+Epoch 727 Completed: 0.458553
+Epoch 728 Completed: 0.458708
+Epoch 729 Completed: 0.460844
+Epoch 730 Completed: 0.463298
+Epoch 731 Completed: 0.461199
+Epoch 732 Completed: 0.459389
+Epoch 733 Completed: 0.459083
+Epoch 734 Completed: 0.458761
+Epoch 735 Completed: 0.458925
+Epoch 736 Completed: 0.458589
+Epoch 737 Completed: 0.458606
+Epoch 738 Completed: 0.458539
+Epoch 739 Completed: 0.458514
+Epoch 740 Completed: 0.458523
+Epoch 741 Completed: 0.458515
+Epoch 742 Completed: 0.458737
+Epoch 743 Completed: 0.458832
+Epoch 744 Completed: 0.458629
+Epoch 745 Completed: 0.461080
+Epoch 746 Completed: 0.458602
+Epoch 747 Completed: 0.458177
+Epoch 748 Completed: 0.458101
+Epoch 749 Completed: 0.458523
+Epoch 750 Completed: 0.458659
+Saving checkpoint: ./results_2008_final_unfreeze_bert_last_layer/run_2020_03_16_15_27_57_e2b11bf5bd3b/checkpoint_750
+Evaluating on Epoch 750
+F1	Gout	0.650794
+F1	Venous Insufficiency	0.255319
+F1	Gallstones	0.566929
+F1	Hypertension	0.830380
+F1	Obesity	0.813131
+F1	Asthma	0.859155
+F1	GERD	0.217687
+F1	Hypercholesterolemia	0.756458
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.718053
+F1	OSA	0.619718
+F1	OA	0.466321
+F1	PVD	0.580153
+F1	CAD	0.796296
+F1	Depression	0.451613
+F1	Diabetes	0.850214
+Epoch 751 Completed: 0.457953
+Epoch 752 Completed: 0.457875
+Epoch 753 Completed: 0.458033
+Epoch 754 Completed: 0.458937
+Epoch 755 Completed: 0.458331
+Epoch 756 Completed: 0.458130
+Epoch 757 Completed: 0.457985
+Epoch 758 Completed: 0.458081
+Epoch 759 Completed: 0.458091
+Epoch 760 Completed: 0.457880
+Epoch 761 Completed: 0.458050
+Epoch 762 Completed: 0.458269
+Epoch 763 Completed: 0.458161
+Epoch 764 Completed: 0.462700
+Epoch 765 Completed: 0.461943
+Epoch 766 Completed: 0.460829
+Epoch 767 Completed: 0.459379
+Epoch 768 Completed: 0.458784
+Epoch 769 Completed: 0.458748
+Epoch 770 Completed: 0.458715
+Epoch 771 Completed: 0.458294
+Epoch 772 Completed: 0.458133
+Epoch 773 Completed: 0.458319
+Epoch 774 Completed: 0.459205
+Epoch 775 Completed: 0.458515
+Evaluating on Epoch 775
+F1	Gout	0.611570
+F1	Venous Insufficiency	0.243902
+F1	Gallstones	0.577114
+F1	Hypertension	0.814910
+F1	Obesity	0.829517
+F1	Asthma	0.833333
+F1	GERD	0.302326
+F1	Hypercholesterolemia	0.747331
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.698198
+F1	OSA	0.623188
+F1	OA	0.462882
+F1	PVD	0.466667
+F1	CAD	0.762617
+F1	Depression	0.375000
+F1	Diabetes	0.780165
+Epoch 776 Completed: 0.458863
+Epoch 777 Completed: 0.458318
+Epoch 778 Completed: 0.458001
+Epoch 779 Completed: 0.457997
+Epoch 780 Completed: 0.458098
+Epoch 781 Completed: 0.457988
+Epoch 782 Completed: 0.457902
+Epoch 783 Completed: 0.457872
+Epoch 784 Completed: 0.457911
+Epoch 785 Completed: 0.458035
+Epoch 786 Completed: 0.457898
+Epoch 787 Completed: 0.458068
+Epoch 788 Completed: 0.458157
+Epoch 789 Completed: 0.458267
+Epoch 790 Completed: 0.457966
+Epoch 791 Completed: 0.457934
+Epoch 792 Completed: 0.457989
+Epoch 793 Completed: 0.457971
+Epoch 794 Completed: 0.457934
+Epoch 795 Completed: 0.460037
+Epoch 796 Completed: 0.459157
+Epoch 797 Completed: 0.458625
+Epoch 798 Completed: 0.458621
+Epoch 799 Completed: 0.458649
+Epoch 800 Completed: 0.458230
+Evaluating on Epoch 800
+F1	Gout	0.624000
+F1	Venous Insufficiency	0.222222
+F1	Gallstones	0.564516
+F1	Hypertension	0.826362
+F1	Obesity	0.805405
+F1	Asthma	0.833333
+F1	GERD	0.192000
+F1	Hypercholesterolemia	0.724947
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.710638
+F1	OSA	0.601504
+F1	OA	0.440860
+F1	PVD	0.587302
+F1	CAD	0.774423
+F1	Depression	0.400000
+F1	Diabetes	0.849926
+Epoch 801 Completed: 0.458120
+Epoch 802 Completed: 0.458201
+Epoch 803 Completed: 0.460018
+Epoch 804 Completed: 0.459172
+Epoch 805 Completed: 0.458576
+Epoch 806 Completed: 0.458717
+Epoch 807 Completed: 0.458069
+Epoch 808 Completed: 0.458420
+Epoch 809 Completed: 0.458055
+Epoch 810 Completed: 0.457876
+Epoch 811 Completed: 0.457956
+Epoch 812 Completed: 0.458083
+Epoch 813 Completed: 0.457889
+Epoch 814 Completed: 0.458142
+Epoch 815 Completed: 0.458101
+Epoch 816 Completed: 0.457873
+Epoch 817 Completed: 0.457875
+Epoch 818 Completed: 0.457930
+Epoch 819 Completed: 0.457926
+Epoch 820 Completed: 0.462452
+Epoch 821 Completed: 0.461874
+Epoch 822 Completed: 0.459190
+Epoch 823 Completed: 0.459036
+Epoch 824 Completed: 0.459199
+Epoch 825 Completed: 0.459410
+Evaluating on Epoch 825
+F1	Gout	0.672897
+F1	Venous Insufficiency	0.235294
+F1	Gallstones	0.560606
+F1	Hypertension	0.807742
+F1	Obesity	0.842365
+F1	Asthma	0.802632
+F1	GERD	0.305732
+F1	Hypercholesterolemia	0.730845
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.706161
+F1	OSA	0.601504
+F1	OA	0.485714
+F1	PVD	0.576271
+F1	CAD	0.764133
+F1	Depression	0.449761
+F1	Diabetes	0.849112
+Epoch 826 Completed: 0.458443
+Epoch 827 Completed: 0.458195
+Epoch 828 Completed: 0.458191
+Epoch 829 Completed: 0.457997
+Epoch 830 Completed: 0.458013
+Epoch 831 Completed: 0.458217
+Epoch 832 Completed: 0.457983
+Epoch 833 Completed: 0.458092
+Epoch 834 Completed: 0.458088
+Epoch 835 Completed: 0.457901
+Epoch 836 Completed: 0.459318
+Epoch 837 Completed: 0.459588
+Epoch 838 Completed: 0.459859
+Epoch 839 Completed: 0.458637
+Epoch 840 Completed: 0.458806
+Epoch 841 Completed: 0.458622
+Epoch 842 Completed: 0.458196
+Epoch 843 Completed: 0.458255
+Epoch 844 Completed: 0.458038
+Epoch 845 Completed: 0.457895
+Epoch 846 Completed: 0.457889
+Epoch 847 Completed: 0.457864
+Epoch 848 Completed: 0.457925
+Epoch 849 Completed: 0.457872
+Epoch 850 Completed: 0.457868
+Evaluating on Epoch 850
+F1	Gout	0.604317
+F1	Venous Insufficiency	0.166667
+F1	Gallstones	0.662338
+F1	Hypertension	0.823377
+F1	Obesity	0.848485
+F1	Asthma	0.786667
+F1	GERD	0.186441
+F1	Hypercholesterolemia	0.752437
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.721382
+F1	OSA	0.595745
+F1	OA	0.440191
+F1	PVD	0.545455
+F1	CAD	0.770642
+F1	Depression	0.381503
+F1	Diabetes	0.838806
+Epoch 851 Completed: 0.457841
+Epoch 852 Completed: 0.457880
+Epoch 853 Completed: 0.457909
+Epoch 854 Completed: 0.457882
+Epoch 855 Completed: 0.457961
+Epoch 856 Completed: 0.457834
+Epoch 857 Completed: 0.457912
+Epoch 858 Completed: 0.457863
+Epoch 859 Completed: 0.457883
+Epoch 860 Completed: 0.457903
+Epoch 861 Completed: 0.457965
+Epoch 862 Completed: 0.459676
+Epoch 863 Completed: 0.460852
+Epoch 864 Completed: 0.460338
+Epoch 865 Completed: 0.460951
+Epoch 866 Completed: 0.461507
+Epoch 867 Completed: 0.459404
+Epoch 868 Completed: 0.458451
+Epoch 869 Completed: 0.458245
+Epoch 870 Completed: 0.458861
+Epoch 871 Completed: 0.458339
+Epoch 872 Completed: 0.458347
+Epoch 873 Completed: 0.458245
+Epoch 874 Completed: 0.459059
+Epoch 875 Completed: 0.458045
+Evaluating on Epoch 875
+F1	Gout	0.596491
+F1	Venous Insufficiency	0.200000
+F1	Gallstones	0.573529
+F1	Hypertension	0.812010
+F1	Obesity	0.828125
+F1	Asthma	0.845070
+F1	GERD	0.280255
+F1	Hypercholesterolemia	0.740310
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.723404
+F1	OSA	0.637037
+F1	OA	0.445498
+F1	PVD	0.539683
+F1	CAD	0.777778
+F1	Depression	0.402116
+F1	Diabetes	0.838527
+Epoch 876 Completed: 0.458007
+Epoch 877 Completed: 0.458020
+Epoch 878 Completed: 0.457916
+Epoch 879 Completed: 0.457949
+Epoch 880 Completed: 0.457983
+Epoch 881 Completed: 0.458572
+Epoch 882 Completed: 0.458007
+Epoch 883 Completed: 0.458041
+Epoch 884 Completed: 0.458097
+Epoch 885 Completed: 0.457885
+Epoch 886 Completed: 0.458053
+Epoch 887 Completed: 0.457898
+Epoch 888 Completed: 0.457831
+Epoch 889 Completed: 0.457930
+Epoch 890 Completed: 0.457912
+Epoch 891 Completed: 0.459102
+Epoch 892 Completed: 0.458204
+Epoch 893 Completed: 0.458486
+Epoch 894 Completed: 0.458054
+Epoch 895 Completed: 0.458350
+Epoch 896 Completed: 0.457976
+Epoch 897 Completed: 0.457866
+Epoch 898 Completed: 0.463200
+Epoch 899 Completed: 0.459820
+Epoch 900 Completed: 0.459085
+Evaluating on Epoch 900
+F1	Gout	0.638655
+F1	Venous Insufficiency	0.216216
+F1	Gallstones	0.589744
+F1	Hypertension	0.810256
+F1	Obesity	0.783333
+F1	Asthma	0.885906
+F1	GERD	0.238411
+F1	Hypercholesterolemia	0.735632
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.726115
+F1	OSA	0.547945
+F1	OA	0.409357
+F1	PVD	0.590476
+F1	CAD	0.759036
+F1	Depression	0.370370
+F1	Diabetes	0.832386
+Epoch 901 Completed: 0.458350
+Epoch 902 Completed: 0.460640
+Epoch 903 Completed: 0.460803
+Epoch 904 Completed: 0.460109
+Epoch 905 Completed: 0.459537
+Epoch 906 Completed: 0.459404
+Epoch 907 Completed: 0.458528
+Epoch 908 Completed: 0.458186
+Epoch 909 Completed: 0.457981
+Epoch 910 Completed: 0.457970
+Epoch 911 Completed: 0.457929
+Epoch 912 Completed: 0.460216
+Epoch 913 Completed: 0.458195
+Epoch 914 Completed: 0.458468
+Epoch 915 Completed: 0.458405
+Epoch 916 Completed: 0.458063
+Epoch 917 Completed: 0.458296
+Epoch 918 Completed: 0.458134
+Epoch 919 Completed: 0.458060
+Epoch 920 Completed: 0.457955
+Epoch 921 Completed: 0.457881
+Epoch 922 Completed: 0.457872
+Epoch 923 Completed: 0.458184
+Epoch 924 Completed: 0.459069
+Epoch 925 Completed: 0.458172
+Evaluating on Epoch 925
+F1	Gout	0.603774
+F1	Venous Insufficiency	0.200000
+F1	Gallstones	0.472727
+F1	Hypertension	0.804205
+F1	Obesity	0.846890
+F1	Asthma	0.754098
+F1	GERD	0.237762
+F1	Hypercholesterolemia	0.757895
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.737307
+F1	OSA	0.589928
+F1	OA	0.452381
+F1	PVD	0.629032
+F1	CAD	0.788889
+F1	Depression	0.356688
+F1	Diabetes	0.842407
+Epoch 926 Completed: 0.458091
+Epoch 927 Completed: 0.458076
+Epoch 928 Completed: 0.457988
+Epoch 929 Completed: 0.457944
+Epoch 930 Completed: 0.458387
+Epoch 931 Completed: 0.457966
+Epoch 932 Completed: 0.457840
+Epoch 933 Completed: 0.457897
+Epoch 934 Completed: 0.457871
+Epoch 935 Completed: 0.457850
+Epoch 936 Completed: 0.457987
+Epoch 937 Completed: 0.457865
+Epoch 938 Completed: 0.457863
+Epoch 939 Completed: 0.457979
+Epoch 940 Completed: 0.458131
+Epoch 941 Completed: 0.457997
+Epoch 942 Completed: 0.457859
+Epoch 943 Completed: 0.457846
+Epoch 944 Completed: 0.457830
+Epoch 945 Completed: 0.457959
+Epoch 946 Completed: 0.457987
+Epoch 947 Completed: 0.457905
+Epoch 948 Completed: 0.457965
+Epoch 949 Completed: 0.458013
+Epoch 950 Completed: 0.458179
+Evaluating on Epoch 950
+F1	Gout	0.578125
+F1	Venous Insufficiency	0.150943
+F1	Gallstones	0.624204
+F1	Hypertension	0.807692
+F1	Obesity	0.827225
+F1	Asthma	0.768000
+F1	GERD	0.230769
+F1	Hypercholesterolemia	0.757764
+F1	Hypertriglyceridemia	0.058824
+F1	CHF	0.718750
+F1	OSA	0.582677
+F1	OA	0.472906
+F1	PVD	0.650000
+F1	CAD	0.802721
+F1	Depression	0.446512
+F1	Diabetes	0.737542
+Epoch 951 Completed: 0.459032
+Epoch 952 Completed: 0.464821
+Epoch 953 Completed: 0.461531
+Epoch 954 Completed: 0.461921
+Epoch 955 Completed: 0.459302
+Epoch 956 Completed: 0.460286
+Epoch 957 Completed: 0.458868
+Epoch 958 Completed: 0.458243
+Epoch 959 Completed: 0.457946
+Epoch 960 Completed: 0.458316
+Epoch 961 Completed: 0.461473
+Epoch 962 Completed: 0.458707
+Epoch 963 Completed: 0.458932
+Epoch 964 Completed: 0.460020
+Epoch 965 Completed: 0.458958
+Epoch 966 Completed: 0.458729
+Epoch 967 Completed: 0.457973
+Epoch 968 Completed: 0.457970
+Epoch 969 Completed: 0.457944
+Epoch 970 Completed: 0.457857
+Epoch 971 Completed: 0.458478
+Epoch 972 Completed: 0.458334
+Epoch 973 Completed: 0.457873
+Epoch 974 Completed: 0.457799
+Epoch 975 Completed: 0.457779
+Evaluating on Epoch 975
+F1	Gout	0.556391
+F1	Venous Insufficiency	0.127660
+F1	Gallstones	0.610390
+F1	Hypertension	0.808290
+F1	Obesity	0.858537
+F1	Asthma	0.817518
+F1	GERD	0.237762
+F1	Hypercholesterolemia	0.736402
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.744828
+F1	OSA	0.551181
+F1	OA	0.410959
+F1	PVD	0.574257
+F1	CAD	0.787004
+F1	Depression	0.388889
+F1	Diabetes	0.840456
+Epoch 976 Completed: 0.457807
+Epoch 977 Completed: 0.457999
+Epoch 978 Completed: 0.457869
+Epoch 979 Completed: 0.457773
+Epoch 980 Completed: 0.457763
+Epoch 981 Completed: 0.457763
+Epoch 982 Completed: 0.457783
+Epoch 983 Completed: 0.457836
+Epoch 984 Completed: 0.457790
+Epoch 985 Completed: 0.457745
+Epoch 986 Completed: 0.457754
+Epoch 987 Completed: 0.457935
+Epoch 988 Completed: 0.457896
+Epoch 989 Completed: 0.459570
+Epoch 990 Completed: 0.463942
+Epoch 991 Completed: 0.460438
+Epoch 992 Completed: 0.459264
+Epoch 993 Completed: 0.459481
+Epoch 994 Completed: 0.458388
+Epoch 995 Completed: 0.458093
+Epoch 996 Completed: 0.458126
+Epoch 997 Completed: 0.458133
+Epoch 998 Completed: 0.458296
+Epoch 999 Completed: 0.458344
+Epoch 1000 Completed: 0.458019
+Saving checkpoint: ./results_2008_final_unfreeze_bert_last_layer/run_2020_03_16_15_27_57_e2b11bf5bd3b/checkpoint_1000
+Evaluating on Epoch 1000
+F1	Gout	0.615385
+F1	Venous Insufficiency	0.272727
+F1	Gallstones	0.616438
+F1	Hypertension	0.798408
+F1	Obesity	0.829897
+F1	Asthma	0.821918
+F1	GERD	0.162963
+F1	Hypercholesterolemia	0.753398
+F1	Hypertriglyceridemia	0.000000
+F1	CHF	0.706383
+F1	OSA	0.589041
+F1	OA	0.389744
+F1	PVD	0.556522
+F1	CAD	0.784946
+F1	Depression	0.406977
+F1	Diabetes	0.835694
