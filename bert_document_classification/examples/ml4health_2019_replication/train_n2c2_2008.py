@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(  "/notebook/nas-trainings/arne/OCCAM/text_classification_BERT/code_BERT/bert_document_classification"  )
 
 
-from data import load_n2c2_2006_train_dev_split, load_n2c2_2006
+from data import load_n2c2_2008_train_dev_split, load_n2c2_2008
 from bert_document_classification.document_bert import BertForDocumentClassification
 
 log = logging.getLogger()
@@ -70,38 +70,46 @@ def _initialize_arguments(p: configargparse.ArgParser):
     #        log.info("Using CUDA device:{0}".format(torch.cuda.current_device()))
     #    args.device = 'cuda'
     #else:
-    #    log.info("Not using CUDA :(")
+    #   log.info("Not using CUDA :(")
     #    args.dev = 'cpu'
 
     return args
 
 
 if __name__ == "__main__":
-    p = configargparse.ArgParser(default_config_files=["n2c2_2006_train_config.ini"])
-    args = _initialize_arguments(p)
-    
+
     torch.cuda.empty_cache()
+    p = configargparse.ArgParser(default_config_files=["n2c2_2008_train_config.ini"])
+    args = _initialize_arguments(p)
 
-    #train, dev = load_n2c2_2006_train_dev_split(convert_spacy_doc=False)
-    train, dev = load_n2c2_2006(partition='train'), load_n2c2_2006(partition='test')
+    #train, dev = load_n2c2_2008_train_dev_split()
 
+    #evaluate generalization on entire evaluation set during training.
+    train, dev = load_n2c2_2008(partition='train'), load_n2c2_2008(partition='test')
+
+
+
+    model = BertForDocumentClassification(args=args)
     train_documents, train_labels = [],[]
-    for _, text, status in train:
+    for _, text, _, intuitive in train:
         train_documents.append(text)
         label = [0]*len(args.labels)
         for idx, name in enumerate(args.labels):
-            if name == status:
+            if intuitive[name] is not None and intuitive[name] == 'Y':
                 label[idx] = 1
         train_labels.append(label)
 
     dev_documents, dev_labels = [],[]
-    for _, text, status in dev:
+    for _, text, _, intuitive in dev:
         dev_documents.append(text)
         label = [0]*len(args.labels)
         for idx, name in enumerate(args.labels):
-            if name == status:
+            if intuitive[name] is not None and intuitive[name] == 'Y':
                 label[idx] = 1
         dev_labels.append(label)
 
-    model = BertForDocumentClassification(args=args)
+    # x = torch.FloatTensor(train_labels).transpose(0,1)
+    # for row in range(x.shape[0]):
+    #     print(args.labels[row], sum(x[row].numpy()))
+    # exit()
     model.fit((train_documents, train_labels), (dev_documents,dev_labels))
