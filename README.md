@@ -3,6 +3,12 @@ Document classification with BERT
 
 Code based on https://github.com/AndriyMulyar/bert_document_classification.
 
+With some modifications:
+
+-switch from the pytorch-transformers to the transformers ( https://github.com/huggingface/transformers ) library.
+-unfreezing of the last layers of BERT, instead of freezing complete BERT (the latter results in subpar peformance).
+
+
 Information on how to get data, see. 
 https://github.com/ArneDefauw/bert_document_classification/blob/master/examples/ml4health_2019_replication/data/README.md
 
@@ -47,7 +53,6 @@ Use the predict_n2c2_2006.py, predict_n2c2_2008.py, predict_newstest_bert.py, pr
 
 
 This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLSTM, DocumentBertTransformer, DocumentBertLinear, DocumentBertMaxPool. 
-
 
 
 
