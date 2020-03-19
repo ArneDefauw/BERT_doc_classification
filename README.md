@@ -62,6 +62,14 @@ Note: neither of these architectures could replicate results reported in https:/
 When freezing Clinical BERT:
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_single_gpu_single_lstm_batch_size10/run_2020_03_04_10_37_12_58d26bafbcb2
 
+When unfreezing last encoding layer of Clinical BERT:
 
 
+### Results on newsgroup task:
+
+When freezing bert-base-uncased:
+
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10/run_2020_03_04_12_52_51_58d26bafbcb2
+
+Wheb unfreezing last encoding layer of bert-base-uncased:
 
