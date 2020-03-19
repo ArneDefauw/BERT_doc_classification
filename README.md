@@ -7,7 +7,7 @@ With some modifications:
 
 -switch from the pytorch-transformers to the transformers ( https://github.com/huggingface/transformers ) library.
 -unfreezing of the last layers of BERT, instead of freezing complete BERT (the latter results in subpar peformance).
-
+-support for document clasification using DistilBert ( BERT with 40% less parameters )
 
 Information on how to get data to try replicate results reported in (https://arxiv.org/abs/1910.13664 ), see. 
 https://github.com/ArneDefauw/bert_document_classification/blob/master/examples/ml4health_2019_replication/data/README.md
@@ -74,5 +74,6 @@ When freezing bert-base-uncased:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10/run_2020_03_04_12_52_51_58d26bafbcb2
 
-Wheb unfreezing last encoding layer of bert-base-uncased:
+When unfreezing last encoding layer of bert-base-uncased:
+
 
