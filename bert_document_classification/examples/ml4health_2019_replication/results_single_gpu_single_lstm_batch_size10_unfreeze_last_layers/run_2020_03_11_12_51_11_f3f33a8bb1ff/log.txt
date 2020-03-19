@@ -1,0 +1,1992 @@
+Config File (n2c2_2006_train_config.ini):
+  model_storage_directory:./results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers
+  batch_size:        10
+  epochs:            5000
+  evaluation_interval:10
+  checkpoint_interval:250
+  bert_model_path:   clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000
+  labels:            PAST SMOKER, CURRENT SMOKER, NON-SMOKER, UNKNOWN
+  architecture:      DocumentBertLSTM
+  freeze_bert:       True
+  bert_batch_size:   7
+  device:            cuda:0
+  cuda:              true
+  learning_rate:     6e-5
+  weight_decay:      0
+
+Using 2 CUDA devices
+Model name 'clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc). Assuming 'clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000' is a path or url to a directory containing tokenizer files.
+Didn't find file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/added_tokens.json. We won't load it.
+Didn't find file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/special_tokens_map.json. We won't load it.
+Didn't find file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/tokenizer_config.json. We won't load it.
+loading file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/vocab.txt
+loading file None
+loading file None
+loading file None
+loading weights file clinicalBERT/pretrained_bert_tf/biobert_pretrain_output_all_notes_150000/pytorch_model.bin
+Weights of DocumentBertLSTM not initialized from pretrained model: ['lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'classifier.1.weight', 'classifier.1.bias']
+Weights from pretrained model not used in DocumentBertLSTM: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+Epoch 1 Completed: 1.082113
+Epoch 2 Completed: 1.047119
+Epoch 3 Completed: 1.003188
+Epoch 4 Completed: 0.992167
+Epoch 5 Completed: 0.966608
+Epoch 6 Completed: 0.984696
+Epoch 7 Completed: 0.962208
+Epoch 8 Completed: 0.914703
+Epoch 9 Completed: 0.889802
+Epoch 10 Completed: 0.767498
+Evaluating on Epoch 10
+F1	PAST SMOKER	0.385965
+F1	CURRENT SMOKER	0.357143
+F1	NON-SMOKER	0.483871
+F1	UNKNOWN	0.925620
+Epoch 11 Completed: 0.725653
+Epoch 12 Completed: 0.721725
+Epoch 13 Completed: 0.722839
+Epoch 14 Completed: 0.708503
+Epoch 15 Completed: 0.701705
+Epoch 16 Completed: 0.693246
+Epoch 17 Completed: 0.695408
+Epoch 18 Completed: 0.703653
+Epoch 19 Completed: 0.692948
+Epoch 20 Completed: 0.683181
+Evaluating on Epoch 20
+F1	PAST SMOKER	0.392157
+F1	CURRENT SMOKER	0.392157
+F1	NON-SMOKER	0.533333
+F1	UNKNOWN	0.951613
+Epoch 21 Completed: 0.698623
+Epoch 22 Completed: 0.706020
+Epoch 23 Completed: 0.698885
+Epoch 24 Completed: 0.696102
+Epoch 25 Completed: 0.694913
+Epoch 26 Completed: 0.685635
+Epoch 27 Completed: 0.697131
+Epoch 28 Completed: 0.679904
+Epoch 29 Completed: 0.697206
+Epoch 30 Completed: 0.690024
+Evaluating on Epoch 30
+F1	PAST SMOKER	0.392157
+F1	CURRENT SMOKER	0.418605
+F1	NON-SMOKER	0.508475
+F1	UNKNOWN	0.951613
+Epoch 31 Completed: 0.688778
+Epoch 32 Completed: 0.687582
+Epoch 33 Completed: 0.680733
+Epoch 34 Completed: 0.674468
+Epoch 35 Completed: 0.675810
+Epoch 36 Completed: 0.677397
+Epoch 37 Completed: 0.677368
+Epoch 38 Completed: 0.660505
+Epoch 39 Completed: 0.655854
+Epoch 40 Completed: 0.663703
+Evaluating on Epoch 40
+F1	PAST SMOKER	0.400000
+F1	CURRENT SMOKER	0.382979
+F1	NON-SMOKER	0.535714
+F1	UNKNOWN	0.976378
+Epoch 41 Completed: 0.663538
+Epoch 42 Completed: 0.668796
+Epoch 43 Completed: 0.656645
+Epoch 44 Completed: 0.648383
+Epoch 45 Completed: 0.656490
+Epoch 46 Completed: 0.671061
+Epoch 47 Completed: 0.667117
+Epoch 48 Completed: 0.667144
+Epoch 49 Completed: 0.649231
+Epoch 50 Completed: 0.666604
+Evaluating on Epoch 50
+F1	PAST SMOKER	0.384615
+F1	CURRENT SMOKER	0.344828
+F1	NON-SMOKER	0.500000
+F1	UNKNOWN	0.943089
+Epoch 51 Completed: 0.637014
+Epoch 52 Completed: 0.639842
+Epoch 53 Completed: 0.645715
+Epoch 54 Completed: 0.631690
+Epoch 55 Completed: 0.645252
+Epoch 56 Completed: 0.628556
+Epoch 57 Completed: 0.634303
+Epoch 58 Completed: 0.641560
+Epoch 59 Completed: 0.626493
+Epoch 60 Completed: 0.645602
+Evaluating on Epoch 60
+F1	PAST SMOKER	0.307692
+F1	CURRENT SMOKER	0.408163
+F1	NON-SMOKER	0.461538
+F1	UNKNOWN	0.915254
+Epoch 61 Completed: 0.631866
+Epoch 62 Completed: 0.633842
+Epoch 63 Completed: 0.628359
+Epoch 64 Completed: 0.624982
+Epoch 65 Completed: 0.623467
+Epoch 66 Completed: 0.607350
+Epoch 67 Completed: 0.603671
+Epoch 68 Completed: 0.600606
+Epoch 69 Completed: 0.580421
+Epoch 70 Completed: 0.608226
+Evaluating on Epoch 70
+F1	PAST SMOKER	0.340426
+F1	CURRENT SMOKER	0.480000
+F1	NON-SMOKER	0.612245
+F1	UNKNOWN	0.967742
+Epoch 71 Completed: 0.583636
+Epoch 72 Completed: 0.579555
+Epoch 73 Completed: 0.575046
+Epoch 74 Completed: 0.585271
+Epoch 75 Completed: 0.672162
+Epoch 76 Completed: 0.588334
+Epoch 77 Completed: 0.586848
+Epoch 78 Completed: 0.606851
+Epoch 79 Completed: 0.582718
+Epoch 80 Completed: 0.579044
+Evaluating on Epoch 80
+F1	PAST SMOKER	0.408163
+F1	CURRENT SMOKER	0.551724
+F1	NON-SMOKER	0.666667
+F1	UNKNOWN	0.951613
+Epoch 81 Completed: 0.563495
+Epoch 82 Completed: 0.564254
+Epoch 83 Completed: 0.547051
+Epoch 84 Completed: 0.533079
+Epoch 85 Completed: 0.539785
+Epoch 86 Completed: 0.546470
+Epoch 87 Completed: 0.548448
+Epoch 88 Completed: 0.545242
+Epoch 89 Completed: 0.562689
+Epoch 90 Completed: 0.547537
+Evaluating on Epoch 90
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.454545
+F1	NON-SMOKER	0.700000
+F1	UNKNOWN	0.968254
+Epoch 91 Completed: 0.534504
+Epoch 92 Completed: 0.544382
+Epoch 93 Completed: 0.546637
+Epoch 94 Completed: 0.530948
+Epoch 95 Completed: 0.525978
+Epoch 96 Completed: 0.534613
+Epoch 97 Completed: 0.525548
+Epoch 98 Completed: 0.523195
+Epoch 99 Completed: 0.522095
+Epoch 100 Completed: 0.525493
+Evaluating on Epoch 100
+F1	PAST SMOKER	0.437500
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.717949
+F1	UNKNOWN	0.976000
+Epoch 101 Completed: 0.530055
+Epoch 102 Completed: 0.535681
+Epoch 103 Completed: 0.532973
+Epoch 104 Completed: 0.529636
+Epoch 105 Completed: 0.563819
+Epoch 106 Completed: 0.546934
+Epoch 107 Completed: 0.538745
+Epoch 108 Completed: 0.530297
+Epoch 109 Completed: 0.529254
+Epoch 110 Completed: 0.523276
+Evaluating on Epoch 110
+F1	PAST SMOKER	0.484848
+F1	CURRENT SMOKER	0.333333
+F1	NON-SMOKER	0.717949
+F1	UNKNOWN	0.960000
+Epoch 111 Completed: 0.527400
+Epoch 112 Completed: 0.542318
+Epoch 113 Completed: 0.528520
+Epoch 114 Completed: 0.539261
+Epoch 115 Completed: 0.538934
+Epoch 116 Completed: 0.522528
+Epoch 117 Completed: 0.518579
+Epoch 118 Completed: 0.521716
+Epoch 119 Completed: 0.519876
+Epoch 120 Completed: 0.539132
+Evaluating on Epoch 120
+F1	PAST SMOKER	0.523810
+F1	CURRENT SMOKER	0.434783
+F1	NON-SMOKER	0.896552
+F1	UNKNOWN	0.959350
+Epoch 121 Completed: 0.541817
+Epoch 122 Completed: 0.521636
+Epoch 123 Completed: 0.520808
+Epoch 124 Completed: 0.518165
+Epoch 125 Completed: 0.529448
+Epoch 126 Completed: 0.517946
+Epoch 127 Completed: 0.524233
+Epoch 128 Completed: 0.524587
+Epoch 129 Completed: 0.538353
+Epoch 130 Completed: 0.533544
+Evaluating on Epoch 130
+F1	PAST SMOKER	0.551724
+F1	CURRENT SMOKER	0.516129
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.942149
+Epoch 131 Completed: 0.536802
+Epoch 132 Completed: 0.515023
+Epoch 133 Completed: 0.516376
+Epoch 134 Completed: 0.526055
+Epoch 135 Completed: 0.567664
+Epoch 136 Completed: 0.518360
+Epoch 137 Completed: 0.515873
+Epoch 138 Completed: 0.521120
+Epoch 139 Completed: 0.520650
+Epoch 140 Completed: 0.514532
+Evaluating on Epoch 140
+F1	PAST SMOKER	0.400000
+F1	CURRENT SMOKER	0.476190
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.976000
+Epoch 141 Completed: 0.518866
+Epoch 142 Completed: 0.526354
+Epoch 143 Completed: 0.546344
+Epoch 144 Completed: 0.543177
+Epoch 145 Completed: 0.539018
+Epoch 146 Completed: 0.516006
+Epoch 147 Completed: 0.517453
+Epoch 148 Completed: 0.515203
+Epoch 149 Completed: 0.518095
+Epoch 150 Completed: 0.515368
+Evaluating on Epoch 150
+F1	PAST SMOKER	0.400000
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.984127
+Epoch 151 Completed: 0.525349
+Epoch 152 Completed: 0.512962
+Epoch 153 Completed: 0.539928
+Epoch 154 Completed: 0.521575
+Epoch 155 Completed: 0.518609
+Epoch 156 Completed: 0.523774
+Epoch 157 Completed: 0.519238
+Epoch 158 Completed: 0.521118
+Epoch 159 Completed: 0.520857
+Epoch 160 Completed: 0.509041
+Evaluating on Epoch 160
+F1	PAST SMOKER	0.615385
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.700000
+F1	UNKNOWN	0.984127
+Epoch 161 Completed: 0.507457
+Epoch 162 Completed: 0.528984
+Epoch 163 Completed: 0.508886
+Epoch 164 Completed: 0.516973
+Epoch 165 Completed: 0.503305
+Epoch 166 Completed: 0.510291
+Epoch 167 Completed: 0.504753
+Epoch 168 Completed: 0.501053
+Epoch 169 Completed: 0.516220
+Epoch 170 Completed: 0.542396
+Evaluating on Epoch 170
+F1	PAST SMOKER	0.562500
+F1	CURRENT SMOKER	0.608696
+F1	NON-SMOKER	0.717949
+F1	UNKNOWN	0.975610
+Epoch 171 Completed: 0.513524
+Epoch 172 Completed: 0.503531
+Epoch 173 Completed: 0.512474
+Epoch 174 Completed: 0.511209
+Epoch 175 Completed: 0.507948
+Epoch 176 Completed: 0.500453
+Epoch 177 Completed: 0.538542
+Epoch 178 Completed: 0.519720
+Epoch 179 Completed: 0.509306
+Epoch 180 Completed: 0.511758
+Evaluating on Epoch 180
+F1	PAST SMOKER	0.516129
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.975610
+Epoch 181 Completed: 0.501334
+Epoch 182 Completed: 0.499469
+Epoch 183 Completed: 0.515187
+Epoch 184 Completed: 0.500517
+Epoch 185 Completed: 0.500835
+Epoch 186 Completed: 0.506704
+Epoch 187 Completed: 0.500450
+Epoch 188 Completed: 0.499244
+Epoch 189 Completed: 0.501021
+Epoch 190 Completed: 0.497094
+Evaluating on Epoch 190
+F1	PAST SMOKER	0.580645
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.967213
+Epoch 191 Completed: 0.496139
+Epoch 192 Completed: 0.496273
+Epoch 193 Completed: 0.496913
+Epoch 194 Completed: 0.497446
+Epoch 195 Completed: 0.502342
+Epoch 196 Completed: 0.496257
+Epoch 197 Completed: 0.496047
+Epoch 198 Completed: 0.505914
+Epoch 199 Completed: 0.504235
+Epoch 200 Completed: 0.590305
+Evaluating on Epoch 200
+F1	PAST SMOKER	0.529412
+F1	CURRENT SMOKER	0.142857
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.976744
+Epoch 201 Completed: 0.603611
+Epoch 202 Completed: 0.527182
+Epoch 203 Completed: 0.514695
+Epoch 204 Completed: 0.502108
+Epoch 205 Completed: 0.499845
+Epoch 206 Completed: 0.504442
+Epoch 207 Completed: 0.501953
+Epoch 208 Completed: 0.500249
+Epoch 209 Completed: 0.502296
+Epoch 210 Completed: 0.496872
+Evaluating on Epoch 210
+F1	PAST SMOKER	0.562500
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.848485
+F1	UNKNOWN	0.967213
+Epoch 211 Completed: 0.504772
+Epoch 212 Completed: 0.496750
+Epoch 213 Completed: 0.503227
+Epoch 214 Completed: 0.495744
+Epoch 215 Completed: 0.508112
+Epoch 216 Completed: 0.502672
+Epoch 217 Completed: 0.509781
+Epoch 218 Completed: 0.505867
+Epoch 219 Completed: 0.503410
+Epoch 220 Completed: 0.498891
+Evaluating on Epoch 220
+F1	PAST SMOKER	0.620690
+F1	CURRENT SMOKER	0.583333
+F1	NON-SMOKER	0.848485
+F1	UNKNOWN	0.967213
+Epoch 221 Completed: 0.504938
+Epoch 222 Completed: 0.499877
+Epoch 223 Completed: 0.497510
+Epoch 224 Completed: 0.498880
+Epoch 225 Completed: 0.498415
+Epoch 226 Completed: 0.496830
+Epoch 227 Completed: 0.496095
+Epoch 228 Completed: 0.504044
+Epoch 229 Completed: 0.507255
+Epoch 230 Completed: 0.500213
+Evaluating on Epoch 230
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.848485
+F1	UNKNOWN	0.975610
+Epoch 231 Completed: 0.509440
+Epoch 232 Completed: 0.496963
+Epoch 233 Completed: 0.499897
+Epoch 234 Completed: 0.497453
+Epoch 235 Completed: 0.496476
+Epoch 236 Completed: 0.496748
+Epoch 237 Completed: 0.507192
+Epoch 238 Completed: 0.503535
+Epoch 239 Completed: 0.496180
+Epoch 240 Completed: 0.541754
+Evaluating on Epoch 240
+F1	PAST SMOKER	0.642857
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.761905
+F1	UNKNOWN	0.942149
+Epoch 241 Completed: 0.515663
+Epoch 242 Completed: 0.502775
+Epoch 243 Completed: 0.520114
+Epoch 244 Completed: 0.513142
+Epoch 245 Completed: 0.503389
+Epoch 246 Completed: 0.503940
+Epoch 247 Completed: 0.497026
+Epoch 248 Completed: 0.496092
+Epoch 249 Completed: 0.504466
+Epoch 250 Completed: 0.506548
+Saving checkpoint: ./results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff/checkpoint_250
+Evaluating on Epoch 250
+F1	PAST SMOKER	0.615385
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.640000
+F1	UNKNOWN	0.941176
+Epoch 251 Completed: 0.523981
+Epoch 252 Completed: 0.501250
+Epoch 253 Completed: 0.496653
+Epoch 254 Completed: 0.496140
+Epoch 255 Completed: 0.496934
+Epoch 256 Completed: 0.498302
+Epoch 257 Completed: 0.495974
+Epoch 258 Completed: 0.501452
+Epoch 259 Completed: 0.496394
+Epoch 260 Completed: 0.498327
+Evaluating on Epoch 260
+F1	PAST SMOKER	0.600000
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.958678
+Epoch 261 Completed: 0.502258
+Epoch 262 Completed: 0.530032
+Epoch 263 Completed: 0.503282
+Epoch 264 Completed: 0.496524
+Epoch 265 Completed: 0.495447
+Epoch 266 Completed: 0.498122
+Epoch 267 Completed: 0.495872
+Epoch 268 Completed: 0.500336
+Epoch 269 Completed: 0.495997
+Epoch 270 Completed: 0.510356
+Evaluating on Epoch 270
+F1	PAST SMOKER	0.580645
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.975610
+Epoch 271 Completed: 0.497318
+Epoch 272 Completed: 0.505341
+Epoch 273 Completed: 0.501398
+Epoch 274 Completed: 0.496542
+Epoch 275 Completed: 0.498329
+Epoch 276 Completed: 0.496645
+Epoch 277 Completed: 0.496426
+Epoch 278 Completed: 0.504326
+Epoch 279 Completed: 0.496327
+Epoch 280 Completed: 0.500086
+Evaluating on Epoch 280
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.975610
+Epoch 281 Completed: 0.502652
+Epoch 282 Completed: 0.496008
+Epoch 283 Completed: 0.504572
+Epoch 284 Completed: 0.494933
+Epoch 285 Completed: 0.494762
+Epoch 286 Completed: 0.497497
+Epoch 287 Completed: 0.496972
+Epoch 288 Completed: 0.498207
+Epoch 289 Completed: 0.502515
+Epoch 290 Completed: 0.496322
+Evaluating on Epoch 290
+F1	PAST SMOKER	0.600000
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.959350
+Epoch 291 Completed: 0.497020
+Epoch 292 Completed: 0.496194
+Epoch 293 Completed: 0.495984
+Epoch 294 Completed: 0.511138
+Epoch 295 Completed: 0.528833
+Epoch 296 Completed: 0.519222
+Epoch 297 Completed: 0.501753
+Epoch 298 Completed: 0.497203
+Epoch 299 Completed: 0.495426
+Epoch 300 Completed: 0.497022
+Evaluating on Epoch 300
+F1	PAST SMOKER	0.645161
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.950820
+Epoch 301 Completed: 0.496527
+Epoch 302 Completed: 0.504280
+Epoch 303 Completed: 0.521862
+Epoch 304 Completed: 0.504521
+Epoch 305 Completed: 0.511309
+Epoch 306 Completed: 0.500442
+Epoch 307 Completed: 0.498058
+Epoch 308 Completed: 0.521000
+Epoch 309 Completed: 0.506702
+Epoch 310 Completed: 0.504121
+Evaluating on Epoch 310
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.968750
+Epoch 311 Completed: 0.519471
+Epoch 312 Completed: 0.506098
+Epoch 313 Completed: 0.505291
+Epoch 314 Completed: 0.503578
+Epoch 315 Completed: 0.497915
+Epoch 316 Completed: 0.497266
+Epoch 317 Completed: 0.495049
+Epoch 318 Completed: 0.497873
+Epoch 319 Completed: 0.497388
+Epoch 320 Completed: 0.494718
+Evaluating on Epoch 320
+F1	PAST SMOKER	0.714286
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.848485
+F1	UNKNOWN	0.976378
+Epoch 321 Completed: 0.496513
+Epoch 322 Completed: 0.499034
+Epoch 323 Completed: 0.499809
+Epoch 324 Completed: 0.495080
+Epoch 325 Completed: 0.498551
+Epoch 326 Completed: 0.495560
+Epoch 327 Completed: 0.494908
+Epoch 328 Completed: 0.496066
+Epoch 329 Completed: 0.502226
+Epoch 330 Completed: 0.498963
+Evaluating on Epoch 330
+F1	PAST SMOKER	0.642857
+F1	CURRENT SMOKER	0.380952
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.983871
+Epoch 331 Completed: 0.494916
+Epoch 332 Completed: 0.497438
+Epoch 333 Completed: 0.498303
+Epoch 334 Completed: 0.502272
+Epoch 335 Completed: 0.498409
+Epoch 336 Completed: 0.495624
+Epoch 337 Completed: 0.502478
+Epoch 338 Completed: 0.511702
+Epoch 339 Completed: 0.499651
+Epoch 340 Completed: 0.496491
+Evaluating on Epoch 340
+F1	PAST SMOKER	0.689655
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.909091
+F1	UNKNOWN	0.992000
+Epoch 341 Completed: 0.513412
+Epoch 342 Completed: 0.494987
+Epoch 343 Completed: 0.494071
+Epoch 344 Completed: 0.502342
+Epoch 345 Completed: 0.504378
+Epoch 346 Completed: 0.501698
+Epoch 347 Completed: 0.497763
+Epoch 348 Completed: 0.494734
+Epoch 349 Completed: 0.494754
+Epoch 350 Completed: 0.499777
+Evaluating on Epoch 350
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.875000
+F1	UNKNOWN	0.950000
+Epoch 351 Completed: 0.506314
+Epoch 352 Completed: 0.536201
+Epoch 353 Completed: 0.509171
+Epoch 354 Completed: 0.496337
+Epoch 355 Completed: 0.496566
+Epoch 356 Completed: 0.494293
+Epoch 357 Completed: 0.494844
+Epoch 358 Completed: 0.495788
+Epoch 359 Completed: 0.493946
+Epoch 360 Completed: 0.494386
+Evaluating on Epoch 360
+F1	PAST SMOKER	0.620690
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.812500
+F1	UNKNOWN	0.975610
+Epoch 361 Completed: 0.495217
+Epoch 362 Completed: 0.494707
+Epoch 363 Completed: 0.494461
+Epoch 364 Completed: 0.496560
+Epoch 365 Completed: 0.499236
+Epoch 366 Completed: 0.497318
+Epoch 367 Completed: 0.496060
+Epoch 368 Completed: 0.495199
+Epoch 369 Completed: 0.507792
+Epoch 370 Completed: 0.502666
+Evaluating on Epoch 370
+F1	PAST SMOKER	0.600000
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.967213
+Epoch 371 Completed: 0.494339
+Epoch 372 Completed: 0.507183
+Epoch 373 Completed: 0.497977
+Epoch 374 Completed: 0.515877
+Epoch 375 Completed: 0.506049
+Epoch 376 Completed: 0.498103
+Epoch 377 Completed: 0.502397
+Epoch 378 Completed: 0.497047
+Epoch 379 Completed: 0.498754
+Epoch 380 Completed: 0.503768
+Evaluating on Epoch 380
+F1	PAST SMOKER	0.640000
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.700000
+F1	UNKNOWN	0.967742
+Epoch 381 Completed: 0.498109
+Epoch 382 Completed: 0.496200
+Epoch 383 Completed: 0.495506
+Epoch 384 Completed: 0.494987
+Epoch 385 Completed: 0.497653
+Epoch 386 Completed: 0.493602
+Epoch 387 Completed: 0.502385
+Epoch 388 Completed: 0.503085
+Epoch 389 Completed: 0.492592
+Epoch 390 Completed: 0.496988
+Evaluating on Epoch 390
+F1	PAST SMOKER	0.692308
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.959350
+Epoch 391 Completed: 0.500331
+Epoch 392 Completed: 0.492600
+Epoch 393 Completed: 0.500521
+Epoch 394 Completed: 0.513169
+Epoch 395 Completed: 0.538980
+Epoch 396 Completed: 0.512805
+Epoch 397 Completed: 0.503789
+Epoch 398 Completed: 0.501563
+Epoch 399 Completed: 0.495643
+Epoch 400 Completed: 0.496869
+Evaluating on Epoch 400
+F1	PAST SMOKER	0.470588
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.950000
+Epoch 401 Completed: 0.494700
+Epoch 402 Completed: 0.495537
+Epoch 403 Completed: 0.495969
+Epoch 404 Completed: 0.499629
+Epoch 405 Completed: 0.499685
+Epoch 406 Completed: 0.496696
+Epoch 407 Completed: 0.509419
+Epoch 408 Completed: 0.513443
+Epoch 409 Completed: 0.495963
+Epoch 410 Completed: 0.511897
+Evaluating on Epoch 410
+F1	PAST SMOKER	0.439024
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.750000
+F1	UNKNOWN	0.846847
+Epoch 411 Completed: 0.509890
+Epoch 412 Completed: 0.496373
+Epoch 413 Completed: 0.500147
+Epoch 414 Completed: 0.496651
+Epoch 415 Completed: 0.496360
+Epoch 416 Completed: 0.508031
+Epoch 417 Completed: 0.501506
+Epoch 418 Completed: 0.500799
+Epoch 419 Completed: 0.507797
+Epoch 420 Completed: 0.498300
+Evaluating on Epoch 420
+F1	PAST SMOKER	0.486486
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.838710
+F1	UNKNOWN	0.967213
+Epoch 421 Completed: 0.498408
+Epoch 422 Completed: 0.507282
+Epoch 423 Completed: 0.496344
+Epoch 424 Completed: 0.496030
+Epoch 425 Completed: 0.495464
+Epoch 426 Completed: 0.496856
+Epoch 427 Completed: 0.496249
+Epoch 428 Completed: 0.497222
+Epoch 429 Completed: 0.494628
+Epoch 430 Completed: 0.494735
+Evaluating on Epoch 430
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.959350
+Epoch 431 Completed: 0.494371
+Epoch 432 Completed: 0.496363
+Epoch 433 Completed: 0.496257
+Epoch 434 Completed: 0.503586
+Epoch 435 Completed: 0.500636
+Epoch 436 Completed: 0.496454
+Epoch 437 Completed: 0.502605
+Epoch 438 Completed: 0.498389
+Epoch 439 Completed: 0.554738
+Epoch 440 Completed: 0.500047
+Evaluating on Epoch 440
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.968254
+Epoch 441 Completed: 0.496738
+Epoch 442 Completed: 0.497230
+Epoch 443 Completed: 0.497934
+Epoch 444 Completed: 0.501492
+Epoch 445 Completed: 0.497325
+Epoch 446 Completed: 0.496829
+Epoch 447 Completed: 0.508093
+Epoch 448 Completed: 0.522695
+Epoch 449 Completed: 0.508631
+Epoch 450 Completed: 0.497628
+Evaluating on Epoch 450
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.992126
+Epoch 451 Completed: 0.503987
+Epoch 452 Completed: 0.499212
+Epoch 453 Completed: 0.511998
+Epoch 454 Completed: 0.502537
+Epoch 455 Completed: 0.500988
+Epoch 456 Completed: 0.498313
+Epoch 457 Completed: 0.496655
+Epoch 458 Completed: 0.501591
+Epoch 459 Completed: 0.495378
+Epoch 460 Completed: 0.499953
+Evaluating on Epoch 460
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.992126
+Epoch 461 Completed: 0.504793
+Epoch 462 Completed: 0.496555
+Epoch 463 Completed: 0.499785
+Epoch 464 Completed: 0.496347
+Epoch 465 Completed: 0.500100
+Epoch 466 Completed: 0.495820
+Epoch 467 Completed: 0.502717
+Epoch 468 Completed: 0.504802
+Epoch 469 Completed: 0.496530
+Epoch 470 Completed: 0.502122
+Evaluating on Epoch 470
+F1	PAST SMOKER	0.370370
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.702703
+F1	UNKNOWN	0.959350
+Epoch 471 Completed: 0.503844
+Epoch 472 Completed: 0.496470
+Epoch 473 Completed: 0.496973
+Epoch 474 Completed: 0.496178
+Epoch 475 Completed: 0.495958
+Epoch 476 Completed: 0.498621
+Epoch 477 Completed: 0.496223
+Epoch 478 Completed: 0.494439
+Epoch 479 Completed: 0.496332
+Epoch 480 Completed: 0.494682
+Evaluating on Epoch 480
+F1	PAST SMOKER	0.482759
+F1	CURRENT SMOKER	0.352941
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.968254
+Epoch 481 Completed: 0.495229
+Epoch 482 Completed: 0.520414
+Epoch 483 Completed: 0.501638
+Epoch 484 Completed: 0.495802
+Epoch 485 Completed: 0.493688
+Epoch 486 Completed: 0.494600
+Epoch 487 Completed: 0.495817
+Epoch 488 Completed: 0.495451
+Epoch 489 Completed: 0.494155
+Epoch 490 Completed: 0.495501
+Evaluating on Epoch 490
+F1	PAST SMOKER	0.428571
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.736842
+F1	UNKNOWN	0.967742
+Epoch 491 Completed: 0.538553
+Epoch 492 Completed: 0.541677
+Epoch 493 Completed: 0.505574
+Epoch 494 Completed: 0.502447
+Epoch 495 Completed: 0.497233
+Epoch 496 Completed: 0.496743
+Epoch 497 Completed: 0.495771
+Epoch 498 Completed: 0.496373
+Epoch 499 Completed: 0.495936
+Epoch 500 Completed: 0.494777
+Saving checkpoint: ./results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff/checkpoint_500
+Evaluating on Epoch 500
+F1	PAST SMOKER	0.461538
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.968750
+Epoch 501 Completed: 0.496278
+Epoch 502 Completed: 0.496583
+Epoch 503 Completed: 0.503520
+Epoch 504 Completed: 0.495608
+Epoch 505 Completed: 0.495697
+Epoch 506 Completed: 0.495869
+Epoch 507 Completed: 0.495295
+Epoch 508 Completed: 0.495383
+Epoch 509 Completed: 0.497387
+Epoch 510 Completed: 0.494484
+Evaluating on Epoch 510
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.555556
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.952381
+Epoch 511 Completed: 0.494398
+Epoch 512 Completed: 0.493705
+Epoch 513 Completed: 0.493289
+Epoch 514 Completed: 0.493483
+Epoch 515 Completed: 0.493037
+Epoch 516 Completed: 0.493895
+Epoch 517 Completed: 0.493959
+Epoch 518 Completed: 0.492769
+Epoch 519 Completed: 0.494549
+Epoch 520 Completed: 0.494266
+Evaluating on Epoch 520
+F1	PAST SMOKER	0.461538
+F1	CURRENT SMOKER	0.526316
+F1	NON-SMOKER	0.787879
+F1	UNKNOWN	0.951613
+Epoch 521 Completed: 0.502404
+Epoch 522 Completed: 0.495098
+Epoch 523 Completed: 0.492208
+Epoch 524 Completed: 0.507725
+Epoch 525 Completed: 0.495568
+Epoch 526 Completed: 0.519978
+Epoch 527 Completed: 0.501330
+Epoch 528 Completed: 0.493642
+Epoch 529 Completed: 0.495420
+Epoch 530 Completed: 0.493505
+Evaluating on Epoch 530
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.968254
+Epoch 531 Completed: 0.491404
+Epoch 532 Completed: 0.495052
+Epoch 533 Completed: 0.501267
+Epoch 534 Completed: 0.492968
+Epoch 535 Completed: 0.497846
+Epoch 536 Completed: 0.505897
+Epoch 537 Completed: 0.499579
+Epoch 538 Completed: 0.496303
+Epoch 539 Completed: 0.495357
+Epoch 540 Completed: 0.496626
+Evaluating on Epoch 540
+F1	PAST SMOKER	0.482759
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.960000
+Epoch 541 Completed: 0.495552
+Epoch 542 Completed: 0.493801
+Epoch 543 Completed: 0.494915
+Epoch 544 Completed: 0.493430
+Epoch 545 Completed: 0.493850
+Epoch 546 Completed: 0.500076
+Epoch 547 Completed: 0.494199
+Epoch 548 Completed: 0.494386
+Epoch 549 Completed: 0.493845
+Epoch 550 Completed: 0.496163
+Evaluating on Epoch 550
+F1	PAST SMOKER	0.538462
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.967742
+Epoch 551 Completed: 0.492861
+Epoch 552 Completed: 0.493058
+Epoch 553 Completed: 0.493308
+Epoch 554 Completed: 0.498233
+Epoch 555 Completed: 0.491990
+Epoch 556 Completed: 0.497974
+Epoch 557 Completed: 0.493370
+Epoch 558 Completed: 0.493046
+Epoch 559 Completed: 0.492759
+Epoch 560 Completed: 0.492263
+Evaluating on Epoch 560
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.967742
+Epoch 561 Completed: 0.492120
+Epoch 562 Completed: 0.492332
+Epoch 563 Completed: 0.492512
+Epoch 564 Completed: 0.491037
+Epoch 565 Completed: 0.491296
+Epoch 566 Completed: 0.491844
+Epoch 567 Completed: 0.492772
+Epoch 568 Completed: 0.491737
+Epoch 569 Completed: 0.491862
+Epoch 570 Completed: 0.491727
+Evaluating on Epoch 570
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.976000
+Epoch 571 Completed: 0.496401
+Epoch 572 Completed: 0.493210
+Epoch 573 Completed: 0.493382
+Epoch 574 Completed: 0.491659
+Epoch 575 Completed: 0.491972
+Epoch 576 Completed: 0.492060
+Epoch 577 Completed: 0.493656
+Epoch 578 Completed: 0.491547
+Epoch 579 Completed: 0.492104
+Epoch 580 Completed: 0.494912
+Evaluating on Epoch 580
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.555556
+F1	NON-SMOKER	0.731707
+F1	UNKNOWN	0.967742
+Epoch 581 Completed: 0.494880
+Epoch 582 Completed: 0.491710
+Epoch 583 Completed: 0.492859
+Epoch 584 Completed: 0.494920
+Epoch 585 Completed: 0.491080
+Epoch 586 Completed: 0.491964
+Epoch 587 Completed: 0.491054
+Epoch 588 Completed: 0.490963
+Epoch 589 Completed: 0.497118
+Epoch 590 Completed: 0.493527
+Evaluating on Epoch 590
+F1	PAST SMOKER	0.434783
+F1	CURRENT SMOKER	0.600000
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.976000
+Epoch 591 Completed: 0.492262
+Epoch 592 Completed: 0.493785
+Epoch 593 Completed: 0.493267
+Epoch 594 Completed: 0.495755
+Epoch 595 Completed: 0.492931
+Epoch 596 Completed: 0.493386
+Epoch 597 Completed: 0.499836
+Epoch 598 Completed: 0.495977
+Epoch 599 Completed: 0.535714
+Epoch 600 Completed: 0.496902
+Evaluating on Epoch 600
+F1	PAST SMOKER	0.560000
+F1	CURRENT SMOKER	0.521739
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.959350
+Epoch 601 Completed: 0.494861
+Epoch 602 Completed: 0.499600
+Epoch 603 Completed: 0.493166
+Epoch 604 Completed: 0.493420
+Epoch 605 Completed: 0.492519
+Epoch 606 Completed: 0.492972
+Epoch 607 Completed: 0.494735
+Epoch 608 Completed: 0.495382
+Epoch 609 Completed: 0.493336
+Epoch 610 Completed: 0.493399
+Evaluating on Epoch 610
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.750000
+F1	UNKNOWN	0.967742
+Epoch 611 Completed: 0.492138
+Epoch 612 Completed: 0.490970
+Epoch 613 Completed: 0.491262
+Epoch 614 Completed: 0.492260
+Epoch 615 Completed: 0.491340
+Epoch 616 Completed: 0.491643
+Epoch 617 Completed: 0.498322
+Epoch 618 Completed: 0.491976
+Epoch 619 Completed: 0.492213
+Epoch 620 Completed: 0.492263
+Evaluating on Epoch 620
+F1	PAST SMOKER	0.482759
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.702703
+F1	UNKNOWN	0.967742
+Epoch 621 Completed: 0.491959
+Epoch 622 Completed: 0.492870
+Epoch 623 Completed: 0.491294
+Epoch 624 Completed: 0.492120
+Epoch 625 Completed: 0.494431
+Epoch 626 Completed: 0.492900
+Epoch 627 Completed: 0.491468
+Epoch 628 Completed: 0.492118
+Epoch 629 Completed: 0.494899
+Epoch 630 Completed: 0.492167
+Evaluating on Epoch 630
+F1	PAST SMOKER	0.551724
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.684211
+F1	UNKNOWN	0.967742
+Epoch 631 Completed: 0.491713
+Epoch 632 Completed: 0.491253
+Epoch 633 Completed: 0.492635
+Epoch 634 Completed: 0.492177
+Epoch 635 Completed: 0.491705
+Epoch 636 Completed: 0.492403
+Epoch 637 Completed: 0.491253
+Epoch 638 Completed: 0.492966
+Epoch 639 Completed: 0.492785
+Epoch 640 Completed: 0.492174
+Evaluating on Epoch 640
+F1	PAST SMOKER	0.551724
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.717949
+F1	UNKNOWN	0.967742
+Epoch 641 Completed: 0.493376
+Epoch 642 Completed: 0.491458
+Epoch 643 Completed: 0.493677
+Epoch 644 Completed: 0.491914
+Epoch 645 Completed: 0.493184
+Epoch 646 Completed: 0.491741
+Epoch 647 Completed: 0.491676
+Epoch 648 Completed: 0.492420
+Epoch 649 Completed: 0.491478
+Epoch 650 Completed: 0.490976
+Evaluating on Epoch 650
+F1	PAST SMOKER	0.551724
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.976000
+Epoch 651 Completed: 0.497166
+Epoch 652 Completed: 0.493443
+Epoch 653 Completed: 0.493452
+Epoch 654 Completed: 0.491006
+Epoch 655 Completed: 0.490878
+Epoch 656 Completed: 0.492090
+Epoch 657 Completed: 0.492222
+Epoch 658 Completed: 0.490878
+Epoch 659 Completed: 0.490619
+Epoch 660 Completed: 0.491540
+Evaluating on Epoch 660
+F1	PAST SMOKER	0.400000
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.984127
+Epoch 661 Completed: 0.490594
+Epoch 662 Completed: 0.491576
+Epoch 663 Completed: 0.491806
+Epoch 664 Completed: 0.490342
+Epoch 665 Completed: 0.491565
+Epoch 666 Completed: 0.491559
+Epoch 667 Completed: 0.491494
+Epoch 668 Completed: 0.491786
+Epoch 669 Completed: 0.490336
+Epoch 670 Completed: 0.490559
+Evaluating on Epoch 670
+F1	PAST SMOKER	0.400000
+F1	CURRENT SMOKER	0.555556
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.967742
+Epoch 671 Completed: 0.491037
+Epoch 672 Completed: 0.491080
+Epoch 673 Completed: 0.490157
+Epoch 674 Completed: 0.492316
+Epoch 675 Completed: 0.492099
+Epoch 676 Completed: 0.496022
+Epoch 677 Completed: 0.507193
+Epoch 678 Completed: 0.497380
+Epoch 679 Completed: 0.492632
+Epoch 680 Completed: 0.493153
+Evaluating on Epoch 680
+F1	PAST SMOKER	0.428571
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.967742
+Epoch 681 Completed: 0.487146
+Epoch 682 Completed: 0.499818
+Epoch 683 Completed: 0.502594
+Epoch 684 Completed: 0.492466
+Epoch 685 Completed: 0.488312
+Epoch 686 Completed: 0.487815
+Epoch 687 Completed: 0.488468
+Epoch 688 Completed: 0.488517
+Epoch 689 Completed: 0.488748
+Epoch 690 Completed: 0.489542
+Evaluating on Epoch 690
+F1	PAST SMOKER	0.363636
+F1	CURRENT SMOKER	0.476190
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.984127
+Epoch 691 Completed: 0.486609
+Epoch 692 Completed: 0.508920
+Epoch 693 Completed: 0.517069
+Epoch 694 Completed: 0.502758
+Epoch 695 Completed: 0.511767
+Epoch 696 Completed: 0.498333
+Epoch 697 Completed: 0.504102
+Epoch 698 Completed: 0.491424
+Epoch 699 Completed: 0.491449
+Epoch 700 Completed: 0.499048
+Evaluating on Epoch 700
+F1	PAST SMOKER	0.529412
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.787879
+F1	UNKNOWN	0.951613
+Epoch 701 Completed: 0.520329
+Epoch 702 Completed: 0.491168
+Epoch 703 Completed: 0.490703
+Epoch 704 Completed: 0.488455
+Epoch 705 Completed: 0.488866
+Epoch 706 Completed: 0.487720
+Epoch 707 Completed: 0.494360
+Epoch 708 Completed: 0.494231
+Epoch 709 Completed: 0.489149
+Epoch 710 Completed: 0.489342
+Evaluating on Epoch 710
+F1	PAST SMOKER	0.484848
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.943089
+Epoch 711 Completed: 0.488280
+Epoch 712 Completed: 0.500177
+Epoch 713 Completed: 0.498510
+Epoch 714 Completed: 0.490335
+Epoch 715 Completed: 0.496749
+Epoch 716 Completed: 0.488146
+Epoch 717 Completed: 0.489223
+Epoch 718 Completed: 0.487271
+Epoch 719 Completed: 0.487535
+Epoch 720 Completed: 0.486783
+Evaluating on Epoch 720
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.968254
+Epoch 721 Completed: 0.486575
+Epoch 722 Completed: 0.487994
+Epoch 723 Completed: 0.493986
+Epoch 724 Completed: 0.487191
+Epoch 725 Completed: 0.488533
+Epoch 726 Completed: 0.488110
+Epoch 727 Completed: 0.486697
+Epoch 728 Completed: 0.487052
+Epoch 729 Completed: 0.486850
+Epoch 730 Completed: 0.488592
+Evaluating on Epoch 730
+F1	PAST SMOKER	0.608696
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.736842
+F1	UNKNOWN	0.967742
+Epoch 731 Completed: 0.487159
+Epoch 732 Completed: 0.486542
+Epoch 733 Completed: 0.487299
+Epoch 734 Completed: 0.487678
+Epoch 735 Completed: 0.487179
+Epoch 736 Completed: 0.494089
+Epoch 737 Completed: 0.486881
+Epoch 738 Completed: 0.487247
+Epoch 739 Completed: 0.486974
+Epoch 740 Completed: 0.492010
+Evaluating on Epoch 740
+F1	PAST SMOKER	0.480000
+F1	CURRENT SMOKER	0.421053
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.923077
+Epoch 741 Completed: 0.498272
+Epoch 742 Completed: 0.490261
+Epoch 743 Completed: 0.487700
+Epoch 744 Completed: 0.487393
+Epoch 745 Completed: 0.486735
+Epoch 746 Completed: 0.486592
+Epoch 747 Completed: 0.487503
+Epoch 748 Completed: 0.487041
+Epoch 749 Completed: 0.486361
+Epoch 750 Completed: 0.486795
+Saving checkpoint: ./results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff/checkpoint_750
+Evaluating on Epoch 750
+F1	PAST SMOKER	0.592593
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.967742
+Epoch 751 Completed: 0.486813
+Epoch 752 Completed: 0.493331
+Epoch 753 Completed: 0.487989
+Epoch 754 Completed: 0.486138
+Epoch 755 Completed: 0.486296
+Epoch 756 Completed: 0.486805
+Epoch 757 Completed: 0.486981
+Epoch 758 Completed: 0.486332
+Epoch 759 Completed: 0.488647
+Epoch 760 Completed: 0.488309
+Evaluating on Epoch 760
+F1	PAST SMOKER	0.588235
+F1	CURRENT SMOKER	0.555556
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.951613
+Epoch 761 Completed: 0.486144
+Epoch 762 Completed: 0.487015
+Epoch 763 Completed: 0.486048
+Epoch 764 Completed: 0.486555
+Epoch 765 Completed: 0.487470
+Epoch 766 Completed: 0.490667
+Epoch 767 Completed: 0.487095
+Epoch 768 Completed: 0.487296
+Epoch 769 Completed: 0.486738
+Epoch 770 Completed: 0.486565
+Evaluating on Epoch 770
+F1	PAST SMOKER	0.600000
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.787879
+F1	UNKNOWN	0.960630
+Epoch 771 Completed: 0.488339
+Epoch 772 Completed: 0.487513
+Epoch 773 Completed: 0.486551
+Epoch 774 Completed: 0.487053
+Epoch 775 Completed: 0.487011
+Epoch 776 Completed: 0.487537
+Epoch 777 Completed: 0.485602
+Epoch 778 Completed: 0.486346
+Epoch 779 Completed: 0.490618
+Epoch 780 Completed: 0.507375
+Evaluating on Epoch 780
+F1	PAST SMOKER	0.428571
+F1	CURRENT SMOKER	0.380952
+F1	NON-SMOKER	0.733333
+F1	UNKNOWN	0.907563
+Epoch 781 Completed: 0.502369
+Epoch 782 Completed: 0.498150
+Epoch 783 Completed: 0.491721
+Epoch 784 Completed: 0.487896
+Epoch 785 Completed: 0.487997
+Epoch 786 Completed: 0.486063
+Epoch 787 Completed: 0.486553
+Epoch 788 Completed: 0.486960
+Epoch 789 Completed: 0.487400
+Epoch 790 Completed: 0.494348
+Evaluating on Epoch 790
+F1	PAST SMOKER	0.588235
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.960000
+Epoch 791 Completed: 0.495214
+Epoch 792 Completed: 0.486132
+Epoch 793 Completed: 0.486561
+Epoch 794 Completed: 0.486761
+Epoch 795 Completed: 0.487750
+Epoch 796 Completed: 0.487453
+Epoch 797 Completed: 0.493829
+Epoch 798 Completed: 0.487306
+Epoch 799 Completed: 0.486106
+Epoch 800 Completed: 0.486686
+Evaluating on Epoch 800
+F1	PAST SMOKER	0.538462
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.960000
+Epoch 801 Completed: 0.487327
+Epoch 802 Completed: 0.486595
+Epoch 803 Completed: 0.486802
+Epoch 804 Completed: 0.487298
+Epoch 805 Completed: 0.486104
+Epoch 806 Completed: 0.487184
+Epoch 807 Completed: 0.485617
+Epoch 808 Completed: 0.485836
+Epoch 809 Completed: 0.487500
+Epoch 810 Completed: 0.486699
+Evaluating on Epoch 810
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.960000
+Epoch 811 Completed: 0.486489
+Epoch 812 Completed: 0.493193
+Epoch 813 Completed: 0.486856
+Epoch 814 Completed: 0.487542
+Epoch 815 Completed: 0.486574
+Epoch 816 Completed: 0.486578
+Epoch 817 Completed: 0.486558
+Epoch 818 Completed: 0.486552
+Epoch 819 Completed: 0.487324
+Epoch 820 Completed: 0.486532
+Evaluating on Epoch 820
+F1	PAST SMOKER	0.560000
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.968254
+Epoch 821 Completed: 0.487288
+Epoch 822 Completed: 0.486098
+Epoch 823 Completed: 0.487287
+Epoch 824 Completed: 0.487328
+Epoch 825 Completed: 0.487288
+Epoch 826 Completed: 0.486542
+Epoch 827 Completed: 0.486560
+Epoch 828 Completed: 0.486303
+Epoch 829 Completed: 0.487732
+Epoch 830 Completed: 0.486050
+Evaluating on Epoch 830
+F1	PAST SMOKER	0.538462
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.968254
+Epoch 831 Completed: 0.487538
+Epoch 832 Completed: 0.486317
+Epoch 833 Completed: 0.486796
+Epoch 834 Completed: 0.490316
+Epoch 835 Completed: 0.486594
+Epoch 836 Completed: 0.486313
+Epoch 837 Completed: 0.486342
+Epoch 838 Completed: 0.486576
+Epoch 839 Completed: 0.486073
+Epoch 840 Completed: 0.487684
+Evaluating on Epoch 840
+F1	PAST SMOKER	0.461538
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.684211
+F1	UNKNOWN	0.933333
+Epoch 841 Completed: 0.490417
+Epoch 842 Completed: 0.495445
+Epoch 843 Completed: 0.491206
+Epoch 844 Completed: 0.495866
+Epoch 845 Completed: 0.487691
+Epoch 846 Completed: 0.493937
+Epoch 847 Completed: 0.496557
+Epoch 848 Completed: 0.486828
+Epoch 849 Completed: 0.487880
+Epoch 850 Completed: 0.487062
+Evaluating on Epoch 850
+F1	PAST SMOKER	0.560000
+F1	CURRENT SMOKER	0.555556
+F1	NON-SMOKER	0.736842
+F1	UNKNOWN	0.983871
+Epoch 851 Completed: 0.486377
+Epoch 852 Completed: 0.487263
+Epoch 853 Completed: 0.492017
+Epoch 854 Completed: 0.486178
+Epoch 855 Completed: 0.487865
+Epoch 856 Completed: 0.487403
+Epoch 857 Completed: 0.486742
+Epoch 858 Completed: 0.486678
+Epoch 859 Completed: 0.486342
+Epoch 860 Completed: 0.486809
+Evaluating on Epoch 860
+F1	PAST SMOKER	0.560000
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.722222
+F1	UNKNOWN	0.983871
+Epoch 861 Completed: 0.486875
+Epoch 862 Completed: 0.485605
+Epoch 863 Completed: 0.486273
+Epoch 864 Completed: 0.486403
+Epoch 865 Completed: 0.491063
+Epoch 866 Completed: 0.502475
+Epoch 867 Completed: 0.497192
+Epoch 868 Completed: 0.504449
+Epoch 869 Completed: 0.495193
+Epoch 870 Completed: 0.491771
+Evaluating on Epoch 870
+F1	PAST SMOKER	0.461538
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.833333
+F1	UNKNOWN	0.984127
+Epoch 871 Completed: 0.491861
+Epoch 872 Completed: 0.492083
+Epoch 873 Completed: 0.491140
+Epoch 874 Completed: 0.489710
+Epoch 875 Completed: 0.492258
+Epoch 876 Completed: 0.491181
+Epoch 877 Completed: 0.491307
+Epoch 878 Completed: 0.492804
+Epoch 879 Completed: 0.488871
+Epoch 880 Completed: 0.487088
+Evaluating on Epoch 880
+F1	PAST SMOKER	0.560000
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.833333
+F1	UNKNOWN	0.968750
+Epoch 881 Completed: 0.495845
+Epoch 882 Completed: 0.498800
+Epoch 883 Completed: 0.498769
+Epoch 884 Completed: 0.492247
+Epoch 885 Completed: 0.494738
+Epoch 886 Completed: 0.490798
+Epoch 887 Completed: 0.491557
+Epoch 888 Completed: 0.498760
+Epoch 889 Completed: 0.493030
+Epoch 890 Completed: 0.487450
+Evaluating on Epoch 890
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.976744
+Epoch 891 Completed: 0.495772
+Epoch 892 Completed: 0.486737
+Epoch 893 Completed: 0.491916
+Epoch 894 Completed: 0.497013
+Epoch 895 Completed: 0.486331
+Epoch 896 Completed: 0.488079
+Epoch 897 Completed: 0.486316
+Epoch 898 Completed: 0.487574
+Epoch 899 Completed: 0.486310
+Epoch 900 Completed: 0.487997
+Evaluating on Epoch 900
+F1	PAST SMOKER	0.521739
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.736842
+F1	UNKNOWN	0.960000
+Epoch 901 Completed: 0.486084
+Epoch 902 Completed: 0.488024
+Epoch 903 Completed: 0.485935
+Epoch 904 Completed: 0.486092
+Epoch 905 Completed: 0.487020
+Epoch 906 Completed: 0.486306
+Epoch 907 Completed: 0.485829
+Epoch 908 Completed: 0.486531
+Epoch 909 Completed: 0.487273
+Epoch 910 Completed: 0.486611
+Evaluating on Epoch 910
+F1	PAST SMOKER	0.545455
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.736842
+F1	UNKNOWN	0.968254
+Epoch 911 Completed: 0.486513
+Epoch 912 Completed: 0.487190
+Epoch 913 Completed: 0.485641
+Epoch 914 Completed: 0.486338
+Epoch 915 Completed: 0.486136
+Epoch 916 Completed: 0.492675
+Epoch 917 Completed: 0.489136
+Epoch 918 Completed: 0.486767
+Epoch 919 Completed: 0.487935
+Epoch 920 Completed: 0.487438
+Evaluating on Epoch 920
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.833333
+F1	UNKNOWN	0.976000
+Epoch 921 Completed: 0.487985
+Epoch 922 Completed: 0.487459
+Epoch 923 Completed: 0.486799
+Epoch 924 Completed: 0.486549
+Epoch 925 Completed: 0.486838
+Epoch 926 Completed: 0.485681
+Epoch 927 Completed: 0.487019
+Epoch 928 Completed: 0.485827
+Epoch 929 Completed: 0.486591
+Epoch 930 Completed: 0.487354
+Evaluating on Epoch 930
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.968254
+Epoch 931 Completed: 0.486287
+Epoch 932 Completed: 0.486580
+Epoch 933 Completed: 0.491808
+Epoch 934 Completed: 0.505469
+Epoch 935 Completed: 0.492016
+Epoch 936 Completed: 0.502632
+Epoch 937 Completed: 0.488108
+Epoch 938 Completed: 0.488769
+Epoch 939 Completed: 0.487289
+Epoch 940 Completed: 0.486635
+Evaluating on Epoch 940
+F1	PAST SMOKER	0.466667
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.685714
+F1	UNKNOWN	0.942149
+Epoch 941 Completed: 0.487404
+Epoch 942 Completed: 0.486854
+Epoch 943 Completed: 0.487003
+Epoch 944 Completed: 0.486307
+Epoch 945 Completed: 0.486307
+Epoch 946 Completed: 0.491999
+Epoch 947 Completed: 0.495069
+Epoch 948 Completed: 0.491731
+Epoch 949 Completed: 0.495883
+Epoch 950 Completed: 0.487840
+Evaluating on Epoch 950
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.984127
+Epoch 951 Completed: 0.496504
+Epoch 952 Completed: 0.486886
+Epoch 953 Completed: 0.488563
+Epoch 954 Completed: 0.489269
+Epoch 955 Completed: 0.488320
+Epoch 956 Completed: 0.491986
+Epoch 957 Completed: 0.490936
+Epoch 958 Completed: 0.487646
+Epoch 959 Completed: 0.486334
+Epoch 960 Completed: 0.495590
+Evaluating on Epoch 960
+F1	PAST SMOKER	0.560000
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.800000
+F1	UNKNOWN	0.984127
+Epoch 961 Completed: 0.487186
+Epoch 962 Completed: 0.493701
+Epoch 963 Completed: 0.486640
+Epoch 964 Completed: 0.485880
+Epoch 965 Completed: 0.488110
+Epoch 966 Completed: 0.499718
+Epoch 967 Completed: 0.492637
+Epoch 968 Completed: 0.491775
+Epoch 969 Completed: 0.488835
+Epoch 970 Completed: 0.486462
+Evaluating on Epoch 970
+F1	PAST SMOKER	0.640000
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.968254
+Epoch 971 Completed: 0.486963
+Epoch 972 Completed: 0.488218
+Epoch 973 Completed: 0.487303
+Epoch 974 Completed: 0.488318
+Epoch 975 Completed: 0.486205
+Epoch 976 Completed: 0.486223
+Epoch 977 Completed: 0.486811
+Epoch 978 Completed: 0.489454
+Epoch 979 Completed: 0.486560
+Epoch 980 Completed: 0.487307
+Evaluating on Epoch 980
+F1	PAST SMOKER	0.615385
+F1	CURRENT SMOKER	0.454545
+F1	NON-SMOKER	0.787879
+F1	UNKNOWN	0.976000
+Epoch 981 Completed: 0.486924
+Epoch 982 Completed: 0.493743
+Epoch 983 Completed: 0.486815
+Epoch 984 Completed: 0.486815
+Epoch 985 Completed: 0.486086
+Epoch 986 Completed: 0.486133
+Epoch 987 Completed: 0.487553
+Epoch 988 Completed: 0.486052
+Epoch 989 Completed: 0.486780
+Epoch 990 Completed: 0.486329
+Evaluating on Epoch 990
+F1	PAST SMOKER	0.615385
+F1	CURRENT SMOKER	0.454545
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.959350
+Epoch 991 Completed: 0.485827
+Epoch 992 Completed: 0.486977
+Epoch 993 Completed: 0.486665
+Epoch 994 Completed: 0.488151
+Epoch 995 Completed: 0.488224
+Epoch 996 Completed: 0.525189
+Epoch 997 Completed: 0.508569
+Epoch 998 Completed: 0.496203
+Epoch 999 Completed: 0.491107
+Epoch 1000 Completed: 0.494468
+Saving checkpoint: ./results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff/checkpoint_1000
+Evaluating on Epoch 1000
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.357143
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.967213
+Epoch 1001 Completed: 0.488657
+Epoch 1002 Completed: 0.496080
+Epoch 1003 Completed: 0.494316
+Epoch 1004 Completed: 0.487530
+Epoch 1005 Completed: 0.485880
+Epoch 1006 Completed: 0.487979
+Epoch 1007 Completed: 0.485851
+Epoch 1008 Completed: 0.486598
+Epoch 1009 Completed: 0.487852
+Epoch 1010 Completed: 0.487590
+Evaluating on Epoch 1010
+F1	PAST SMOKER	0.500000
+F1	CURRENT SMOKER	0.526316
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.976378
+Epoch 1011 Completed: 0.487794
+Epoch 1012 Completed: 0.491390
+Epoch 1013 Completed: 0.487097
+Epoch 1014 Completed: 0.485920
+Epoch 1015 Completed: 0.487048
+Epoch 1016 Completed: 0.486130
+Epoch 1017 Completed: 0.487971
+Epoch 1018 Completed: 0.488721
+Epoch 1019 Completed: 0.488403
+Epoch 1020 Completed: 0.490882
+Evaluating on Epoch 1020
+F1	PAST SMOKER	0.545455
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.857143
+F1	UNKNOWN	0.969231
+Epoch 1021 Completed: 0.493878
+Epoch 1022 Completed: 0.493622
+Epoch 1023 Completed: 0.492522
+Epoch 1024 Completed: 0.486553
+Epoch 1025 Completed: 0.488157
+Epoch 1026 Completed: 0.488637
+Epoch 1027 Completed: 0.488059
+Epoch 1028 Completed: 0.490248
+Epoch 1029 Completed: 0.487537
+Epoch 1030 Completed: 0.486817
+Evaluating on Epoch 1030
+F1	PAST SMOKER	0.518519
+F1	CURRENT SMOKER	0.434783
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.967742
+Epoch 1031 Completed: 0.486207
+Epoch 1032 Completed: 0.487551
+Epoch 1033 Completed: 0.488033
+Epoch 1034 Completed: 0.487255
+Epoch 1035 Completed: 0.486800
+Epoch 1036 Completed: 0.486817
+Epoch 1037 Completed: 0.487109
+Epoch 1038 Completed: 0.492721
+Epoch 1039 Completed: 0.486320
+Epoch 1040 Completed: 0.486798
+Evaluating on Epoch 1040
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.454545
+F1	NON-SMOKER	0.705882
+F1	UNKNOWN	0.959350
+Epoch 1041 Completed: 0.486049
+Epoch 1042 Completed: 0.487269
+Epoch 1043 Completed: 0.486821
+Epoch 1044 Completed: 0.492862
+Epoch 1045 Completed: 0.486712
+Epoch 1046 Completed: 0.486310
+Epoch 1047 Completed: 0.487462
+Epoch 1048 Completed: 0.486593
+Epoch 1049 Completed: 0.488023
+Epoch 1050 Completed: 0.488530
+Evaluating on Epoch 1050
+F1	PAST SMOKER	0.551724
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.774194
+F1	UNKNOWN	0.967742
+Epoch 1051 Completed: 0.487051
+Epoch 1052 Completed: 0.486078
+Epoch 1053 Completed: 0.486095
+Epoch 1054 Completed: 0.486579
+Epoch 1055 Completed: 0.486061
+Epoch 1056 Completed: 0.487581
+Epoch 1057 Completed: 0.487216
+Epoch 1058 Completed: 0.485601
+Epoch 1059 Completed: 0.486316
+Epoch 1060 Completed: 0.486048
+Evaluating on Epoch 1060
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.764706
+F1	UNKNOWN	0.968254
+Epoch 1061 Completed: 0.486078
+Epoch 1062 Completed: 0.485825
+Epoch 1063 Completed: 0.487050
+Epoch 1064 Completed: 0.486476
+Epoch 1065 Completed: 0.486753
+Epoch 1066 Completed: 0.487517
+Epoch 1067 Completed: 0.487091
+Epoch 1068 Completed: 0.486299
+Epoch 1069 Completed: 0.486315
+Epoch 1070 Completed: 0.486523
+Evaluating on Epoch 1070
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.959350
+Epoch 1071 Completed: 0.486774
+Epoch 1072 Completed: 0.487030
+Epoch 1073 Completed: 0.487328
+Epoch 1074 Completed: 0.486538
+Epoch 1075 Completed: 0.487002
+Epoch 1076 Completed: 0.493774
+Epoch 1077 Completed: 0.488769
+Epoch 1078 Completed: 0.487747
+Epoch 1079 Completed: 0.488554
+Epoch 1080 Completed: 0.486271
+Evaluating on Epoch 1080
+F1	PAST SMOKER	0.434783
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.684211
+F1	UNKNOWN	0.952381
+Epoch 1081 Completed: 0.487719
+Epoch 1082 Completed: 0.488354
+Epoch 1083 Completed: 0.486543
+Epoch 1084 Completed: 0.486526
+Epoch 1085 Completed: 0.486585
+Epoch 1086 Completed: 0.486538
+Epoch 1087 Completed: 0.487472
+Epoch 1088 Completed: 0.486709
+Epoch 1089 Completed: 0.486306
+Epoch 1090 Completed: 0.485603
+Evaluating on Epoch 1090
+F1	PAST SMOKER	0.615385
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.736842
+F1	UNKNOWN	0.960000
+Epoch 1091 Completed: 0.486807
+Epoch 1092 Completed: 0.486270
+Epoch 1093 Completed: 0.486409
+Epoch 1094 Completed: 0.488263
+Epoch 1095 Completed: 0.487112
+Epoch 1096 Completed: 0.486589
+Epoch 1097 Completed: 0.487432
+Epoch 1098 Completed: 0.494796
+Epoch 1099 Completed: 0.497006
+Epoch 1100 Completed: 0.503711
+Evaluating on Epoch 1100
+F1	PAST SMOKER	0.533333
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.769231
+F1	UNKNOWN	0.976378
+Epoch 1101 Completed: 0.489923
+Epoch 1102 Completed: 0.485974
+Epoch 1103 Completed: 0.494722
+Epoch 1104 Completed: 0.486356
+Epoch 1105 Completed: 0.487067
+Epoch 1106 Completed: 0.488396
+Epoch 1107 Completed: 0.492162
+Epoch 1108 Completed: 0.489876
+Epoch 1109 Completed: 0.488857
+Epoch 1110 Completed: 0.489205
+Evaluating on Epoch 1110
+F1	PAST SMOKER	0.600000
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.857143
+F1	UNKNOWN	0.976744
+Epoch 1111 Completed: 0.487884
+Epoch 1112 Completed: 0.486645
+Epoch 1113 Completed: 0.486981
+Epoch 1114 Completed: 0.487022
+Epoch 1115 Completed: 0.487316
+Epoch 1116 Completed: 0.486848
+Epoch 1117 Completed: 0.487382
+Epoch 1118 Completed: 0.487286
+Epoch 1119 Completed: 0.487983
+Epoch 1120 Completed: 0.487315
+Evaluating on Epoch 1120
+F1	PAST SMOKER	0.521739
+F1	CURRENT SMOKER	0.333333
+F1	NON-SMOKER	0.769231
+F1	UNKNOWN	0.960000
+Epoch 1121 Completed: 0.487063
+Epoch 1122 Completed: 0.486796
+Epoch 1123 Completed: 0.486748
+Epoch 1124 Completed: 0.493974
+Epoch 1125 Completed: 0.499192
+Epoch 1126 Completed: 0.488225
+Epoch 1127 Completed: 0.487816
+Epoch 1128 Completed: 0.486857
+Epoch 1129 Completed: 0.486179
+Epoch 1130 Completed: 0.486880
+Evaluating on Epoch 1130
+F1	PAST SMOKER	0.666667
+F1	CURRENT SMOKER	0.352941
+F1	NON-SMOKER	0.810811
+F1	UNKNOWN	0.968254
+Epoch 1131 Completed: 0.487548
+Epoch 1132 Completed: 0.486880
+Epoch 1133 Completed: 0.486918
+Epoch 1134 Completed: 0.486303
+Epoch 1135 Completed: 0.487112
+Epoch 1136 Completed: 0.486328
+Epoch 1137 Completed: 0.491186
+Epoch 1138 Completed: 0.486079
+Epoch 1139 Completed: 0.487829
+Epoch 1140 Completed: 0.487362
+Evaluating on Epoch 1140
+F1	PAST SMOKER	0.592593
+F1	CURRENT SMOKER	0.333333
+F1	NON-SMOKER	0.789474
+F1	UNKNOWN	0.960000
+Epoch 1141 Completed: 0.486529
+Epoch 1142 Completed: 0.486671
+Epoch 1143 Completed: 0.486420
+Epoch 1144 Completed: 0.486763
+Epoch 1145 Completed: 0.487018
+Epoch 1146 Completed: 0.493404
+Epoch 1147 Completed: 0.501697
+Epoch 1148 Completed: 0.494040
+Epoch 1149 Completed: 0.494487
+Epoch 1150 Completed: 0.491215
+Evaluating on Epoch 1150
+F1	PAST SMOKER	0.428571
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.619048
+F1	UNKNOWN	0.950820
+Epoch 1151 Completed: 0.488074
+Epoch 1152 Completed: 0.487115
+Epoch 1153 Completed: 0.494978
+Epoch 1154 Completed: 0.486548
+Epoch 1155 Completed: 0.487880
+Epoch 1156 Completed: 0.487481
+Epoch 1157 Completed: 0.487498
+Epoch 1158 Completed: 0.493605
+Epoch 1159 Completed: 0.486965
+Epoch 1160 Completed: 0.486809
+Evaluating on Epoch 1160
+F1	PAST SMOKER	0.461538
+F1	CURRENT SMOKER	0.500000
+F1	NON-SMOKER	0.742857
+F1	UNKNOWN	0.968254
+Epoch 1161 Completed: 0.485883
+Epoch 1162 Completed: 0.486070
+Epoch 1163 Completed: 0.487583
+Epoch 1164 Completed: 0.487546
+Epoch 1165 Completed: 0.487130
+Epoch 1166 Completed: 0.487110
+Epoch 1167 Completed: 0.494615
+Epoch 1168 Completed: 0.487191
+Epoch 1169 Completed: 0.487001
+Epoch 1170 Completed: 0.493904
+Evaluating on Epoch 1170
+F1	PAST SMOKER	0.538462
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.727273
+F1	UNKNOWN	0.976378
+Epoch 1171 Completed: 0.487489
+Epoch 1172 Completed: 0.486998
+Epoch 1173 Completed: 0.486655
+Epoch 1174 Completed: 0.487544
+Epoch 1175 Completed: 0.486538
+Epoch 1176 Completed: 0.486746
+Epoch 1177 Completed: 0.487014
+Epoch 1178 Completed: 0.487022
+Epoch 1179 Completed: 0.485849
+Epoch 1180 Completed: 0.486572
+Evaluating on Epoch 1180
+F1	PAST SMOKER	0.428571
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.685714
+F1	UNKNOWN	0.933333
+Epoch 1181 Completed: 0.486314
+Epoch 1182 Completed: 0.487550
+Epoch 1183 Completed: 0.487013
+Epoch 1184 Completed: 0.487306
+Epoch 1185 Completed: 0.487803
+Epoch 1186 Completed: 0.486522
+Epoch 1187 Completed: 0.488349
+Epoch 1188 Completed: 0.495671
+Epoch 1189 Completed: 0.491308
+Epoch 1190 Completed: 0.497506
+Evaluating on Epoch 1190
+F1	PAST SMOKER	0.388889
+F1	CURRENT SMOKER	0.300000
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.916667
+Epoch 1191 Completed: 0.493644
+Epoch 1192 Completed: 0.491736
+Epoch 1193 Completed: 0.491846
+Epoch 1194 Completed: 0.500378
+Epoch 1195 Completed: 0.490270
+Epoch 1196 Completed: 0.488301
+Epoch 1197 Completed: 0.487236
+Epoch 1198 Completed: 0.486384
+Epoch 1199 Completed: 0.486834
+Epoch 1200 Completed: 0.492161
+Evaluating on Epoch 1200
+F1	PAST SMOKER	0.514286
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.812500
+F1	UNKNOWN	0.942149
+Epoch 1201 Completed: 0.486276
+Epoch 1202 Completed: 0.488485
+Epoch 1203 Completed: 0.486486
+Epoch 1204 Completed: 0.487969
+Epoch 1205 Completed: 0.487300
+Epoch 1206 Completed: 0.489546
+Epoch 1207 Completed: 0.486551
+Epoch 1208 Completed: 0.486814
+Epoch 1209 Completed: 0.487346
+Epoch 1210 Completed: 0.489771
+Evaluating on Epoch 1210
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.333333
+F1	NON-SMOKER	0.848485
+F1	UNKNOWN	0.976000
+Epoch 1211 Completed: 0.486311
+Epoch 1212 Completed: 0.485835
+Epoch 1213 Completed: 0.487647
+Epoch 1214 Completed: 0.486724
+Epoch 1215 Completed: 0.487713
+Epoch 1216 Completed: 0.487543
+Epoch 1217 Completed: 0.486096
+Epoch 1218 Completed: 0.486554
+Epoch 1219 Completed: 0.485835
+Epoch 1220 Completed: 0.489523
+Evaluating on Epoch 1220
+F1	PAST SMOKER	0.625000
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.984375
+Epoch 1221 Completed: 0.487125
+Epoch 1222 Completed: 0.486952
+Epoch 1223 Completed: 0.485828
+Epoch 1224 Completed: 0.488050
+Epoch 1225 Completed: 0.485923
+Epoch 1226 Completed: 0.486793
+Epoch 1227 Completed: 0.487223
+Epoch 1228 Completed: 0.485825
+Epoch 1229 Completed: 0.486787
+Epoch 1230 Completed: 0.486793
+Evaluating on Epoch 1230
+F1	PAST SMOKER	0.600000
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.823529
+F1	UNKNOWN	0.984375
+Epoch 1231 Completed: 0.487494
+Epoch 1232 Completed: 0.486971
+Epoch 1233 Completed: 0.486707
+Epoch 1234 Completed: 0.488013
+Epoch 1235 Completed: 0.486797
+Epoch 1236 Completed: 0.487036
+Epoch 1237 Completed: 0.486548
+Epoch 1238 Completed: 0.486324
+Epoch 1239 Completed: 0.487759
+Epoch 1240 Completed: 0.487410
+Evaluating on Epoch 1240
+F1	PAST SMOKER	0.562500
+F1	CURRENT SMOKER	0.400000
+F1	NON-SMOKER	0.756757
+F1	UNKNOWN	0.959350
+Epoch 1241 Completed: 0.487299
+Epoch 1242 Completed: 0.486782
+Epoch 1243 Completed: 0.487655
+Epoch 1244 Completed: 0.486076
+Epoch 1245 Completed: 0.487614
+Epoch 1246 Completed: 0.486522
+Epoch 1247 Completed: 0.486046
+Epoch 1248 Completed: 0.486143
+Epoch 1249 Completed: 0.486300
+Epoch 1250 Completed: 0.486812
+Saving checkpoint: ./results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff/checkpoint_1250
+Evaluating on Epoch 1250
+F1	PAST SMOKER	0.571429
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.848485
+F1	UNKNOWN	0.959350
+Epoch 1251 Completed: 0.485844
+Epoch 1252 Completed: 0.487224
+Epoch 1253 Completed: 0.486643
+Epoch 1254 Completed: 0.486067
+Epoch 1255 Completed: 0.485621
+Epoch 1256 Completed: 0.486924
+Epoch 1257 Completed: 0.486298
+Epoch 1258 Completed: 0.486822
+Epoch 1259 Completed: 0.486045
+Epoch 1260 Completed: 0.486566
+Evaluating on Epoch 1260
+F1	PAST SMOKER	0.538462
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.777778
+F1	UNKNOWN	0.968254
+Epoch 1261 Completed: 0.487028
+Epoch 1262 Completed: 0.486099
+Epoch 1263 Completed: 0.486045
+Epoch 1264 Completed: 0.489474
+Epoch 1265 Completed: 0.502654
+Epoch 1266 Completed: 0.486452
+Epoch 1267 Completed: 0.487265
+Epoch 1268 Completed: 0.488788
+Epoch 1269 Completed: 0.487987
+Epoch 1270 Completed: 0.510434
+Evaluating on Epoch 1270
+F1	PAST SMOKER	0.400000
+F1	CURRENT SMOKER	0.518519
+F1	NON-SMOKER	0.717949
+F1	UNKNOWN	0.950820
+Epoch 1271 Completed: 0.492509
+Epoch 1272 Completed: 0.489025
+Epoch 1273 Completed: 0.487135
+Epoch 1274 Completed: 0.489847
+Epoch 1275 Completed: 0.492605
+Epoch 1276 Completed: 0.491238
+Epoch 1277 Completed: 0.490444
+Epoch 1278 Completed: 0.487792
+Epoch 1279 Completed: 0.487642
+Epoch 1280 Completed: 0.486504
+Evaluating on Epoch 1280
+F1	PAST SMOKER	0.461538
+F1	CURRENT SMOKER	0.470588
+F1	NON-SMOKER	0.702703
+F1	UNKNOWN	0.951613
+Epoch 1281 Completed: 0.486581
+Epoch 1282 Completed: 0.486100
+Epoch 1283 Completed: 0.489015
+Epoch 1284 Completed: 0.487223
+Epoch 1285 Completed: 0.487271
+Epoch 1286 Completed: 0.486402
+Epoch 1287 Completed: 0.486048
+Epoch 1288 Completed: 0.486807
+Epoch 1289 Completed: 0.486604
+Epoch 1290 Completed: 0.486317
+Evaluating on Epoch 1290
+F1	PAST SMOKER	0.480000
+F1	CURRENT SMOKER	0.375000
+F1	NON-SMOKER	0.702703
+F1	UNKNOWN	0.951613
+Epoch 1291 Completed: 0.486317
+Epoch 1292 Completed: 0.491094
+Epoch 1293 Completed: 0.493428
+Epoch 1294 Completed: 0.487032
+Epoch 1295 Completed: 0.487253
+Epoch 1296 Completed: 0.487798
+Epoch 1297 Completed: 0.487506
+Epoch 1298 Completed: 0.486099
+Epoch 1299 Completed: 0.487042
+Epoch 1300 Completed: 0.486325
+Evaluating on Epoch 1300
+F1	PAST SMOKER	0.416667
+F1	CURRENT SMOKER	0.444444
+F1	NON-SMOKER	0.666667
+F1	UNKNOWN	0.959350
+Epoch 1301 Completed: 0.485620
+Epoch 1302 Completed: 0.486745
+Epoch 1303 Completed: 0.488169
+Epoch 1304 Completed: 0.486301
+Epoch 1305 Completed: 0.487389
+Epoch 1306 Completed: 0.485622
+Epoch 1307 Completed: 0.486092
+Epoch 1308 Completed: 0.487532
+Epoch 1309 Completed: 0.486114
