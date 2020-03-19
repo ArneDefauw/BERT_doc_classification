@@ -33,4 +33,19 @@ examples/ml4health_2019_replication/data/
 Clinical Bert: https://github.com/EmilyAlsentzer/clinicalBERT
 
 
+For training of Bert for Document classification: 
+
+Use the Config files in:
+https://github.com/ArneDefauw/BERT_doc_classification/blob/master/bert_document_classification/examples/ml4health_2019_replication
+
+And the python scripts ( 	train_n2c2_2006.py, train_n2c2_2008.py, train_newstest.py ). The latter script will train a system for document classification on the Newsgroup dataset (https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_20newsgroups.html). The Newsgroup dataset will be automatically downloaded when running the script. 
+
+
+For evaluation, use the predict_n2c2_2006.py, predict_n2c2_2008.py, predict_newstest_bert.py, predict_newstest_distilbert.py,
+
+
+This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLSTM, DocumentBertTransformer, DocumentBertLinear, DocumentBertMaxPool. 
+
+
+
 
