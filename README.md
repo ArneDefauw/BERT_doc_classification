@@ -78,5 +78,9 @@ https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_
 
 When unfreezing last encoding layer of bert-base-uncased:
 
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_13_02_42_f3f33a8bb1ff
+
+
+
 
 
