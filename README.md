@@ -62,33 +62,41 @@ This repository supports 5 architectures: DocumentBertLSTM, DocumentDistilBertLS
 
 ### Results on n2c2_2006 task:
 
-Freezing Clinical BERT:
+Freezing Clinical BERT + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_single_gpu_single_lstm_batch_size10/run_2020_03_04_10_37_12_58d26bafbcb2
 
-Unfreezing last encoding layer of Clinical BERT:
+Unfreezing last encoding layer of Clinical BERT + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_single_gpu_single_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_12_51_11_f3f33a8bb1ff
+
+Unfreezing last encoding layer of Clinical BERT + linear layer:
+
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_SMOKERS_Bertlinear_unfreeze_last_layers/run_2020_03_18_15_57_30_e36ea6cdbe42
 
 
 ### Results on n2c2_2008 task:
 
-Unfreezing last encoding layer of Clinical BERT:
+Unfreezing last encoding layer of Clinical BERT + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_2008_final_unfreeze_bert_last_layer/run_2020_03_16_15_27_57_e2b11bf5bd3b
 
 
+Unfreezing last encoding layer of Clinical BERT + linear layer:
+
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_2008_BertLinear_unfreeze_last_layers/run_2020_03_18_16_13_48_e36ea6cdbe42
+
 ### Results on newsgroup task:
 
-Freezing bert-base-uncased:
+Freezing bert-base-uncased + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10/run_2020_03_04_12_52_51_58d26bafbcb2
 
-Unfreezing last encoding layer of bert-base-uncased:
+Unfreezing last encoding layer of bert-base-uncased + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers/run_2020_03_11_13_02_42_f3f33a8bb1ff
 
 
-Unfreezing last encoding layer of distilbert-base-uncased:
+Unfreezing last encoding layer of distilbert-base-uncased + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_newstest_single_gpu_lstm_batch_size10_unfreeze_last_layers_distillbert/run_2020_03_16_13_28_02_e36ea6cdbe42
