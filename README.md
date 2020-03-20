@@ -6,7 +6,9 @@ Code based on https://github.com/AndriyMulyar/bert_document_classification.
 With some modifications:
 
 -switch from the pytorch-transformers to the transformers ( https://github.com/huggingface/transformers ) library.
+
 -unfreezing of the last layers of BERT, instead of freezing complete BERT (the latter results in subpar peformance).
+
 -support for document classification using DistilBert ( BERT with 40% less parameters )
 
 Information on how to get data to try replicate results reported in (https://arxiv.org/abs/1910.13664 ), see. 
