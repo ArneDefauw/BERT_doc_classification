@@ -79,6 +79,10 @@ https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_
 
 ### Results on n2c2_2008 task:
 
+Freezing Clinical BERT + LSTM
+
+https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_2008_BertLSTM_freeze_bert/run_2020_03_20_07_59_44_e36ea6cdbe42
+
 Unfreezing last encoding layer of Clinical BERT + LSTM:
 
 https://github.com/ArneDefauw/BERT_doc_classification/tree/master/bert_document_classification/examples/ml4health_2019_replication/results_2008_final_unfreeze_bert_last_layer/run_2020_03_16_15_27_57_e2b11bf5bd3b
